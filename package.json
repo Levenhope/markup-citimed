@@ -1,0 +1,28 @@
+{
+	"name": "lev2022",
+	"version": "0.0.1",
+	"scripts": {
+		"start": "gulp --local",
+		"build": "gulp --build-only",
+		"watch": "gulp"
+	},
+	"devDependencies": {
+		"bemto.pug": "^2.1.0",
+		"browser-sync": "^2.27.9",
+		"del": "^6.0.0",
+		"fancy-log": "^2.0.0",
+		"file-system": "^2.2.2",
+		"gulp-autoprefixer": "^8.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-pug": "^5.0.0",
+		"gulp-sass": "^5.1.0",
+		"gulp-sass-glob": "^1.1.0",
+		"gulp-svg-sprite": "^1.5.0",
+		"gulp-svgo": "^2.2.1"
+	},
+	"dependencies": {
+		"gulp": "^4.0.2",
+		"sass": "^1.49.10"
+	}
+}

@@ -1,0 +1,73 @@
+// Grid settings
+$number-of-columns: 12;
+
+$margin-desktop: 30px;
+$margin-mobile: 15px;
+$content-max-width: 1170px;
+
+$block-margin: 85px;
+$block-margin-mob: 60px;
+
+// Font settings
+$roboto: "Roboto", sans-serif;
+$font-base: $roboto;
+$font-rouble: 'Helvetica Neue', 'Arial', sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+
+// Media queries
+$media-desktop: "screen and (max-width: 1230px)"; // 1281 - 1440
+$media-desktop-small: "screen and (max-width: 1280px)"; // 1025-1280
+$media-tablet: "screen and (max-width: 1024px)"; // 768-1024
+$media-phone-landscape: "screen and (max-width: 768px)"; // 481-768 (large phones included, ipad vertical - not)
+$media-phone: "screen and (max-width: 600px)"; // 320-481 (iphone 4 landscape not included)
+$media-phone-small: "screen and (max-width: 400px)"; // 320-481 (iphone 4 landscape not included)
+$media-retina: "screen and (min-device-pixel-ratio: 1.5), screen and (-webkit-min-device-pixel-ratio: 1.5)";
+
+$media-mobile: $media-tablet;
+$media-not-mobile: "screen and (min-width: 1025px)";
+
+// Styles
+$font-size-base: 16px;
+$line-height-base: 1.2;
+$font-size-form: 16px; //smaller size is not recommended due mobile devices features
+
+$color-black: #0E3F60;
+$color-white: #ffffff;
+$color-white-bg-transparent: rgba(#ffffff, .4);
+$color-accent: #F35150;
+$color-accent-light: lighten(#F35150, 0.22);
+$color-secondary: #1C7ADD;
+$color-secondary-light: #AAC9E4;
+
+$color-text: $color-black;
+$color-text-light: #57758F;
+$color-text-light-white: rgba(#ffffff, .67);
+
+$color-link: #7288DD;
+
+$color-bg-dark: #293048;
+$color-bg-medium: #374060;
+$color-bg-light: #F2F7FD;
+
+$color-border: rgba(87, 117, 143, 0.47);
+
+$color-status-ok: #00CF6F;
+$color-status-error: #ff4701;
+
+$gradient-bg-light: linear-gradient(90deg, #E8F1FD 0%, #F2F7FD 100%);
+
+$transparent: rgba($color-black, 0);
+
+$animation-fast-in: cubic-bezier(0.12, 1.02, 0.69, 0.93);
+$animation-slow-out: cubic-bezier(0.32, 0.69, 0.58, 1);
+
+$shadow: 0px 0px 6px rgba(34, 87, 142, 0.15);
+$shadow-accent: 0px 2px 8px rgba(243, 81, 80, 0.4);
+
+$radius-card: 3px;
+$radius-button: 60px;
+

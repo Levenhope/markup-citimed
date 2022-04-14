@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+@import 'variables';
+@import 'helpers/*.scss';
+//@import 'UI/*.scss';
+
+/*!-- Общие стили --*/
+
+body {
+	min-width: 320px;
+	font-family: $font-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	color: $color-black;
+	background-color: $color-white;
+	&.is-fixed {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+	}
+	@media #{$media-desktop} {
+		font-size: 16px;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body::-moz-selection { color: $color-accent; }
+body::selection { color: $color-accent; }
+
+a {
+	color: $color-link;
+	text-decoration: none;
+	transition: color 0.2s ease 0s;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+body .nomargin {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.content-center {
+	width: 100%;
+	max-width: $content-max-width;
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 0 $margin-desktop;
+	@media ($media-mobile) {
+		padding: 0 $margin-mobile;
+	}
+}
+
+.rub {
+	font-family: $font-rouble;
+	margin-left: .5rem;
+}
+
+.is-hide {display: none}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.block-margin {
+	@include block-margin();
+}
+
+.page {
+	padding-top: 15px;
+}
+
+@media #{$media-mobile} {
+	.is-hide-mobile {
+		display: none !important;
+	}
+}
+@media #{$media-not-mobile} {
+	.is-hide-desktop {
+		display: none !important;
+	}
+}
+
+//Дополнения плагина bvi
+.bvi-show {
+	display: none;
+}
+
+/*!--Блоки--*/
+@import '../blocks/**/*.scss';
+
+

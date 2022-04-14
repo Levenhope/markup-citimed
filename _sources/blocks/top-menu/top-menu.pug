@@ -1,0 +1,115 @@
+
+
+mixin top-menu()
+    -
+        var items = [
+            {
+                name: 'Анализы и цены',
+                link: '#',
+                icon: '',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            },
+            {
+                name: 'Тесты на COVID-19',
+                link: '#',
+                icon: '',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            },
+            {
+                name: 'Комплексные исследования',
+                link: '#',
+                icon: '',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            },
+            {
+                name: 'Анализы на дому',
+                link: '#',
+                icon: '',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            },
+            {
+                name: 'Акции',
+                link: '#',
+                icon: 'icon-hot',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            },
+            {
+                name: 'О центре',
+                link: '#',
+                icon: '',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            },
+            {
+                name: 'Другие медицинские услуги',
+                link: '#',
+                icon: '',
+                subitems: [
+                    {
+                        name: '',
+                        link: '',
+                        icon: '',
+                    },
+
+                ]
+            }
+        ];
+
+    +b.top-menu
+        +e.container.content-center
+            +e.NAV.nav
+                +e.UL.menu
+                    each item in items
+                        +e.LI.menu-item
+                            +e.A.menu-link(href=item.link)
+                                if item.icon
+                                    +svgUse(12,12,item.icon)
+                                +e.item-text= item.name
+                            +e.UL.submenu
+                                each subitem in item.subitems
+                                    +e.LI.menu-item
+                                        +e.A.menu-link(href=subitem.link)
+                                            if subitem.icon
+                                                +svgUse(12,12,subitem.icon)
+                                            +e.item-text= subitem.name

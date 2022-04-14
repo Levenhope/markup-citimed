@@ -1,0 +1,87 @@
+@mixin placeholder() {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&.ui-placeholder {
+		@content;
+	}
+}
+
+@mixin mtop($m) {
+	margin-top: $m;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+@mixin mbot($m) {
+	margin-bottom: $m;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@mixin mright($m) {
+	margin-right: $m;
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+@mixin margin($m) {
+	@include mtop($m);
+	@include mbot($m);
+}
+
+$column-gap: 24px;
+
+@mixin grid-width($num: 1, $card: false, $base: 12, $includeMarginWidth: false) {
+	@if $includeMarginWidth {
+		width: calc((((100% - #{$column-gap} * #{$base}) / #{$base}) * #{$num}) + (#{$column-gap} * (#{$num} - 1)) + (#{$column-gap} / 2 ) * 3);
+	} @else {
+		width: calc((((100% - #{$column-gap} * #{$base}) / #{$base}) * #{$num}) + (#{$column-gap} * (#{$num} - 1)));
+		@if $card {
+			margin: $column-gap / 2;
+		} @else {
+			margin: 0 $column-gap / 2;
+		}
+	}
+}
+
+@mixin grid-offset-left($num: 1, $negative: false, $base: 12) {
+	@if $negative  {
+		margin-left: calc(-1 * (((100% - #{$column-gap} * #{$base}) / #{$base}) * #{$num}) + (#{$column-gap} * (#{$num} - 1)) + (#{$column-gap} / 2 ) * 3);
+	} @else {
+		margin-left: calc((((100% - #{$column-gap} * #{$base}) / #{$base}) * #{$num}) + (#{$column-gap} * (#{$num} - 1)) + (#{$column-gap} / 2 ) * 3);
+	}
+}
+
+@mixin grid-offset-right($num: 1, $negative: false, $base: 12) {
+	@if $negative  {
+		margin-right: calc(-1 * (((100% - #{$column-gap} * #{$base}) / #{$base}) * #{$num}) + (#{$column-gap} * (#{$num} - 1)) + (#{$column-gap} / 2 ) * 3);
+	} @else {
+		margin-right: calc((((100% - #{$column-gap} * #{$base}) / #{$base}) * #{$num}) + (#{$column-gap} * (#{$num} - 1)) + (#{$column-gap} / 2 ) * 3);
+	}}
+
+@mixin grid-row() {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 (-1 *  $column-gap / 2);
+}
+
+@mixin block-margin(){
+	margin-bottom: $block-margin;
+	@media #{$media-mobile} {
+		margin-bottom: $block-margin-mob;
+	}
+}
+

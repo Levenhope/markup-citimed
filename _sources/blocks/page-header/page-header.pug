@@ -1,0 +1,42 @@
+include ../top-menu/top-menu
+
+mixin page-header()
+    +b.page-header
+        +e.top
+            +e.container.content-center
+                +e.A.logo(href='/')
+                    +svgUse(140, 36, 'logo-header')
+                +e.link-holder._adress
+                    +b.A.icon-link._icon-accent._text-secondary(href='#')
+                        +svgUse(16, 20, 'icon-pin')
+                        +e.SPAN.text Адреса медицинских центров
+                +e.link-holder._call
+                    +b.A.icon-link._icon-accent(href='tel:+74951212578')
+                        +svgUse(30, 24, 'icon-call-time')
+                        +e.SPAN.text +7 (495) 121-25-78
+                +e.link-holder._search
+                    +b.A.icon-link(href='#')
+                        +svgUse(16, 16, 'icon-search')
+                        +e.SPAN.text Поиск анализов
+                +e.link-holder._results
+                    +b.A.icon-link(href='#')
+                        +svgUse(16, 16, 'icon-doc')
+                        +e.SPAN.text Получить результат
+                +e.profile-holder
+                    +b.profile-compact
+                        +e.A.link(href='javascript:;')
+                            +svgUse(16, 16, 'icon-profile')
+                            span.bvi-show Меню профиля
+                        +e.dropdown
+                +e.cart-holder
+                    +b.cart-compact
+                        +e.A.link(href='javascript:;')
+                            +svgUse(20, 20, 'icon-cart')
+                            span.bvi-show Корзина
+                            +e.SPAN.counter 12
+                        +e.dropdown
+        +e.menu-holder
+            +top-menu()
+
+
+

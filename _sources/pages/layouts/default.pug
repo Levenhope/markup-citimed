@@ -1,0 +1,20 @@
+include ../../../node_modules/bemto.pug/bemto.pug
+include ../library/helpers/svgUse
+include ../../blocks/page-header/page-header
+include ../../blocks/page-footer/page-footer
+
+- $bodyMods = [];
+- $webPath = '';
+block global_vars
+
+doctype html
+html(lang='ru')
+    block head
+        include ../library/head
+
+    block body
+        body.page(class=$bodyMods)
+
+            +page-header()
+            block content
+            +page-footer()

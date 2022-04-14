@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>Demo page</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, sans-serif;
+            font-weight: 300;
+        }
+        .readme {
+            padding: 20px;
+            display: block;
+            width: 80%;
+            min-width: 290px;
+            height: 100%;
+            margin: auto;
+        }
+        h1 {
+            border-bottom: 1px solid #f9ae4c;
+            padding-bottom: 10px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            letter-spacing: 0.05em;
+        }
+        a:hover, a:active {
+            text-decoration: none;
+        }
+        .links {
+            text-align: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #faae4c;
+        }
+    </style>
+</head>
+<body>
+<div class="links">
+    <h3>Список страниц</h3>
+    <a href="./build/"><b>index.html</b> - Главная страница</a><br><br>
+</div>
+<div class="readme">
+    <h2>Информация для разработчиков</h2>
+    <h3>Инструменты</h3>
+    <p>По умолчанию на проекте установлены <b>PUG</b> для формирования html, <b>SASS</b> - для формирования стилей, <b>GULP</b> - для сборки проекта.</p>
+    <h3>assets</h3>
+    <p>содержит статичные некомпилируемые папки <b>img</b> (изображения), <b>vendor</b> (сторонние библиотеки), <b>fonts</b> (файлы подключенных шрифтов)</p>
+    <h3>build</h3>
+    <p>Содержимое папки <b>build</b> является результатом сборки файлов из папки _source.</p>
+    <h3>_source</h3>
+    <p>Папка <b>_source</b> содержит исходные файлы разметки, скриптов и стилей. <b>blocks</b> - отдельные файлы разметки, скриптов и стилей под каждый блок; <b>js, pages, sass</b> - общие файлы проекта.</p>
+    <h3>Getting started</h3>
+    <p><b>gulp</b> - запуск сборки с отслеживанием изменений;</p>
+    <p><b>gulp --local</b> - запуск сборки с отслеживанием изменений и трансляцией в браузер;</p>
+    <p><b>gulp --build-only</b> - единоразовый запуск сборки без отслеживания изменений.</p>
+</div>
+</body>
+</html>
