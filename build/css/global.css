@@ -260,8 +260,12 @@ body .nomargin {
   }
 }
 
-.page {
-  padding-top: 15px;
+.push-from-left {
+  margin-left: auto;
+}
+
+.push-from-right {
+  margin-right: auto;
 }
 
 @media screen and (max-width: 1024px) {
@@ -279,4 +283,132 @@ body .nomargin {
 }
 
 /*!--Блоки--*/
+.cart-compact__link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.cart-compact__link:hover {
+  text-decoration: none;
+}
+.cart-compact__icon {
+  fill: #0E3F60;
+}
+.cart-compact__link:hover .cart-compact__icon {
+  fill: #1C7ADD;
+}
+.cart-compact__counter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  min-width: 24px;
+  margin-left: 5px;
+  padding: 0 3px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1;
+  background-color: #F35150;
+  border-radius: 20px;
+}
+
+.icon-link {
+  text-decoration: none;
+  color: #0E3F60;
+}
+.icon-link:hover {
+  color: #1C7ADD;
+  text-decoration: none;
+}
+.icon-link__icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  fill: #1C7ADD;
+}
+.icon-link_icon-accent .icon-link__icon {
+  fill: #F35150;
+}
+.icon-link__text {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.icon-link_text-secondary .icon-link__text {
+  color: #1C7ADD;
+}
+.icon-link_text-secondary:hover .icon-link__text {
+  color: #F35150;
+}
+.icon-link_text-bigger .icon-link__text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 12px rgba(34, 87, 142, 0.1);
+}
+.page-header__logo {
+  align-self: center;
+  margin-bottom: -5px;
+}
+.page-header__top {
+  border-bottom: 1px solid #EEF3F9;
+}
+.page-header__container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-height: 68px;
+}
+
+.profile-compact__link {
+  position: relative;
+  display: block;
+  padding-right: 22px;
+}
+.profile-compact__link svg {
+  fill: #0E3F60;
+}
+.profile-compact__link:hover svg {
+  fill: #1C7ADD;
+}
+.profile-compact__arrow {
+  position: absolute;
+  right: 2px;
+  top: 0;
+  bottom: 0;
+  display: block;
+  margin: auto;
+}
+
+.top-menu__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-menu__menu-link {
+  display: block;
+  padding: 24px 5px 20px;
+  color: #0E3F60;
+  font-size: 15px;
+}
+.top-menu__menu-link:hover {
+  color: #1C7ADD;
+  text-decoration: none;
+}
+.top-menu__link-icon {
+  display: inline-block;
+  margin-right: 5px;
+  fill: #F35150;
+}
+.top-menu__submenu {
+  display: none;
+}
 /*# sourceMappingURL=../sourcemaps/global.css.map */

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/vendor/bvi/css/bvi.min.css" type="text/css">
+    <link rel="stylesheet" href="./svg/css/sprite.css" type="text/css">
     <link href="./css/global.css" type="text/css" rel="stylesheet">
     <script src="../assets/vendor/bvi/js/bvi.js"></script>
     <script src="./js/global.js"></script>
@@ -15,47 +16,49 @@
     <title>Citimed - Главная</title>
   </head>
   <body class="page">
-    <div class="page-header">
+    <header class="page-header">
       <div class="page-header__top">
-        <div class="page-header__container content-center"><a class="page-header__logo" href="/">
-          <svg width="140" height="36">
-            <use xlink:href="./svg/stack/sprite.svg#logo-header"></use>
-          </svg></a>
-          <div class="page-header__link-holder page-header__link-holder_adress"><a class="icon-link icon-link_icon-accent icon-link_text-secondary" href="#">
-            <svg width="16" height="20">
-              <use xlink:href="./svg/stack/sprite.svg#icon-pin"></use>
-            </svg><span class="icon-link__text">Адреса медицинских центров</span></a>
-          </div>
-          <div class="page-header__link-holder page-header__link-holder_call"><a class="icon-link icon-link_icon-accent" href="tel:+74951212578">
-            <svg width="30" height="24">
-              <use xlink:href="./svg/stack/sprite.svg#icon-call-time"></use>
-            </svg><span class="icon-link__text">+7 (495) 121-25-78</span></a>
-          </div>
-          <div class="page-header__link-holder page-header__link-holder_search"><a class="icon-link" href="#">
-            <svg width="16" height="16">
-              <use xlink:href="./svg/stack/sprite.svg#icon-search"></use>
-            </svg><span class="icon-link__text">Поиск анализов</span></a>
-          </div>
-          <div class="page-header__link-holder page-header__link-holder_results"><a class="icon-link" href="#">
-            <svg width="16" height="16">
-              <use xlink:href="./svg/stack/sprite.svg#icon-doc"></use>
-            </svg><span class="icon-link__text">Получить результат</span></a>
-          </div>
-          <div class="page-header__profile-holder">
-            <div class="profile-compact"><a class="profile-compact__link" href="javascript:;">
-              <svg width="16" height="16">
-                <use xlink:href="./svg/stack/sprite.svg#icon-profile"></use>
-              </svg><span class="bvi-show">Меню профиля</span></a>
-              <div class="profile-compact__dropdown">
+        <div class="content-center">
+          <div class="page-header__container"><a class="page-header__logo" href="/">
+            <svg width="140" height="36">
+              <use xlink:href="./svg/symbol/sprite.svg#logo-header"></use>
+            </svg></a>
+            <div class="page-header__link-holder"><a class="icon-link icon-link_icon-accent icon-link_text-secondary" href="#">
+              <svg class="icon-link__icon" width="16" height="20">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+              </svg><span class="icon-link__text">Адреса медицинских центров</span></a>
+            </div>
+            <div class="page-header__link-holder"><a class="icon-link icon-link_icon-accent icon-link_text-bigger" href="tel:+74951212578">
+              <svg class="icon-link__icon" width="30" height="23">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-call-time"></use>
+              </svg><span class="icon-link__text">+7 (495) 121-25-78</span></a>
+            </div>
+            <div class="page-header__link-holder push-from-left"><a class="icon-link" href="#">
+              <svg class="icon-link__icon" width="16" height="16">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+              </svg><span class="icon-link__text">Поиск анализов</span></a>
+            </div>
+            <div class="page-header__link-holder"><a class="icon-link" href="#">
+              <svg class="icon-link__icon" width="16" height="20">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-doc"></use>
+              </svg><span class="icon-link__text">Получить результат</span></a>
+            </div>
+            <div class="page-header__profile-holder">
+              <div class="profile-compact"><a class="profile-compact__link" href="javascript:;">
+                <svg class="profile-compact__icon" width="16" height="16">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-profile"></use>
+                </svg><span class="bvi-show">Меню профиля</span><span class="profile-compact__arrow svg-icon-arrow-down-s svg-icon-arrow-down-s-dims"></span></a>
+                <div class="profile-compact__dropdown">
+                </div>
               </div>
             </div>
-          </div>
-          <div class="page-header__cart-holder">
-            <div class="cart-compact"><a class="cart-compact__link" href="javascript:;">
-              <svg width="20" height="20">
-                <use xlink:href="./svg/stack/sprite.svg#icon-cart"></use>
-              </svg><span class="bvi-show">Корзина</span><span class="cart-compact__counter">12</span></a>
-              <div class="cart-compact__dropdown">
+            <div class="page-header__cart-holder">
+              <div class="cart-compact"><a class="cart-compact__link" href="javascript:;">
+                <svg class="cart-compact__icon" width="20" height="20">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                </svg><span class="bvi-show">Корзина</span><span class="cart-compact__counter">12</span></a>
+                <div class="cart-compact__dropdown">
+                </div>
               </div>
             </div>
           </div>
@@ -91,8 +94,8 @@
                   </ul>
                 </li>
                 <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="#">
-                  <svg width="12" height="12">
-                    <use xlink:href="./svg/stack/sprite.svg#icon-hot"></use>
+                  <svg class="top-menu__link-icon" width="12" height="12">
+                    <use xlink:href="./svg/symbol/sprite.svg#icon-hot"></use>
                   </svg><span class="top-menu__item-text">Акции</span></a>
                   <ul class="top-menu__submenu">
                     <li class="top-menu__menu-item"><a class="top-menu__menu-link" href=""><span class="top-menu__item-text"></span></a>
@@ -116,10 +119,120 @@
           </div>
         </div>
       </div>
-    </div>
+    </header>
     <main class="page-content">test content</main>
     <footer class="page-footer">
-      <div class="content-center"><a class="bvi-open" href="#">версия для слабовидящих</a></div>
+      <div class="content-center">
+        <div class="page-footer__container">
+          <div class="page-footer__grid">
+            <div class="page-footer__logo-holder">
+              <svg class="page-footer__logo" width="253" height="60">
+                <use xlink:href="./svg/symbol/sprite.svg#logo-footer"></use>
+              </svg>
+            </div>
+            <div class="page-footer__nav">
+              <div class="page-footer__menu">
+                <div class="footer-menu">
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">О центре</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">О нас</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Лицензии</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Акции</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Новости</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="page-footer__menu">
+                <div class="footer-menu">
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Анализы и цены</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Каталог анализов</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Анализы на дому</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Информация об оплате</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Результаты анализов</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="page-footer__menu">
+                <div class="footer-menu">
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Другие услуги</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Медицинские справки</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Медицинские книжки</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Профосмотры</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">Диагностика</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="">СанОбработка</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="page-footer__contacts">
+              <div class="footer-menu">
+                <ul class="footer-menu__list">
+                  <li class="footer-menu__item"><a class="footer-menu__link" href="">контакты</a>
+                  </li>
+                </ul>
+              </div><a class="icon-link icon-link_icon-accent icon-link_text-bigger" href="tel:+74951212578">
+              <svg class="icon-link__icon" width="30" height="23">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-call-time"></use>
+              </svg><span class="icon-link__text">+7 (495) 121-25-78</span></a>
+              <div class="page-footer__work-hours">
+                <div class="page-footer__work-hours-line">Время работы колл-центра:
+                </div>
+                <div class="page-footer__work-hours-line">Пн-Вс:<b>Круглосуточно</b>
+                </div>
+              </div><a class="page-footer__places-link" href="#">Адреса медцентров</a>
+            </div>
+            <div class="page-footer__social">
+              <div class="page-footer__social-title">Присоединяйтесь к нам:
+              </div>
+              <ul class="page-footer__social-list">
+                <li class="page-footer__social-link" href="" target="_blank">
+                  <div class="bvi-show">Telegram</div>
+                  <div class="bvi-hide">
+                    <svg width="20" height="20">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-telegram"></use>
+                    </svg>
+                  </div>
+                </li>
+              </ul>
+              <ul class="page-footer__social-list">
+                <li class="page-footer__social-link" href="" target="_blank">
+                  <div class="bvi-show">ВКонтакте</div>
+                  <div class="bvi-hide">
+                    <svg width="24" height="20">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-vk"></use>
+                    </svg>
+                  </div>
+                </li>
+              </ul><a class="icon-link icon-link_text-smaller bvi-open" href="#">
+              <svg class="icon-link__icon" width="25" height="16">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-eye"></use>
+              </svg><span class="icon-link__text">Версия для слабовидящих</span></a>
+            </div>
+            <div class="page-footer__bottom">
+              <div class="page-footer__copyright">© 2022 СитиМед. Все права защищены<a class="page-footer__policy" href="#">Политика конфиденциальности</a>
+              </div><a class="page-footer__dev-holder" href="/" target="_blank"><img class="page-footer__dev-img" src="../assets/img/logo-dev.svg" alt="Webolution" title=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   </body>
 </html>

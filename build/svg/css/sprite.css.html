@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<title>SVG CSS sprite preview | svg-sprite</title>
+		<style>@charset "UTF-8";body{padding:0;margin:0;color:#666;background:#fafafa;font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:1.4}header{display:block;padding:3em 3em 2em 3em;background-color:#fff}header p{margin:2em 0 0 0}section{border-top:1px solid #eee;padding:2em 3em 0 3em}section ul{margin:0;padding:0}section li{display:inline;display:inline-block;background-color:#fff;position:relative;margin:0 2em 2em 0;vertical-align:top;border:1px solid #ccc;padding:1em 1em 3em 1em;cursor:default}.icon-box{margin:0;width:144px;height:144px;position:relative;background:#ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;border:1px solid #ccc;display:table-cell;vertical-align:middle;text-align:center}.icon{display:inline;display:inline-block}h1{margin-top:0}h2{margin:0;padding:0;font-size:1em;font-weight:normal;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;position:absolute;left:1em;right:1em;bottom:1em}footer{display:block;margin:0;padding:0 3em 3em 3em}footer p{margin:0;font-size:.7em}footer a{color:#0f7595;margin-left:0}</style>
+		<style>i{text-indent:200%;white-space:nowrap;overflow:hidden;display:inline-block;background-size:595px 333px!important}</style>
+
+<!--
+
+Sprite CSS
+====================================================================================================
+This is an all-in-one inline version of the CSS necessary to use the SVG sprite.
+
+-->
+
+<style type="text/css">
+.svg-icon-arrow-down-s {
+	background: url("sprite-ee6a856a.svg") 88.54700854700855% 23.24159021406728% no-repeat;
+	width: 10px;
+	height: 6px;
+}
+.svg-icon-call-time {
+	background: url("sprite-ee6a856a.svg") 86.3716814159292% 19.35483870967742% no-repeat;
+	width: 30px;
+	height: 23px;
+}
+.svg-icon-cart {
+	background: url("sprite-ee6a856a.svg") 83.82608695652173% 28.343949044585987% no-repeat;
+	width: 20px;
+	height: 19px;
+}
+.svg-icon-close {
+	background: url("sprite-ee6a856a.svg") 86.70120898100173% 28.07570977917981% no-repeat;
+	width: 16px;
+	height: 16px;
+}
+.svg-icon-doc {
+	background: url("sprite-ee6a856a.svg") 59.067357512953365% 40.2555910543131% no-repeat;
+	width: 16px;
+	height: 20px;
+}
+.svg-icon-eye {
+	background: url("sprite-ee6a856a.svg") 90.87719298245614% 18.92744479495268% no-repeat;
+	width: 25px;
+	height: 16px;
+}
+.svg-icon-hot {
+	background: url("sprite-ee6a856a.svg") 94.33962264150944% 27.725856697819314% no-repeat;
+	width: 12px;
+	height: 12px;
+}
+.svg-icon-mobile-menu {
+	background: url("sprite-ee6a856a.svg") 98.95287958115183% 18.808777429467085% no-repeat;
+	width: 22px;
+	height: 14px;
+}
+.svg-icon-pin {
+	background: url("sprite-ee6a856a.svg") 61.8307426597582% 40.2555910543131% no-repeat;
+	width: 16px;
+	height: 20px;
+}
+.svg-icon-profile {
+	background: url("sprite-ee6a856a.svg") 89.46459412780656% 28.07570977917981% no-repeat;
+	width: 16px;
+	height: 16px;
+}
+.svg-icon-search {
+	background: url("sprite-ee6a856a.svg") 92.2279792746114% 28.07570977917981% no-repeat;
+	width: 16px;
+	height: 16px;
+}
+.svg-icon-telegram {
+	background: url("sprite-ee6a856a.svg") 65.04347826086956% 40.2555910543131% no-repeat;
+	width: 20px;
+	height: 20px;
+}
+.svg-icon-vk {
+	background: url("sprite-ee6a856a.svg") 95.09632224168126% 18.808777429467085% no-repeat;
+	width: 24px;
+	height: 14px;
+}
+.svg-logo-bg {
+	background: url("sprite-ee6a856a.svg") 0 0 no-repeat;
+	width: 342px;
+	height: 333px;
+}
+.svg-logo-dev {
+	background: url("sprite-ee6a856a.svg") 76.16926503340757% 19.736842105263158% no-repeat;
+	width: 146px;
+	height: 29px;
+}
+.svg-logo-footer {
+	background: url("sprite-ee6a856a.svg") 100% 0 no-repeat;
+	width: 253px;
+	height: 60px;
+}
+.svg-logo-header {
+	background: url("sprite-ee6a856a.svg") 75.16483516483517% 30.06756756756757% no-repeat;
+	width: 140px;
+	height: 37px;
+}
+</style>
+
+<!--
+====================================================================================================
+-->
+
+	</head>
+	<body>
+		<header>
+			<h1>SVG CSS sprite preview</h1>
+			<p>This preview features the generated SVG file as a conventional CSS sprite. The shapes are displayed as background images of several <code>&lt;i&gt;</code> elements.</p>
+		</header>
+		<section>
+
+<!--
+
+Conventional CSS sprite
+====================================================================================================
+This technique uses CSS classes to display portions of the sprite as background image of
+appropriately sized elements.
+
+-->
+
+			<ul>
+				<li title="icon-arrow-down-s">
+					<div class="icon-box">
+
+						<!-- icon-arrow-down-s -->
+						<i class="svg-icon-arrow-down-s">icon-arrow-down-s</i>
+
+					</div>
+					<h2>icon-arrow-down-s</h2>
+				</li>
+				<li title="icon-call-time">
+					<div class="icon-box">
+
+						<!-- icon-call-time -->
+						<i class="svg-icon-call-time">icon-call-time</i>
+
+					</div>
+					<h2>icon-call-time</h2>
+				</li>
+				<li title="icon-cart">
+					<div class="icon-box">
+
+						<!-- icon-cart -->
+						<i class="svg-icon-cart">icon-cart</i>
+
+					</div>
+					<h2>icon-cart</h2>
+				</li>
+				<li title="icon-close">
+					<div class="icon-box">
+
+						<!-- icon-close -->
+						<i class="svg-icon-close">icon-close</i>
+
+					</div>
+					<h2>icon-close</h2>
+				</li>
+				<li title="icon-doc">
+					<div class="icon-box">
+
+						<!-- icon-doc -->
+						<i class="svg-icon-doc">icon-doc</i>
+
+					</div>
+					<h2>icon-doc</h2>
+				</li>
+				<li title="icon-eye">
+					<div class="icon-box">
+
+						<!-- icon-eye -->
+						<i class="svg-icon-eye">icon-eye</i>
+
+					</div>
+					<h2>icon-eye</h2>
+				</li>
+				<li title="icon-hot">
+					<div class="icon-box">
+
+						<!-- icon-hot -->
+						<i class="svg-icon-hot">icon-hot</i>
+
+					</div>
+					<h2>icon-hot</h2>
+				</li>
+				<li title="icon-mobile-menu">
+					<div class="icon-box">
+
+						<!-- icon-mobile-menu -->
+						<i class="svg-icon-mobile-menu">icon-mobile-menu</i>
+
+					</div>
+					<h2>icon-mobile-menu</h2>
+				</li>
+				<li title="icon-pin">
+					<div class="icon-box">
+
+						<!-- icon-pin -->
+						<i class="svg-icon-pin">icon-pin</i>
+
+					</div>
+					<h2>icon-pin</h2>
+				</li>
+				<li title="icon-profile">
+					<div class="icon-box">
+
+						<!-- icon-profile -->
+						<i class="svg-icon-profile">icon-profile</i>
+
+					</div>
+					<h2>icon-profile</h2>
+				</li>
+				<li title="icon-search">
+					<div class="icon-box">
+
+						<!-- icon-search -->
+						<i class="svg-icon-search">icon-search</i>
+
+					</div>
+					<h2>icon-search</h2>
+				</li>
+				<li title="icon-telegram">
+					<div class="icon-box">
+
+						<!-- icon-telegram -->
+						<i class="svg-icon-telegram">icon-telegram</i>
+
+					</div>
+					<h2>icon-telegram</h2>
+				</li>
+				<li title="icon-vk">
+					<div class="icon-box">
+
+						<!-- icon-vk -->
+						<i class="svg-icon-vk">icon-vk</i>
+
+					</div>
+					<h2>icon-vk</h2>
+				</li>
+				<li title="logo-bg">
+					<div class="icon-box">
+
+						<!-- logo-bg -->
+						<i class="svg-logo-bg">logo-bg</i>
+
+					</div>
+					<h2>logo-bg</h2>
+				</li>
+				<li title="logo-dev">
+					<div class="icon-box">
+
+						<!-- logo-dev -->
+						<i class="svg-logo-dev">logo-dev</i>
+
+					</div>
+					<h2>logo-dev</h2>
+				</li>
+				<li title="logo-footer">
+					<div class="icon-box">
+
+						<!-- logo-footer -->
+						<i class="svg-logo-footer">logo-footer</i>
+
+					</div>
+					<h2>logo-footer</h2>
+				</li>
+				<li title="logo-header">
+					<div class="icon-box">
+
+						<!-- logo-header -->
+						<i class="svg-logo-header">logo-header</i>
+
+					</div>
+					<h2>logo-header</h2>
+				</li>
+			</ul>
+
+<!--
+====================================================================================================
+-->
+
+		</section>
+		<footer>
+			<p>Generated at Thu, 14 Apr 2022 18:31:17 GMT by <a href="https://github.com/svg-sprite/svg-sprite" target="_blank" rel="noopener noreferrer">svg-sprite</a>.</p>
+		</footer>
+	</body>
+</html>

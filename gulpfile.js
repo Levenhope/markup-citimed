@@ -80,39 +80,40 @@ function concatBlockJs() {
 function modifySvg() {
 	let images = [paths.srcsvg + '*.svg'];
 	return gulp.src(images)
-		.pipe(gulpSvgo({
-			removeViewBox: false,
-			removeXMLNS: true,
-			convertStyleToAttrs: true,
-			removeDimensions: true,
-			removeAttributesBySelector: {attributes: ['fill']},
-		}))
+		.pipe(gulpSvgo())
 		.pipe(svgSprite({
 				mode: {
-					stack: {
-						sprite: 'sprite.svg'
+					symbol: {
+						sprite: 'sprite.svg',
+						example: true
+					},
+					css: {
+						sprite: 'sprite.svg',
+						example: true,
+						render: {
+							css: true,
+						}
 					}
-				},
-			}
-		))
-		.pipe(gulp.dest(paths.base + paths.build + paths.svg));
-}
-
-function buildHTML() {
-	return gulp.src(paths.srcpages + '*.pug')
-		.pipe(pug({
-			pretty: true
+				}
 		}))
-		.pipe(gulp.dest(paths.build));
+        .pipe(gulp.dest(paths.base + paths.build + paths.svg));
 }
 
-function watchFiles(done) {
-	if (isBuildOnly > 0) {
-		log('Watcher is disabled');
-		return done();
-	}
+            function buildHTML() {
+                return gulp.src(paths.srcpages + '*.pug')
+                    .pipe(pug({
+                        pretty: true
+                    }))
+                    .pipe(gulp.dest(paths.build));
+            }
 
-	gulp.watch([paths.srcpages + '*.pug', paths.srcpages + '**/*.pug', paths.blocks + '**/*.pug'], buildHTML).on('change', browserSync.reload);
+            function watchFiles(done) {
+                if (isBuildOnly > 0) {
+                    log('Watcher is disabled');
+                    return done();
+                }
+
+                gulp.watch([paths.srcpages + '*.pug', paths.srcpages + '**/*.pug', paths.blocks + '**/*.pug'], buildHTML).on('change', browserSync.reload);
 	gulp.watch(paths.blocks + '**/*.js', concatBlockJs).on('change', browserSync.reload);
 	gulp.watch([paths.sass + '**/*.scss', paths.blocks + '**/*.scss'], buildSass);
 	gulp.watch(paths.srcjs + '*.js', buildJs).on('change', browserSync.reload);

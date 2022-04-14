@@ -1,0 +1,6 @@
+mixin footer-menu(options)
+    +b.footer-menu
+        +e.UL.list
+            each item in options.items
+                +e.LI.item
+                    +e.A.link(href=item.link)= item.name

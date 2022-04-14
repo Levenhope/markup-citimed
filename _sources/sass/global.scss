@@ -71,8 +71,12 @@ body .nomargin {
 	@include block-margin();
 }
 
-.page {
-	padding-top: 15px;
+.push-from-left {
+	margin-left: auto;
+}
+
+.push-from-right {
+	margin-right: auto;
 }
 
 @media #{$media-mobile} {

@@ -1,0 +1,23 @@
+.profile-compact {
+  &__link {
+    position: relative;
+    display: block;
+    padding-right: 22px;
+    svg {
+      fill: $color-black;
+    }
+    &:hover {
+      svg {
+        fill: $color-secondary;
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    right: 2px;
+    top: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+  }
+}

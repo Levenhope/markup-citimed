@@ -1,0 +1,25 @@
+.top-menu {
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__menu-link {
+    display: block;
+    padding: 24px 5px 20px;
+    color: $color-black;
+    font-size: 15px;
+    &:hover {
+      color: $color-secondary;
+      text-decoration: none;
+    }
+  }
+  &__link-icon {
+    display: inline-block;
+    margin-right: 5px;
+    fill: $color-accent;
+  }
+  &__submenu {
+    display: none;
+  }
+}

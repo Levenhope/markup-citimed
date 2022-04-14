@@ -1,4 +1,129 @@
+include ../footer-menu/footer-menu
+
 mixin page-footer()
-    footer.page-footer
+    +b.FOOTER.page-footer
         .content-center
-            a.bvi-open(href='#') версия для слабовидящих
+            +e.container
+                +e.grid
+                    +e.logo-holder
+                        +svgUse(253, 60, 'logo-footer')(class='page-footer__logo')
+                    +e.nav
+                        +e.menu
+                            +footer-menu({
+                                items: [
+                                    {
+                                        name: 'О центре',
+                                        link: '',
+                                        title: true
+                                    },
+                                    {
+                                        name: 'О нас',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Лицензии',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Акции',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Новости',
+                                        link: ''
+                                    }
+                                ]
+                            })
+                        +e.menu
+                            +footer-menu({
+                                items: [
+                                    {
+                                        name: 'Анализы и цены',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Каталог анализов',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Анализы на дому',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Информация об оплате',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Результаты анализов',
+                                        link: ''
+                                    }
+                                ]
+                            })
+                        +e.menu
+                            +footer-menu({
+                                items: [
+                                    {
+                                        name: 'Другие услуги',
+                                        link: '',
+                                        title: true
+                                    },
+                                    {
+                                        name: 'Медицинские справки',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Медицинские книжки',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Профосмотры',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'Диагностика',
+                                        link: ''
+                                    },
+                                    {
+                                        name: 'СанОбработка',
+                                        link: ''
+                                    }
+                                ]
+                            })
+                    +e.contacts
+                        +footer-menu({
+                            items: [
+                                {
+                                    name: 'контакты',
+                                    link: '',
+                                    title: true
+                                }
+                            ]
+                        })
+                        +b.A.icon-link._icon-accent._text-bigger(href='tel:+74951212578')
+                            +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
+                            +e.SPAN.text +7 (495) 121-25-78
+                        +e.work-hours
+                            +e.work-hours-line Время работы колл-центра:
+                            +e.work-hours-line Пн-Вс:
+                                b Круглосуточно
+                        +e.A.places-link(href='#') Адреса медцентров
+                    +e.social
+                        +e.social-title Присоединяйтесь к нам:
+                        +e.UL.social-list
+                            +e.LI.social-link(href='' target='_blank')
+                                .bvi-show Telegram
+                                .bvi-hide
+                                    +svgUse(20,20,'icon-telegram')
+                        +e.UL.social-list
+                            +e.LI.social-link(href='' target='_blank')
+                                .bvi-show ВКонтакте
+                                .bvi-hide
+                                    +svgUse(24,20,'icon-vk')
+                        +b.A.icon-link._text-smaller.bvi-open(href='#')
+                            +svgUse(25, 16, 'icon-eye')(class='icon-link__icon')
+                            +e.SPAN.text Версия для слабовидящих
+                    +e.bottom
+                        +e.copyright © 2022 СитиМед. Все права защищены
+                            +e.A.policy(href='#') Политика конфиденциальности
+                        +e.A.dev-holder(href='/' target="_blank")
+                            +e.IMG.dev-img(src='../assets/img/logo-dev.svg' alt='Webolution')

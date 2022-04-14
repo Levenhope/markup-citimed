@@ -104,12 +104,12 @@ mixin top-menu()
                         +e.LI.menu-item
                             +e.A.menu-link(href=item.link)
                                 if item.icon
-                                    +svgUse(12,12,item.icon)
+                                    +svgUse(12,12,item.icon)(class='top-menu__link-icon')
                                 +e.item-text= item.name
                             +e.UL.submenu
                                 each subitem in item.subitems
                                     +e.LI.menu-item
                                         +e.A.menu-link(href=subitem.link)
                                             if subitem.icon
-                                                +svgUse(12,12,subitem.icon)
+                                                +svgUse(12,12,subitem.icon)(class='top-menu__link-icon')
                                             +e.item-text= subitem.name
