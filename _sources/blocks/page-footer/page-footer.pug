@@ -13,24 +13,24 @@ mixin page-footer()
                                 items: [
                                     {
                                         name: 'О центре',
-                                        link: '',
+                                        link: '#',
                                         title: true
                                     },
                                     {
                                         name: 'О нас',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Лицензии',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Акции',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Новости',
-                                        link: ''
+                                        link: '#'
                                     }
                                 ]
                             })
@@ -39,23 +39,24 @@ mixin page-footer()
                                 items: [
                                     {
                                         name: 'Анализы и цены',
-                                        link: ''
+                                        link: '#',
+                                        title: true
                                     },
                                     {
                                         name: 'Каталог анализов',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Анализы на дому',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Информация об оплате',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Результаты анализов',
-                                        link: ''
+                                        link: '#'
                                     }
                                 ]
                             })
@@ -64,28 +65,28 @@ mixin page-footer()
                                 items: [
                                     {
                                         name: 'Другие услуги',
-                                        link: '',
+                                        link: '#',
                                         title: true
                                     },
                                     {
                                         name: 'Медицинские справки',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Медицинские книжки',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Профосмотры',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'Диагностика',
-                                        link: ''
+                                        link: '#'
                                     },
                                     {
                                         name: 'СанОбработка',
-                                        link: ''
+                                        link: '#'
                                     }
                                 ]
                             })
@@ -93,37 +94,42 @@ mixin page-footer()
                         +footer-menu({
                             items: [
                                 {
-                                    name: 'контакты',
-                                    link: '',
+                                    name: 'Контакты',
+                                    link: '#',
                                     title: true
                                 }
                             ]
                         })
-                        +b.A.icon-link._icon-accent._text-bigger(href='tel:+74951212578')
-                            +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
-                            +e.SPAN.text +7 (495) 121-25-78
+                        +e.phone
+                            +b.A.icon-link._icon-accent._text-bigger._no-brake(href='tel:+74951212578')
+                                +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
+                                +e.SPAN.text +7 (495) 121-25-78
                         +e.work-hours
                             +e.work-hours-line Время работы колл-центра:
-                            +e.work-hours-line Пн-Вс:
+                            +e.work-hours-line Пн-Вс:&nbsp;
                                 b Круглосуточно
                         +e.A.places-link(href='#') Адреса медцентров
                     +e.social
-                        +e.social-title Присоединяйтесь к нам:
-                        +e.UL.social-list
-                            +e.LI.social-link(href='' target='_blank')
-                                .bvi-show Telegram
-                                .bvi-hide
-                                    +svgUse(20,20,'icon-telegram')
-                        +e.UL.social-list
-                            +e.LI.social-link(href='' target='_blank')
-                                .bvi-show ВКонтакте
-                                .bvi-hide
-                                    +svgUse(24,20,'icon-vk')
-                        +b.A.icon-link._text-smaller.bvi-open(href='#')
-                            +svgUse(25, 16, 'icon-eye')(class='icon-link__icon')
-                            +e.SPAN.text Версия для слабовидящих
+                        +e.social-links
+                            +e.social-title Присоединяйтесь к нам:
+                            +e.UL.social-list
+                                +e.LI.social-item
+                                    +e.A.social-link(href='' target='_blank')
+                                        .bvi-show Telegram
+                                        .bvi-hide
+                                            +svgUse(20,20,'icon-telegram')
+                                +e.LI.social-item
+                                    +e.A.social-link(href='' target='_blank')
+                                        .bvi-show ВКонтакте
+                                        .bvi-hide
+                                            +svgUse(24,20,'icon-vk')
+                        +e.social-help
+                            +b.A.icon-link._text-smaller.bvi-open(href='#')
+                                +svgUse(25, 16, 'icon-eye')(class='icon-link__icon')
+                                +e.SPAN.text Версия для слабовидящих
                     +e.bottom
-                        +e.copyright © 2022 СитиМед. Все права защищены
+                        +e.copyright
+                            +e.SPAN.copyright-text © 2022 СитиМед. Все права защищены
                             +e.A.policy(href='#') Политика конфиденциальности
                         +e.A.dev-holder(href='/' target="_blank")
                             +e.IMG.dev-img(src='../assets/img/logo-dev.svg' alt='Webolution')

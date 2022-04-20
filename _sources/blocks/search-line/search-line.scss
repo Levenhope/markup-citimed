@@ -1,0 +1,39 @@
+.search-line {
+  $self: &;
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    height: 54px;
+    padding: 0 15px;
+    background-color: $color-bg-light;
+  }
+  &__input {
+    flex-grow: 1;
+    background: $transparent;
+    border: 0;
+    box-shadow: none;
+    @include placeholder() {
+      color: rgba(87, 117, 143, 0.5);
+    }
+  }
+  &__button {
+    background: $transparent;
+    border: none;
+    box-shadow: none;
+    &_reset {
+      opacity: 1;
+      pointer-events: auto;
+      transition: opacity ease .35s;
+      #{$self}__input:placeholder-shown + & {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+  &__button-icon {
+    display: block;
+    fill: $color-secondary;
+  }
+}

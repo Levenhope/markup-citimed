@@ -7,7 +7,7 @@
 /*!-- Общие стили --*/
 
 body {
-	min-width: 320px;
+	min-height: 100vh;
 	font-family: $font-base;
 	font-size: $font-size-base;
 	line-height: $line-height-base;
@@ -21,6 +21,9 @@ body {
 	}
 	@media #{$media-desktop} {
 		font-size: 16px;
+	}
+	@media (max-width: 319px) {
+		min-width: 320px;
 	}
 }
 
@@ -48,10 +51,9 @@ body .nomargin {
 .content-center {
 	width: 100%;
 	max-width: $content-max-width;
-	min-width: 320px;
 	margin: 0 auto;
 	padding: 0 $margin-desktop;
-	@media ($media-mobile) {
+	@media #{$media-mobile} {
 		padding: 0 $margin-mobile;
 	}
 }
@@ -73,6 +75,11 @@ body .nomargin {
 
 .push-from-left {
 	margin-left: auto;
+	&_not-mobile {
+		@media #{$media-mobile} {
+			margin-left: initial;
+		}
+	}
 }
 
 .push-from-right {

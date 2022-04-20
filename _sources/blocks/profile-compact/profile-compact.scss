@@ -1,15 +1,18 @@
 .profile-compact {
+  $self: &;
   &__link {
     position: relative;
     display: block;
     padding-right: 22px;
-    svg {
-      fill: $color-black;
+    @media #{$media-mobile} {
+      padding-right: 0;
     }
-    &:hover {
-      svg {
-        fill: $color-secondary;
-      }
+  }
+  &__icon {
+    display: block;
+    fill: $color-black;
+    #{$self}__link:hover & {
+      fill: $color-secondary;
     }
   }
   &__arrow {
@@ -19,5 +22,8 @@
     bottom: 0;
     display: block;
     margin: auto;
+    @media #{$media-mobile} {
+      display: none;
+    }
   }
 }

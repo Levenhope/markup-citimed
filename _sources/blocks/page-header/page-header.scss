@@ -1,5 +1,7 @@
 .page-header {
+  $self: &;
   position: fixed;
+  z-index: 90;
   top: 0;
   left: 0;
   width: 100%;
@@ -8,6 +10,19 @@
   &__logo {
     align-self: center;
     margin-bottom: -5px;
+    svg {
+      display: block;
+    }
+    @media #{$media-mobile} {
+      width: 40px;
+      height: 34px;
+      overflow: hidden;
+      flex-shrink: 0;
+      svg {
+        height: 100%;
+        width: auto;
+      }
+    }
   }
   &__top {
     border-bottom: 1px solid $color-border;
@@ -17,5 +32,65 @@
     align-items: center;
     gap: 20px;
     min-height: 68px;
+    @media #{$media-mobile} {
+      justify-content: space-between;
+    }
+  }
+  &__toggle {
+    display: none;
+    @media #{$media-mobile} {
+      display: block;
+      border: 0;
+      box-shadow: none;
+      background: $transparent;
+      &_close {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+      }
+    }
+  }
+  &__toggle-icon {
+    display: block;
+    fill: $color-secondary;
+    #{$self}__toggle_close & {
+      fill: $color-black;
+    }
+  }
+  &__toggle-text {
+    display: none;
+  }
+  &__menu-holder {
+    @media #{$media-mobile} {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: calc(var(--vh, 1vh) * 100);
+      padding-top: 70px;
+      overflow: auto;
+      transform: translateY(-100%);
+      background-color: $color-white;
+      .is-menu-open & {
+        transform: translateY(0);
+      }
+    }
+  }
+  &__search-icon {
+    margin-left: auto;
+    @media #{$media-phone-small} {
+      margin-left: 0;
+    }
+  }
+  &__mobile-part {
+    display: none;
+    @media #{$media-mobile} {
+      display: block;
+      padding-top: 10px;
+    }
+  }
+  &__mobile-search-line {
+    margin: 15px 0;
   }
 }

@@ -9,7 +9,82 @@ mixin top-menu()
                 icon: '',
                 subitems: [
                     {
-                        name: '',
+                        name: 'Анализы крови',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Анализы на гормоны',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Аллергологические исследования',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Генодиагностика наследственных заболеваний',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Анализы мочи',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Онкомаркеры',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Диагностика инфекций',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Химико-токсикологические исследования',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Анализы кала',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Маркеры аутоиммунных заболеваний',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Микробиологические исследования',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Гистологические исследования',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Биохимические анализы',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Анализы на иммунный статуc',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Цитологические исследования',
+                        link: '',
+                        icon: '',
+                    },
+                    {
+                        name: 'Генетические исследования',
                         link: '',
                         icon: '',
                     },
@@ -19,97 +94,47 @@ mixin top-menu()
             {
                 name: 'Тесты на COVID-19',
                 link: '#',
-                icon: '',
-                subitems: [
-                    {
-                        name: '',
-                        link: '',
-                        icon: '',
-                    },
-
-                ]
+                icon: ''
             },
             {
                 name: 'Комплексные исследования',
                 link: '#',
-                icon: '',
-                subitems: [
-                    {
-                        name: '',
-                        link: '',
-                        icon: '',
-                    },
-
-                ]
             },
             {
                 name: 'Анализы на дому',
                 link: '#',
-                icon: '',
-                subitems: [
-                    {
-                        name: '',
-                        link: '',
-                        icon: '',
-                    },
-
-                ]
             },
             {
                 name: 'Акции',
                 link: '#',
-                icon: 'icon-hot',
-                subitems: [
-                    {
-                        name: '',
-                        link: '',
-                        icon: '',
-                    },
-
-                ]
+                icon: 'icon-hot'
             },
             {
                 name: 'О центре',
                 link: '#',
-                icon: '',
-                subitems: [
-                    {
-                        name: '',
-                        link: '',
-                        icon: '',
-                    },
-
-                ]
             },
             {
                 name: 'Другие медицинские услуги',
                 link: '#',
-                icon: '',
-                subitems: [
-                    {
-                        name: '',
-                        link: '',
-                        icon: '',
-                    },
-
-                ]
             }
         ];
 
-    +b.top-menu
-        +e.container.content-center
-            +e.NAV.nav
-                +e.UL.menu
-                    each item in items
-                        +e.LI.menu-item
-                            +e.A.menu-link(href=item.link)
-                                if item.icon
-                                    +svgUse(12,12,item.icon)(class='top-menu__link-icon')
-                                +e.item-text= item.name
-                            +e.UL.submenu
-                                each subitem in item.subitems
-                                    +e.LI.menu-item
-                                        +e.A.menu-link(href=subitem.link)
-                                            if subitem.icon
-                                                +svgUse(12,12,subitem.icon)(class='top-menu__link-icon')
-                                            +e.item-text= subitem.name
+    +b.NAV.top-menu
+        .content-center
+            +e.UL.menu
+                each item in items
+                    +e.LI.menu-item(class=(item.subitems&&item.subitems.length > 0)?'is-parent':'')
+                        +e.A.menu-link(href=item.link)
+                            if item.icon
+                                +svgUse(12,12,item.icon)(class='top-menu__link-icon')
+                            +e.item-text= item.name
+                        if item.subitems&&item.subitems.length > 0
+                            +e.submenu-holder
+                                .content-center
+                                    +e.UL.submenu
+                                        each subitem in item.subitems
+                                            +e.LI.submenu-item
+                                                +e.A.submenu-link(href=subitem.link)
+                                                    if subitem.icon
+                                                        +svgUse(12,12,subitem.icon)(class='top-menu__link-icon')
+                                                    +e.subitem-text= subitem.name

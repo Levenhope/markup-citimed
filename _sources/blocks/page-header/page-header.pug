@@ -5,24 +5,27 @@ mixin page-header()
         +e.top
             .content-center
                 +e.container
+                    +e.BUTTON.toggle
+                        +svgUse(16, 20, 'icon-mobile-menu')(class='page-header__toggle-icon')
+                        +e.toggle-text.bvi-show Меню
                     +e.A.logo(href='/')
                         +svgUse(140, 36, 'logo-header')
-                    +e.link-holder
-                        +b.A.icon-link._icon-accent._text-secondary(href='#')
+                    +b.A.icon-link._icon-accent._text-secondary._no-text-mobile._text-uppercase(href='#')
+                        +e.SPAN.icon-holder
                             +svgUse(16, 20, 'icon-pin')(class='icon-link__icon')
-                            +e.SPAN.text Адреса медицинских центров
-                    +e.link-holder
-                        +b.A.icon-link._icon-accent._text-bigger(href='tel:+74951212578')
+                        +e.SPAN.text Адреса медицинских центров
+                    +b.A.icon-link._icon-accent._icon-dark-mobile._text-bigger._no-brake._no-text-mobile(href='tel:+74951212578')
+                        +e.SPAN.icon-holder
                             +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
-                            +e.SPAN.text +7 (495) 121-25-78
-                    +e.link-holder.push-from-left
-                        +b.A.icon-link(href='#')
+                        +e.SPAN.text +7 (495) 121-25-78
+                    +b.A.icon-link._icon-dark-mobile._no-text-mobile._text-uppercase.page-header__search-icon(href='#')
+                        +e.SPAN.icon-holder
                             +svgUse(16, 16, 'icon-search')(class='icon-link__icon')
-                            +e.SPAN.text Поиск анализов
-                    +e.link-holder
-                        +b.A.icon-link(href='#')
+                        +e.SPAN.text Поиск анализов
+                    +b.A.icon-link._text-uppercase.is-hide-mobile(href='#')
+                        +e.SPAN.icon-holder
                             +svgUse(16, 20, 'icon-doc')(class='icon-link__icon')
-                            +e.SPAN.text Получить результат
+                        +e.SPAN.text Получить результат
                     +e.profile-holder
                         +b.profile-compact
                             +e.A.link(href='javascript:;')
@@ -38,7 +41,37 @@ mixin page-header()
                                 +e.SPAN.counter 12
                             +e.dropdown
         +e.menu-holder
+            +e.BUTTON.toggle._close
+                +svgUse(16, 16, 'icon-close')(class='page-header__toggle-icon')
+                +e.toggle-text.bvi-show Закрыть меню
             +top-menu()
+            +e.mobile-part
+                .content-center
+                    +e.mobile-link
+                        +b.A.icon-link(href='#')
+                            +e.SPAN.icon-holder
+                                +svgUse(14, 16, 'icon-doc')(class='icon-link__icon')
+                            +e.SPAN.text Получить результат
+                    +e.mobile-link
+                        +b.A.icon-link(href='#')
+                            +e.SPAN.icon-holder
+                                +svgUse(12, 16, 'icon-pin')(class='icon-link__icon')
+                            +e.SPAN.text Адреса медицинских центров
+                    +e.mobile-link
+                        +b.A.icon-link._no-brake(href='tel:+74951212578')
+                            +e.SPAN.icon-holder
+                                +svgUse(26, 23, 'icon-call-time')(class='icon-link__icon')
+                            +e.SPAN.text +7 (495) 121-25-78
+                    +e.mobile-search-line
+                        +b.search-line._mobile
+                            +e.FORM.form(method='GET')
+                                +e.INPUT.input(type='search' placeholder='Поиск анализов')
+                                +e.BUTTON.button._reset(type='reset')
+                                    +svgUse(14, 14, 'icon-close')(class='search-line__button-icon')
+                                +e.BUTTON.button._submit(type='submit')
+                                    +svgUse(18, 18, 'icon-search')(class='search-line__button-icon')
+
+
 
 
 
