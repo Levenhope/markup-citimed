@@ -19,14 +19,15 @@ document.addEventListener("DOMContentLoaded", function(){
     fixedHeaderfix();
     document.addEventListener('click', function(e) {
         if (e.target.closest('.page-header__toggle') < 1) return;
+        let menu = e.target.closest('.page-header');
+        menu.classList.toggle('is-menu-open');
         if (!document.body.classList.contains('is-fixed')) {
             currentScroll = window.pageYOffset;
+            document.body.classList.add('is-fixed');
         } else {
-            window.scrollTo({ top: currentScroll});
+            document.body.classList.remove('is-fixed');
+            window.scroll(0, currentScroll);
         }
-        let menu = e.target.closest('.page-header');
-        document.body.classList.toggle('is-fixed');
-        menu.classList.toggle('is-menu-open');
     });
 });
 window.addEventListener('resize', function(event) {

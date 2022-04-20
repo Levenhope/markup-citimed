@@ -102,7 +102,8 @@ mixin page-footer()
                         })
                         +e.phone
                             +b.A.icon-link._icon-accent._text-bigger._no-brake(href='tel:+74951212578')
-                                +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
+                                +e.SPAN.icon-holder
+                                    +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
                                 +e.SPAN.text +7 (495) 121-25-78
                         +e.work-hours
                             +e.work-hours-line Время работы колл-центра:
@@ -125,7 +126,8 @@ mixin page-footer()
                                             +svgUse(24,20,'icon-vk')
                         +e.social-help
                             +b.A.icon-link._text-smaller.bvi-open(href='#')
-                                +svgUse(25, 16, 'icon-eye')(class='icon-link__icon')
+                                +e.SPAN.icon-holder
+                                    +svgUse(25, 16, 'icon-eye')(class='icon-link__icon')
                                 +e.SPAN.text Версия для слабовидящих
                     +e.bottom
                         +e.copyright
