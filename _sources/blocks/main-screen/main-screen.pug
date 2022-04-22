@@ -1,0 +1,29 @@
+include ../search-line/search-line
+mixin main-screen()
+    +b.main-screen
+        +e.bg-holder.bvi-hide
+            +e.IMG.bg-img(src='../assets/img/main-screen-bg-clean.jpg' alt='')
+        .content-center
+            +e.content
+                +e.H1.title.h1 Сдать медицинские анализы
+                    +e.SPAN.title-part в Москве и Московской области
+                +e.subtitle У нас есть все виды исследований
+                +e.search
+                    +search-line({placeholder: 'Быстрый поиск нужного исследования...',placeholderMobile: 'Поиск нужного исследования...', template: 'round', tags: true})
+                +e.UL.menu
+                    +e.LI.menu-item
+                        +b.A.icon-link._icon-accent._text-uppercase(href='#')
+                            +e.SPAN.icon-holder
+                                +svgUse(22, 28, 'icon-pin')(class='icon-link__icon')
+                            +e.SPAN.text._mobile Найти мед. центр
+                            +e.SPAN.text Адреса медицинских центров
+                    +e.LI.menu-item
+                        +b.A.icon-link._icon-accent._text-uppercase(href='#')
+                            +e.SPAN.icon-holder
+                                +svgUse(28, 24, 'icon-home')(class='icon-link__icon')
+                            +e.SPAN.text Анализы на дому
+                    +e.LI.menu-item
+                        +b.A.icon-link._icon-accent._text-uppercase(href='#')
+                            +e.SPAN.icon-holder
+                                +svgUse(26, 26, 'icon-percent')(class='icon-link__icon')
+                            +e.SPAN.text Акции и скидки

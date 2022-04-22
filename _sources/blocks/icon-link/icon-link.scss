@@ -36,12 +36,23 @@
     }
     #{$self}_text-bigger & {
       font-size: 16px;
-      font-weight: $font-weight-semibold;
     }
     #{$self}_text-smaller & {
       font-size: 14px;
       text-transform: none;
       font-weight: $font-weight-normal;
+    }
+    @media #{$media-mobile} {
+      #{$self}__text_mobile + & {
+        display: none;
+      }
+    }
+
+    &_mobile {
+      display: none;
+      @media #{$media-mobile} {
+        display: block;
+      }
     }
   }
   &_no-brake {

@@ -8,9 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/vendor/bvi/css/bvi.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/vendor/slick/slick.css" type="text/css">
     <link rel="stylesheet" href="./svg/css/sprite.css" type="text/css">
     <link href="./css/global.css" type="text/css" rel="stylesheet">
     <script src="../assets/vendor/bvi/js/bvi.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../assets/vendor/slick/slick.min.js"></script>
     <script src="./js/global.js"></script>
     <script src="./js/blocks.js"></script>
     <title>Citimed - Главная</title>
@@ -150,17 +153,21 @@
               </svg></span><span class="icon-link__text">+7 (495) 121-25-78</span></a>
             </div>
             <div class="page-header__mobile-search-line">
-              <div class="search-line search-line_mobile">
-                <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Поиск анализов"/>
+              <div class="search-line search-line search-line_mobile-menu">
+                <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Поиск анализов" data-placeholder-mobile=""/>
                   <button class="search-line__button search-line__button_reset" type="reset">
-                    <svg class="search-line__button-icon" width="14" height="14">
+                    <svg class="search-line__button-icon bvi-hide" width="14" height="14">
                       <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
                     </svg>
+                    <div class="search-line__reset-text bvi-show">Сбросить
+                    </div>
                   </button>
                   <button class="search-line__button search-line__button_submit" type="submit">
-                    <svg class="search-line__button-icon" width="18" height="18">
+                    <svg class="search-line__button-icon bvi-hide" width="18" height="18">
                       <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
                     </svg>
+                    <div class="search-line__submit-text bvi-show">Найти
+                    </div>
                   </button>
                 </form>
               </div>
@@ -169,7 +176,315 @@
         </div>
       </div>
     </header>
-    <main class="page-content">test content</main>
+    <main class="page-content">
+      <div class="main-screen">
+        <div class="main-screen__bg-holder bvi-hide"><img class="main-screen__bg-img" src="../assets/img/main-screen-bg-clean.jpg" alt="" role="presentation"/>
+        </div>
+        <div class="content-center">
+          <div class="main-screen__content">
+            <h1 class="main-screen__title h1">Сдать медицинские анализы<span class="main-screen__title-part">в Москве и Московской области</span>
+            </h1>
+            <div class="main-screen__subtitle">У нас есть все виды исследований
+            </div>
+            <div class="main-screen__search">
+              <div class="search-line search-line search-line_round">
+                <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Быстрый поиск нужного исследования..." data-placeholder-mobile="Поиск нужного исследования..."/>
+                  <button class="search-line__button search-line__button_reset" type="reset">
+                    <svg class="search-line__button-icon bvi-hide" width="14" height="14">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                    </svg>
+                    <div class="search-line__reset-text bvi-show">Сбросить
+                    </div>
+                  </button>
+                  <button class="search-line__button search-line__button_submit" type="submit">
+                    <svg class="search-line__button-icon bvi-hide" width="18" height="18">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+                    </svg>
+                    <div class="search-line__submit-text bvi-show">Найти
+                    </div>
+                  </button>
+                </form>
+                <div class="search-line__tags">
+                  <div class="search-line__tags-title">Часто ищут:
+                  </div>
+                  <ul class="search-line__tags-list">
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
+                    </li>
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">COVID-19</a>
+                    </li>
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">Диабет</a>
+                    </li>
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
+                    </li>
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">COVID-19</a>
+                    </li>
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">Диабет</a>
+                    </li>
+                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <ul class="main-screen__menu">
+              <li class="main-screen__menu-item"><a class="icon-link icon-link_icon-accent icon-link_text-uppercase" href="#"><span class="icon-link__icon-holder">
+                <svg class="icon-link__icon" width="22" height="28">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+                </svg></span><span class="icon-link__text icon-link__text_mobile">Найти мед. центр</span><span class="icon-link__text">Адреса медицинских центров</span></a>
+              </li>
+              <li class="main-screen__menu-item"><a class="icon-link icon-link_icon-accent icon-link_text-uppercase" href="#"><span class="icon-link__icon-holder">
+                <svg class="icon-link__icon" width="28" height="24">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
+                </svg></span><span class="icon-link__text">Анализы на дому</span></a>
+              </li>
+              <li class="main-screen__menu-item"><a class="icon-link icon-link_icon-accent icon-link_text-uppercase" href="#"><span class="icon-link__icon-holder">
+                <svg class="icon-link__icon" width="26" height="26">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-percent"></use>
+                </svg></span><span class="icon-link__text">Акции и скидки</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <section class="cards-block">
+        <div class="content-center">
+          <div class="cards-block__content">
+            <h2 class="cards-block__title h2">Популярные исследования
+            </h2>
+            <div class="cards-block__list">
+              <div class="cards-block__item">
+                <article class="service-card service-card_">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-block__item">
+                <article class="service-card service-card_">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-block__item cards-block__item_double">
+                <article class="service-card service-card service-card_double">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="service-card__img-holder"><img class="service-card__img" src="../assets/img/service-card-img.png" alt="" role="presentation"/>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-block__item">
+                <article class="service-card service-card_">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-block__item">
+                <article class="service-card service-card_">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-block__item">
+                <article class="service-card service-card_">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="cards-block__item">
+                <article class="service-card service-card_">
+                  <div class="service-card__header">
+                    <div class="service-card__code">1.0.D1.202
+                    </div>
+                    <div class="service-card__duration">
+                      <svg class="service-card__duration-icon" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                      </svg>
+                      <div class="service-card__duration-text">1 день
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service-card__content"><a class="service-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС<span class="service-card__title-note"> (две порции: утро, вечер)</span></a>
+                    <ul class="service-card__tags">
+                      <li class="service-card__tag">кровь с EDTA
+                      </li>
+                      <li class="service-card__tag">количественный
+                      </li>
+                    </ul>
+                    <div class="service-card__footer">
+                      <div class="service-card__price">2 600 <span class="rub">₽</span>
+                      </div>
+                      <button class="service-card__add">
+                        <svg class="service-card__add-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="cards-block__buttons"><a class="button button_stroke" href="#">Все виды исследований</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="page-footer">
       <div class="content-center">
         <div class="page-footer__container">

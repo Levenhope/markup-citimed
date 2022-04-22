@@ -1,0 +1,23 @@
+include ../service-card/service-card
+mixin cards-block()
+    +b.SECTION.cards-block
+        .content-center
+            +e.content
+                +e.H2.title.h2 Популярные исследования
+                +e.list
+                    +e.item
+                        +service-card()
+                    +e.item
+                        +service-card()
+                    +e.item._double
+                        +service-card({img: '../assets/img/service-card-img.png', mod: 'double'})
+                    +e.item
+                        +service-card()
+                    +e.item
+                        +service-card()
+                    +e.item
+                        +service-card()
+                    +e.item
+                        +service-card()
+                +e.buttons
+                    a.button.button_stroke(href='#') Все виды исследований

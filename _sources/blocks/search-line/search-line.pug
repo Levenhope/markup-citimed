@@ -1,0 +1,18 @@
+mixin search-line(options)
+    - var tagList = ['клинический анализ крови', 'COVID-19', 'Диабет', 'клинический анализ крови', 'COVID-19', 'Диабет', 'клинический анализ крови'];
+    +b.search-line(class='search-line_'+options.template)
+        +e.FORM.form(method='GET')
+            +e.INPUT.input(type='search' placeholder=options.placeholder data-placeholder-mobile=options.placeholderMobile?options.placeholderMobile:'')
+            +e.BUTTON.button._reset(type='reset')
+                +svgUse(14, 14, 'icon-close')(class='search-line__button-icon bvi-hide')
+                +e.reset-text.bvi-show Сбросить
+            +e.BUTTON.button._submit(type='submit')
+                +svgUse(18, 18, 'icon-search')(class='search-line__button-icon bvi-hide')
+                +e.submit-text.bvi-show Найти
+        if options.tags
+            +e.tags
+                +e.tags-title Часто ищут:
+                +e.UL.tags-list
+                    each tag in tagList
+                        +e.LI.tag-item
+                            +e.A.tag(href='#')= tag

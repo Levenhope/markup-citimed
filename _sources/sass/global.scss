@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
-@import 'variables';
 @import 'helpers/*.scss';
-//@import 'UI/*.scss';
+@import 'variables';
 
 /*!-- Общие стили --*/
 
@@ -18,6 +17,9 @@ body {
 		width: 100%;
 		height: 100vh;
 		overflow: hidden;
+	}
+	&.bvi-active {
+		padding-top: 0 !important;
 	}
 	@media #{$media-desktop} {
 		font-size: 16px;
@@ -60,7 +62,7 @@ body .nomargin {
 
 .rub {
 	font-family: $font-rouble;
-	margin-left: .5rem;
+	margin-left: .2rem;
 }
 
 .is-hide {display: none}
@@ -95,6 +97,12 @@ body .nomargin {
 	.is-hide-desktop {
 		display: none !important;
 	}
+}
+
+.h2, h2 {
+	font-weight: $font-weight-medium;
+	font-size: 30px;
+	line-height: 1.6;
 }
 
 //Дополнения плагина bvi

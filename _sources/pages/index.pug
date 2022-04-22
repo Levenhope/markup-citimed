@@ -1,4 +1,6 @@
 extends ./layouts/default
+include ../blocks/main-screen/main-screen
+include ../blocks/cards-block/cards-block
 
 block global_vars
     -
@@ -6,4 +8,6 @@ block global_vars
         $pageTitle = 'Главная'
 
 block content
-    main.page-content test content
+    main.page-content
+        +main-screen()
+        +cards-block()

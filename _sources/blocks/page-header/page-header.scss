@@ -7,6 +7,9 @@
   width: 100%;
   background-color: $color-white;
   box-shadow: 0px 2px 12px rgba(34, 87, 142, 0.1);
+  .bvi-active & {
+    position: relative;
+  }
   &__logo {
     align-self: center;
     margin-bottom: -5px;

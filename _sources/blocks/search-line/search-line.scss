@@ -8,14 +8,34 @@
     height: 54px;
     padding: 0 15px;
     background-color: $color-bg-light;
+    #{$self}_round & {
+      height: 60px;
+      padding: 6px 6px 8px 35px;
+      background: rgba($color-white, 0.4);
+      border: 1px solid $color-white;
+      border-radius: 60px;
+    }
+    .bvi-active & {
+      border: 2px solid black;
+    }
   }
   &__input {
     flex-grow: 1;
     background: $transparent;
     border: 0;
     box-shadow: none;
+    text-overflow: ellipsis;
+    #{$self}_round &{
+      color: $color-white;
+      @media #{$media-mobile} {
+        font-size: 13px;
+      }
+    }
     @include placeholder() {
       color: rgba(87, 117, 143, 0.5);
+      #{$self}_round & {
+        color: $color-white;
+      }
     }
   }
   &__button {
@@ -29,11 +49,85 @@
       #{$self}__input:placeholder-shown + & {
         opacity: 0;
         pointer-events: none;
+        .bvi-active & {
+          opacity: 1;
+          pointer-events: auto;
+        }
       }
+    }
+    &_submit {
+      #{$self}_round & {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        color: $color-white;
+        background: $color-accent;
+        box-shadow: 0 4px 4px rgba(136, 37, 36, 0.33);
+        border-radius: 60px;
+        transition: box-shadow ease .35s;
+        #{$self}__button-icon {
+          fill: $color-white;
+        }
+        &:hover {
+          box-shadow: 0 0 0 rgba(136, 37, 36, 0.0);
+        }
+        @media #{$media-not-mobile} {
+          width: 170px;
+          #{$self}__button-icon {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__submit-text {
+    display: none;
+    @media #{$media-not-mobile} {
+      display: block;
+      font-weight: $font-weight-medium;
+      font-size: 14px;
+      line-height: 1.14;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
   }
   &__button-icon {
     display: block;
     fill: $color-secondary;
+    #{$self}_round & {
+      fill: $color-white;
+    }
+  }
+  &__tags {
+    display: none;
+    @media #{$media-not-mobile} {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      color: $color-text-light-white;
+      font-size: 12px;
+    }
+  }
+  &__tags-title {
+    margin-right: .2rem;
+  }
+  &__tags-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__tag-item {
+    display: flex;
+    &:after {
+      content: '|';
+      margin: 0 .2rem;
+    }
+    &:last-child:after {
+      display: none;
+    }
+  }
+  &__tag {
+    color: inherit;
+    font-weight: $font-weight-medium;
   }
 }

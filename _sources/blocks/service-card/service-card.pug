@@ -1,0 +1,21 @@
+mixin service-card(params)
+    - var mod = params&&params.mod?params.mod:'';
+    +b.ARTICLE.service-card(class='service-card_'+mod)
+        +e.header
+            +e.code 1.0.D1.202
+            +e.duration
+                +svgUse(18, 18, 'icon-clock')(class='service-card__duration-icon')
+                +e.duration-text 1 день
+        +e.content
+            +e.A.title(href='#') Кортизол в слюне, метод ВЭЖХ-МС
+                +e.SPAN.title-note  (две порции: утро, вечер)
+            +e.UL.tags
+                +e.LI.tag кровь с EDTA
+                +e.LI.tag количественный
+            +e.footer
+                +e.price 2 600 #[span.rub ₽]
+                +e.BUTTON.add
+                    +svgUse(18, 18, 'icon-cart')(class='service-card__add-icon')
+        if params&&params.img
+            +e.img-holder
+                +e.IMG.img(src=params.img)

@@ -1,5 +1,5 @@
 include ../top-menu/top-menu
-
+include ../search-line/search-line
 mixin page-header()
     +b.HEADER.page-header
         +e.top
@@ -63,13 +63,7 @@ mixin page-header()
                                 +svgUse(26, 23, 'icon-call-time')(class='icon-link__icon')
                             +e.SPAN.text +7 (495) 121-25-78
                     +e.mobile-search-line
-                        +b.search-line._mobile
-                            +e.FORM.form(method='GET')
-                                +e.INPUT.input(type='search' placeholder='Поиск анализов')
-                                +e.BUTTON.button._reset(type='reset')
-                                    +svgUse(14, 14, 'icon-close')(class='search-line__button-icon')
-                                +e.BUTTON.button._submit(type='submit')
-                                    +svgUse(18, 18, 'icon-search')(class='search-line__button-icon')
+                        +search-line({placeholder: 'Поиск анализов', template: 'mobile-menu'})
 
 
 
