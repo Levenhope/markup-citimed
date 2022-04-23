@@ -5,10 +5,10 @@ mixin footer-menu(options)
             each item in options.items
                 +e.LI.item(class=item.title?'footer-menu__item_title':'')
                     if item.link
-                        +e.A.link(href=item.link class=!single&&item.title?'footer-menu__toggle':'')= item.name
+                        +e.A.link(href='test-inner.html' class=!single&&item.title?'footer-menu__toggle':'')= item.name
                             if (options.items.length > 1 && item.title)
-                                +e.SPAN.arrow.svg-icon-arrow-down-s.svg-icon-arrow-down-s-dims
+                                +e.SPAN.arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
                     else
                         +e.SPAN.link(class=!single&&item.title?'footer-menu__toggle':'')= item.name
                             if (options.items.length > 1 && item.title)
-                                +e.SPAN.arrow.svg-icon-arrow-down-s.svg-icon-arrow-down-s-dims
+                                +e.SPAN.arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims

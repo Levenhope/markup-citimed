@@ -14,6 +14,9 @@
       background: rgba($color-white, 0.4);
       border: 1px solid $color-white;
       border-radius: 60px;
+      @media #{$media-mobile} {
+        gap: 5px;
+      }
     }
     .bvi-active & {
       border: 2px solid black;

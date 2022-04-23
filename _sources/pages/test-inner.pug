@@ -1,0 +1,11 @@
+extends ./layouts/default
+include ../blocks/cards-block/cards-block
+
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Внутренняя'
+
+block content
+    main.page-content
+        +cards-block()

@@ -1,20 +1,12 @@
-//page-footer
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.footer-menu__toggle') < 1) return;
-        let menu = e.target.closest('.footer-menu');
-        if (!menu.classList.contains('is-open')) {
-            e.preventDefault();
-            menu.classList.add('is-open');
-        }
-    })
-});
 //cards-block
 $(function() {
     let options = {
         infinite: false,
         dots: true,
         mobileFirst: true,
+        prevArrow: $('.cards-block__slider-arrow_prev'),
+        nextArrow: $('.cards-block__slider-arrow_next'),
+        appendDots: $('.cards-block__slider-pages'),
         responsive: [{
             breakpoint: 1025,
             settings: "unslick"
@@ -45,6 +37,25 @@ $(function() {
            $slider.slick(options);
        }
     });
+});
+//page-footer
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.footer-menu__toggle') < 1) return;
+        let menu = e.target.closest('.footer-menu');
+        if (!menu.classList.contains('is-open')) {
+            e.preventDefault();
+            menu.classList.add('is-open');
+        }
+    })
+});
+//accorion
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let item = e.target.closest('.accordion__item-heading');
+        if (item < 1) return;
+        item.closest('.accordion__item').classList.toggle('is-open');
+    })
 });
 //page-header
 function fixedHeaderfix() {
@@ -82,10 +93,12 @@ document.addEventListener("DOMContentLoaded", function(){
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
         let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
-        if (parentMenu < 1 || window.innerWidth > 1023) return;
-        e.preventDefault();
-        parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
-        parentMenu.classList.toggle('is-open');
+        let submenuItem = e.target.closest('.top-menu__submenu-item');
+        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
+            e.preventDefault();
+            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
+            parentMenu.classList.toggle('is-open');
+        }
     })
 });
 //# sourceMappingURL=../sourcemaps/blocks.js.map

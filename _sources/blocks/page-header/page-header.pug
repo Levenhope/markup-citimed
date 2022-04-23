@@ -1,5 +1,7 @@
 include ../top-menu/top-menu
 include ../search-line/search-line
+include ../profile-compact/profile-compact
+include ../cart-compact/cart-compact
 mixin page-header()
     +b.HEADER.page-header
         +e.top
@@ -8,7 +10,7 @@ mixin page-header()
                     +e.BUTTON.toggle
                         +svgUse(16, 20, 'icon-mobile-menu')(class='page-header__toggle-icon')
                         +e.toggle-text.bvi-show Меню
-                    +e.A.logo(href='/')
+                    +e.A.logo(href='/build/index.html')
                         +svgUse(140, 36, 'logo-header')
                     +b.A.icon-link._icon-accent._text-secondary._no-text-mobile._text-uppercase(href='#')
                         +e.SPAN.icon-holder
@@ -27,19 +29,9 @@ mixin page-header()
                             +svgUse(16, 20, 'icon-doc')(class='icon-link__icon')
                         +e.SPAN.text Получить результат
                     +e.profile-holder
-                        +b.profile-compact
-                            +e.A.link(href='javascript:;')
-                                +svgUse(16, 16, 'icon-profile')(class='profile-compact__icon')
-                                span.bvi-show Меню профиля
-                                +e.SPAN.arrow.svg-icon-arrow-down-s.svg-icon-arrow-down-s-dims
-                            +e.dropdown
+                        +profile-compact()
                     +e.cart-holder
-                        +b.cart-compact
-                            +e.A.link(href='javascript:;')
-                                +svgUse(20, 20, 'icon-cart')(class='cart-compact__icon')
-                                span.bvi-show Корзина
-                                +e.SPAN.counter 12
-                            +e.dropdown
+                        +cart-compact()
         +e.menu-holder
             +e.BUTTON.toggle._close
                 +svgUse(16, 16, 'icon-close')(class='page-header__toggle-icon')

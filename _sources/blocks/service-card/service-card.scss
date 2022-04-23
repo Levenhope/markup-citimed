@@ -1,5 +1,6 @@
 .service-card {
   $self: &;
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 300px;
@@ -8,10 +9,12 @@
   border-radius: 3px;
   overflow: hidden;
   &_double {
-    flex-direction: row;
-    flex-wrap: wrap;
     background-color: $color-bg-light;
     box-shadow: none;
+    @media #{$media-not-mobile} {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
   &__header {
     display: flex;
@@ -26,12 +29,25 @@
     padding: 0 20px 12px;
     #{$self}_double & {
       width: 45%;
-      flex-grow: 0;
+      @media #{$media-not-mobile} {
+        flex-grow: 0;
+      }
+      @media #{$media-mobile} {
+        position: relative;
+        z-index: 5;
+        width: 80%;
+      }
     }
   }
   &__img-holder {
     width: 45%;
     margin-left: auto;
+    @media #{$media-mobile} {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0;
+    }
   }
   &__img {
     display: block;
@@ -44,11 +60,22 @@
     font-size: 14px;
     line-height: 1.57;
     color: $color-text-light;
+    @media #{$media-mobile} {
+      font-size: 12px;
+    }
   }
   &__duration {
     display: flex;
     align-items: center;
     color: $color-accent;
+    text-transform: uppercase;
+    @media #{$media-mobile} {
+      font-size: 10px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
   }
   &__duration-icon {
     fill: currentColor;
@@ -60,11 +87,18 @@
     font-size: 18px;
     line-height: 1.44;
     color: $color-text;
+    @media #{$media-mobile} {
+      font-size: 15px;
+      line-height: 1.6;
+    }
   }
   &__title-note {
     font-weight: $font-weight-normal;
     font-size: 16px;
     color: $color-text-light;
+    @media #{$media-mobile} {
+      font-size: 14px;
+    }
   }
   &__tags {
     display: flex;
@@ -83,6 +117,9 @@
     &:last-child:after {
       display: none;
     }
+    @media #{$media-mobile} {
+      font-size: 12px;
+    }
   }
   &__footer {
     display: flex;
@@ -95,16 +132,8 @@
     font-weight: $font-weight-semibold;
     font-size: 20px;
     line-height: 1.2;
-  }
-  &__add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 60px;
-    background-color: $color-white;
-    border: 0;
-    box-shadow: 0px 2px 6px rgba(34, 87, 142, 0.15);
+    @media #{$media-mobile} {
+      font-size: 18px;
+    }
   }
 }

@@ -1,0 +1,7 @@
+mixin profile-compact()
+    +b.profile-compact
+        +e.A.link(href='javascript:;')
+            +svgUse(16, 16, 'icon-profile')(class='profile-compact__icon')
+            span.bvi-show Меню профиля
+            +e.SPAN.arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+        +e.dropdown

@@ -19,5 +19,11 @@ mixin cards-block()
                         +service-card()
                     +e.item
                         +service-card()
+                +e.slider-nav
+                    +e.BUTTON.slider-arrow._prev.button.button_control
+                        +svgUse(10, 8, 'icon-arrow-down-s')(class='cards-block__arrow-icon')
+                    +e.slider-pages
+                    +e.BUTTON.slider-arrow._next.button.button_control
+                        +svgUse(10, 8, 'icon-arrow-down-s')(class='cards-block__arrow-icon')
                 +e.buttons
                     a.button.button_stroke(href='#') Все виды исследований

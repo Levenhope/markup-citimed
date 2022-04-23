@@ -39,7 +39,8 @@ $color-black: #0E3F60;
 $color-white: #ffffff;
 $color-white-bg-transparent: rgba(#ffffff, .4);
 $color-accent: #F35150;
-$color-accent-light: lighten(#F35150, 0.22);
+$color-accent-dark: darken($color-accent, 5%);
+$color-accent-light: lighten($color-accent, 22%);
 $color-secondary: #1C7ADD;
 $color-secondary-light: #AAC9E4;
 

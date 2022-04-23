@@ -14,7 +14,7 @@ mixin service-card(params)
                 +e.LI.tag количественный
             +e.footer
                 +e.price 2 600 #[span.rub ₽]
-                +e.BUTTON.add
+                +e.BUTTON.add.button.button_control
                     +svgUse(18, 18, 'icon-cart')(class='service-card__add-icon')
         if params&&params.img
             +e.img-holder

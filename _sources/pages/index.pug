@@ -1,6 +1,8 @@
 extends ./layouts/default
 include ../blocks/main-screen/main-screen
 include ../blocks/cards-block/cards-block
+include ../blocks/information/information
+include ../blocks/accordion/accordion
 
 block global_vars
     -
@@ -11,3 +13,5 @@ block content
     main.page-content
         +main-screen()
         +cards-block()
+        +accordion()
+        +information()

@@ -124,7 +124,7 @@ mixin top-menu()
             +e.UL.menu
                 each item in items
                     +e.LI.menu-item(class=(item.subitems&&item.subitems.length > 0)?'is-parent':'')
-                        +e.A.menu-link(href=item.link)
+                        +e.A.menu-link(href='test-inner.html')
                             if item.icon
                                 +svgUse(12,12,item.icon)(class='top-menu__link-icon')
                             +e.item-text= item.name
@@ -134,7 +134,7 @@ mixin top-menu()
                                     +e.UL.submenu
                                         each subitem in item.subitems
                                             +e.LI.submenu-item
-                                                +e.A.submenu-link(href=subitem.link)
+                                                +e.A.submenu-link(href='test-inner.html')
                                                     if subitem.icon
                                                         +svgUse(12,12,subitem.icon)(class='top-menu__link-icon')
                                                     +e.subitem-text= subitem.name

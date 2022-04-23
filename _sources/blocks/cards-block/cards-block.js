@@ -4,6 +4,9 @@ $(function() {
         infinite: false,
         dots: true,
         mobileFirst: true,
+        prevArrow: $('.cards-block__slider-arrow_prev'),
+        nextArrow: $('.cards-block__slider-arrow_next'),
+        appendDots: $('.cards-block__slider-pages'),
         responsive: [{
             breakpoint: 1025,
             settings: "unslick"

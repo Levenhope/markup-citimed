@@ -1,5 +1,10 @@
 .cards-block {
-  padding: 100px 0 80px;
+  $self: &;
+  margin: 100px 0 80px;
+  overflow: hidden;
+  @media #{$media-mobile} {
+    margin: 50px 0 60px;
+  }
   &__content {
     @media #{$media-not-mobile} {
       display: grid;
@@ -9,6 +14,12 @@
     }
   }
   &__list {
+    @media #{$media-mobile} {
+      margin: 0 45px 15px -5px;
+      .slick-list {
+        overflow: visible;
+      }
+    }
     @media #{$media-not-mobile} {
       display: flex;
       flex-wrap: wrap;
@@ -17,6 +28,9 @@
     }
   }
   &__item {
+    @media #{$media-mobile} {
+      margin: 0 5px;
+    }
     @media #{$media-not-mobile} {
       width: calc(25% - 90px/4);
       &_double {
@@ -26,16 +40,39 @@
   }
   &__title {
     grid-area: title;
-    margin-bottom: 45px;
+    @media #{$media-not-mobile} {
+      margin-bottom: 45px;
+    }
   }
   &__buttons {
     grid-area: buttons;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
+    @media #{$media-mobile} {
+      justify-content: center;
+    }
     @media #{$media-not-mobile} {
       margin-bottom: 45px;
       flex-direction: row-reverse;
+    }
+  }
+  &__slider-nav {
+    display: none;
+    @media #{$media-mobile} {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
+  &__arrow-icon {
+    display: block;
+    #{$self}__slider-arrow_prev & {
+      transform: rotate(90deg) translate(0, 2px);
+    }
+    #{$self}__slider-arrow_next & {
+      transform: rotate(-90deg) translate(0, 2px);
     }
   }
 }

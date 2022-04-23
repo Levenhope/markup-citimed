@@ -1,0 +1,7 @@
+mixin cart-compact()
+    +b.cart-compact
+        +e.A.link(href='javascript:;')
+            +svgUse(20, 20, 'icon-cart')(class='cart-compact__icon')
+            span.bvi-show Корзина
+            +e.SPAN.counter 12
+        +e.dropdown

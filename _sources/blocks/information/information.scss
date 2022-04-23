@@ -1,0 +1,37 @@
+.information {
+  padding: 40px 0;
+  box-shadow: 0 2px 12px rgba(34, 87, 142, 0.1);
+  &__icon-holder {
+    svg {
+      fill: $color-accent;
+      @media #{$media-mobile} {
+        display: none;
+      }
+    }
+  }
+  &__content {
+    @media #{$media-mobile} {
+      text-align: center;
+    }
+    @media #{$media-not-mobile} {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    line-height: 1.7;
+    @media #{$media-mobile} {
+      font-size: 15px;
+      margin-bottom: 15px;
+    }
+  }
+  &__button {
+    margin-left: auto;
+    @media #{$media-mobile} {
+      display: inline-block;
+    }
+  }
+}

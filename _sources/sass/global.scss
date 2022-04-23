@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-@import 'helpers/*.scss';
 @import 'variables';
+@import 'helpers/*.scss';
 
 /*!-- Общие стили --*/
 
@@ -97,17 +97,6 @@ body .nomargin {
 	.is-hide-desktop {
 		display: none !important;
 	}
-}
-
-.h2, h2 {
-	font-weight: $font-weight-medium;
-	font-size: 30px;
-	line-height: 1.6;
-}
-
-//Дополнения плагина bvi
-.bvi-show {
-	display: none;
 }
 
 /*!--Блоки--*/
