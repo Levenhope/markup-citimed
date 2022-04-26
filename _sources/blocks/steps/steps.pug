@@ -1,0 +1,45 @@
+mixin steps()
+    +b.SECTION.steps
+        .content-center
+            +e.content
+                +e.title
+                    +e.SPAN.title-accent.text-accent Пройдите
+                    |  лабораторное исследование
+                    |
+                    span.no-brake в #[img.steps__intext-img(src='../../assets/img/intext-logo.svg')]
+                +e.OL.list
+                    +e.LI.item
+                        +e.icon-holder
+                            +e.IMG.icon(src='../../assets/img/choose-exams.svg')
+                        +e.name-holder
+                            +e.name Выбрать исследование
+                        +b.UL.check-list
+                            +e.LI.item В каталоге на сайте
+                            +e.LI.item По телефону колл-центра (работаем круглосуточно)
+                    +e.LI.item
+                        +e.icon-holder
+                            +e.IMG.icon(src='../../assets/img/examination.svg')
+                        +e.name-holder
+                            +e.name Сдать анализы
+                        +b.UL.check-list
+                            +e.LI.item В медицинском центре
+                            +e.LI.item Заказать выезд на дом
+                    +e.LI.item
+                        +e.icon-holder
+                            +e.IMG.icon(src='../../assets/img/get-results.svg')
+                        +e.name-holder
+                            +e.name Получить результаты
+                        +b.UL.check-list
+                            +e.LI.item В личном кабинете
+                            +e.LI.item В медицинском центре
+                +e.nav
+                    +e.counter
+                        +e.SPAN.current-number 1
+                        | /
+                        +e.SPAN.total-number 3
+                    +e.arrows
+                        +e.BUTTON.slider-arrow.button._control._prev
+                            +svgUse(10, 8, 'icon-arrow-down-s')(class='cards-block__arrow-icon')
+                        +e.BUTTON.slider-arrow.button._control._next
+                            +svgUse(10, 8, 'icon-arrow-down-s')(class='cards-block__arrow-icon')
+

@@ -1,41 +1,52 @@
+//accorion
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let item = e.target.closest('.accordion__item-heading');
+        if (item < 1) return;
+        item.closest('.accordion__item').classList.toggle('is-open');
+    })
+});
 //cards-block
 $(function() {
-    let options = {
-        infinite: false,
-        dots: true,
-        mobileFirst: true,
-        prevArrow: $('.cards-block__slider-arrow_prev'),
-        nextArrow: $('.cards-block__slider-arrow_next'),
-        appendDots: $('.cards-block__slider-pages'),
-        responsive: [{
-            breakpoint: 1025,
-            settings: "unslick"
+    $('.cards-block').each(function() {
+        let $context = $(this);
+        let $slider = $('.cards-block__list', $context);
+        let options = {
+            infinite: false,
+            dots: true,
+            mobileFirst: true,
+            prevArrow: $('.cards-block__slider-arrow.button_prev', $context),
+            nextArrow: $('.cards-block__slider-arrow.button_next', $context),
+            appendDots: $('.cards-block__slider-pages', $context),
+            responsive: [{
+                breakpoint: 1025,
+                settings: "unslick"
 
-        }, {
+            }, {
 
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 2,
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
             }
-
-        }, {
-
-            breakpoint: 300,
-            settings: {
-                slidesToShow: 1
-            }
-
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            $slider.slick(options);
         }
-        ]
-    };
-    let $slider = $('.cards-block__list');
-    if (window.innerWidth < 1025) {
-        $slider.slick(options);
-    }
-    $(window).on('resize', function() {
-       if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-           $slider.slick(options);
-       }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                $slider.slick(options);
+            }
+        });
     });
 });
 //page-footer
@@ -47,14 +58,6 @@ document.addEventListener("DOMContentLoaded", function(){
             e.preventDefault();
             menu.classList.add('is-open');
         }
-    })
-});
-//accorion
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let item = e.target.closest('.accordion__item-heading');
-        if (item < 1) return;
-        item.closest('.accordion__item').classList.toggle('is-open');
     })
 });
 //page-header
@@ -87,6 +90,102 @@ document.addEventListener("DOMContentLoaded", function(){
         if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
             line.setAttribute('placeholder', line.dataset.placeholderMobile);
         }
+    });
+});
+//specials
+$(function() {
+    $('.specials').each(function() {
+        let $context = $(this);
+        let $slider = $('.specials__list', $context);
+        let options = {
+            infinite: false,
+            dots: true,
+            mobileFirst: true,
+            prevArrow: $('.specials__slider-arrow.button_prev', $context),
+            nextArrow: $('.specials__slider-arrow.button_next', $context),
+            appendDots: $('.specials__slider-pages', $context),
+            responsive: [{
+                breakpoint: 1025,
+                settings: {
+                    slidesToShow: 3,
+                }
+            }, {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+            ]
+        };
+        function sliderGridFix() {
+            let parentWidth = $('.specials__content', $context).width();
+            let sliderListWidth = window.innerWidth>1024?parentWidth:parentWidth-65;
+            $slider.width(sliderListWidth);
+        }
+
+        $slider.on('init', function() {
+            sliderGridFix();
+        });
+        $slider.slick(options);
+
+        window.addEventListener('resize', function(event) {
+            sliderGridFix();
+        });
+    });
+});
+//steps
+$(function() {
+    function initSteps($slider, $context, options) {
+        $slider.on("init afterChange", function(event, slick, currentSlide){
+            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
+            $(".steps__total-number", $context).text(slick.slideCount);
+        });
+        $slider.slick(options);
+    }
+    $('.steps').each(function() {
+        let $context = $(this);
+        let $slider = $('.steps__list', $context);
+        let options = {
+            infinite: false,
+            dots: false,
+            mobileFirst: true,
+            prevArrow: $('.steps__slider-arrow.button_prev', $context),
+            nextArrow: $('.steps__slider-arrow.button_next', $context),
+            responsive: [{
+                breakpoint: 769,
+                settings: "unslick"
+
+            }, {
+
+                breakpoint: 483,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
+            }
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            initSteps($slider, $context, options);
+        }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                initSteps($slider, $context, options);
+            }
+        });
     });
 });
 //top-menu

@@ -1,0 +1,25 @@
+include ../complex-card/complex-card
+mixin complex-selection()
+    +b.SECTION.complex-selection
+        .content-center
+            +e.content
+                +e.H2.title.h2 Популярные комплексы анализов
+                +e.list
+                    +e.item._big
+                        +complex-card({img: '../assets/img/complex-card-img.png', imgMob: '../assets/img/complex-card-img-mob.png', mod: 'big'})
+                    +e.item._big
+                        +complex-card({img: '../assets/img/complex-card-img.png', imgMob: '../assets/img/complex-card-img-mob.png', mod: 'big'})
+                    +e.item
+                        +complex-card()
+                    +e.item
+                        +complex-card()
+                    +e.item
+                        +complex-card()
+                    +e.item
+                        +complex-card()
+                    +e.item
+                        +complex-card()
+                    +e.item
+                        +complex-card()
+                +e.buttons
+                    a.button.button_stroke(href='#') Все комплексы

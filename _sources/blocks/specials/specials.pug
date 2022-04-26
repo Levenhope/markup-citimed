@@ -1,0 +1,27 @@
+include ../article-card/article-card
+mixin specials()
+    +b.SECTION.specials
+        .content-center
+            +e.content
+                +e.H2.title.h2._with-link #[a(href='#') Акции] и Новости
+                +e.list
+                    +e.item
+                        +article-card()
+                    +e.item
+                        +article-card()
+                    +e.item
+                        +article-card()
+                    +e.item
+                        +article-card()
+                    +e.item
+                        +article-card()
+                    +e.item
+                        +article-card()
+                +e.slider-nav
+                    +e.BUTTON.slider-arrow.button._control._prev
+                        +svgUse(10, 8, 'icon-arrow-down-s')
+                    +e.slider-pages
+                    +e.BUTTON.slider-arrow.button._control._next
+                        +svgUse(10, 8, 'icon-arrow-down-s')
+                +e.buttons
+                    a.button.button_stroke(href='#') Все акции

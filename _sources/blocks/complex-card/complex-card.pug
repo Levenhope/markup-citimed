@@ -1,0 +1,23 @@
+mixin complex-card(params)
+    - var mod = params&&params.mod?params.mod:'';
+    +b.ARTICLE.complex-card(class='_' + mod)
+        if params && params.mod === 'big'
+            +e.header
+                +e.code 50.0.H139.900
+                +e.duration
+                    +svgUse(18, 18, 'icon-clock')(class='complex-card__duration-icon')
+                    +e.duration-text 4 дня
+        +e.content
+            +e.A.title(href='#') Диагностика сосудистых заболеваний головного мозга
+            if params && params.mod==='big'
+                +e.A.tip(href='#') Что входит в состав комплекса
+            +e.footer
+                +e.price 4 600 #[span.rub ₽]
+                +e.BUTTON.add.button.button_control
+                    +svgUse(18, 18, 'icon-cart')(class='complex-card__add-icon')
+        if params && params.img
+            +e.img-holder
+                +e.PICTURE.img
+                    if params.imgMob
+                        +e.SOURCE(srcset=params.imgMob media="(max-width: 1024px)")
+                    +e.IMG.img(src=params.img)

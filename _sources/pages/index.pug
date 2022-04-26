@@ -3,6 +3,9 @@ include ../blocks/main-screen/main-screen
 include ../blocks/cards-block/cards-block
 include ../blocks/information/information
 include ../blocks/accordion/accordion
+include ../blocks/steps/steps
+include ../blocks/specials/specials
+include ../blocks/complex-selection/complex-selection
 
 block global_vars
     -
@@ -13,5 +16,8 @@ block content
     main.page-content
         +main-screen()
         +cards-block()
+        +complex-selection()
+        +steps()
+        +specials()
         +accordion()
         +information()

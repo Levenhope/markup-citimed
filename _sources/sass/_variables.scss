@@ -11,7 +11,7 @@ $block-margin-mob: 60px;
 // Font settings
 $roboto: "Roboto", sans-serif;
 $font-base: $roboto;
-$font-rouble: 'PT Rouble', sans-serif;
+$font-rouble: "PT Rouble Sans", sans-serif;
 
 $font-weight-normal: 400;
 $font-weight-medium: 500;
@@ -19,12 +19,11 @@ $font-weight-semibold: 600;
 
 
 // Media queries
-$media-desktop: "screen and (max-width: 1230px)"; // 1281 - 1440
-$media-desktop-small: "screen and (max-width: 1280px)"; // 1025-1280
+$media-desktop: "screen and (min-width: 1240px)"; // 1281 - 1440
 $media-tablet: "screen and (max-width: 1024px)"; // 768-1024
 $media-phone-landscape: "screen and (max-width: 768px)"; // 481-768 (large phones included, ipad vertical - not)
 $media-phone: "screen and (max-width: 600px)"; // 320-481 (iphone 4 landscape not included)
-$media-phone-small: "screen and (max-width: 400px)"; // 320-481 (iphone 4 landscape not included)
+$media-phone-small: "screen and (max-width: 482px)"; // 320-481 (iphone 4 landscape not included)
 $media-retina: "screen and (min-device-pixel-ratio: 1.5), screen and (-webkit-min-device-pixel-ratio: 1.5)";
 
 $media-mobile: $media-tablet;

@@ -39,14 +39,13 @@
     justify-content: center;
     width: 45px;
     height: 45px;
+    flex-shrink: 0;
     padding: 0;
     box-shadow: 0 2px 6px rgba(34, 87, 142, 0.15);
     border: 1px solid rgba(87, 117, 143, 0);
     svg {
+      display: block;
       fill: currentColor;
-    }
-    &:hover {
-      box-shadow: 0 0 2px rgba(34, 87, 142, 0.15);
     }
     &.slick-disabled, &:disabled, &.is-disabled {
       box-shadow: 0 0 0 rgba(34, 87, 142, 0);
@@ -54,6 +53,21 @@
       svg {
         fill: #57758F;
       }
+    }
+    @media #{$media-not-mobile} {
+      &:hover {
+        box-shadow: 0 0 2px rgba(34, 87, 142, 0.15);
+      }
+    }
+  }
+  &_prev {
+    svg {
+      transform: rotate(90deg) translate(0, 2px);
+    }
+  }
+  &_next {
+    svg {
+      transform: rotate(-90deg) translate(0, 2px);
     }
   }
 }

@@ -25,6 +25,7 @@
     height: 100%;
     object-fit: cover;
     opacity: .2;
+    user-select: none;
   }
   &__content {
     position: relative;

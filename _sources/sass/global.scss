@@ -1,7 +1,12 @@
 @charset "UTF-8";
 
 @import 'variables';
-@import 'helpers/*.scss';
+@import 'helpers/fonts';
+@import 'helpers/optimize';
+@import 'helpers/mixins';
+@import 'helpers/bvi';
+@import 'helpers/slick';
+@import 'helpers/typografy';
 
 /*!-- Общие стили --*/
 

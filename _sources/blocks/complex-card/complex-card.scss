@@ -1,0 +1,183 @@
+.complex-card {
+  $self: &;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid $color-border;
+  &_big {
+    background-color: $color-bg-light;
+    @media #{$media-not-mobile} {
+      min-height: 300px;
+    }
+  }
+  &__header {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 20px 12px;
+    width: 100%;
+    max-width: 100%;
+    @media #{$media-not-mobile} {
+      #{$self}_big & {
+        width: 270px;
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+    width: 100%;
+    @media #{$media-mobile} {
+      padding: 15px;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    #{$self}_big & {
+      align-items: flex-start;
+      flex-direction: column;
+      width: 300px;
+      padding: 0 20px 12px;
+      @media #{$media-mobile} {
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        padding-bottom: 30px;
+      }
+    }
+  }
+  &__img-holder {
+    position: absolute;
+    z-index: 2;
+    width: 280px;
+    height: 254px;
+    right: 0;
+    bottom: 0;
+    @media #{$media-mobile} {
+      width: 180px;
+      height: 120px;
+    }
+  }
+  &__img {
+    display: block;
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+    object-position: bottom right;
+  }
+  &__code {
+    font-size: 14px;
+    line-height: 1.57;
+    color: $color-text-light;
+    @media #{$media-mobile} {
+      font-size: 12px;
+    }
+  }
+  &__duration {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: $color-accent;
+    text-transform: uppercase;
+    @media #{$media-mobile} {
+      font-size: 10px;
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+  &__duration-icon {
+    fill: currentColor;
+    margin-right: 5px;
+  }
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: 17px;
+    line-height: 1.44;
+    color: $color-text;
+    margin-right: 20px;
+    #{$self}_big & {
+      margin-bottom: auto;
+      font-size: 18px;
+    }
+    @media #{$media-mobile} {
+      font-size: 15px;
+      line-height: 1.5;
+      #{$self}_big & {
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+    }
+  }
+  &__title-note {
+    font-weight: $font-weight-normal;
+    font-size: 16px;
+    color: $color-text-light;
+    @media #{$media-mobile} {
+      font-size: 14px;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    @media #{$media-mobile} {
+      width: 100%;
+      #{$self}_big & {
+        width: auto;
+        margin-left: 0;
+      }
+    }
+    @media #{$media-not-mobile} {
+      #{$self}_big & {
+        width: 270px;
+        margin-left: 0;
+        max-width: 100%;
+        padding-top: 10px;
+        border-top: 1px dashed $color-border-dotted;
+      }
+    }
+  }
+  &__price {
+    margin-right: 15px;
+    padding: 7px 20px 7px 0;
+    font-weight: $font-weight-semibold;
+    font-size: 20px;
+    line-height: 1.2;
+    white-space: nowrap;
+    border-right: 1px dashed $color-border-dotted;
+
+    #{$self}_big & {
+      border-right: none;
+      margin-right: 0;
+      padding: 0 20px 0 0;
+    }
+    @media #{$media-mobile} {
+      font-size: 18px;
+      border-right: 0;
+    }
+  }
+  &__tip {
+    margin-bottom: 20px;
+    color: $color-secondary;
+    font-size: 13px;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+    @media #{$media-mobile} {
+      margin-bottom: 25px;
+      font-size: 11px;
+    }
+  }
+}
