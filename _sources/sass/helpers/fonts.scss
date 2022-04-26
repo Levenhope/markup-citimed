@@ -1,10 +1,5 @@
-/*
 @font-face {
   font-family: "PT Rouble Sans";
-  src: url("../../assets/fonts/PTRouble/PTRoubleSans.eot"); !* IE9*!
-  src: url("../../assets/fonts/PTRouble/PTRoubleSans.eot?#iefix") format("embedded-opentype"), !* IE6-IE8 *!
-  url("../../assets/fonts/PTRouble/PTRoubleSans.woff2") format("woff2"), !* chrome、firefox *!
-  url("../../assets/fonts/PTRouble/PTRoubleSans.woff") format("woff"), !* chrome、firefox *!
-  url("../../assets/fonts/PTRouble/PTRoubleSans.ttf") format("truetype"), !* chrome、firefox、opera、Safari, Android, iOS 4.2+*!
-  url("../../assets/fonts/PTRouble/PTRoubleSans.svg#PT Rouble Sans") format("svg"); !* iOS 4.1- *!
-}*/
+  font-display: swap;
+  src: url("../../assets/fonts/PTRouble/RUBSN.woff2") format("woff2");
+}

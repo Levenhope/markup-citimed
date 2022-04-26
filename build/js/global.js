@@ -1,16 +1,15 @@
 //global
-let vh = window.innerHeight * 0.01; // Затем устанавливаем значение свойства --vh
-// для корневого элемента
-
-document.documentElement.style.setProperty('--vh', `${vh}px`); // слушаем событие resize
-
+//height fix for mobiles
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
 window.addEventListener('resize', function () {
-  // получаем текущее значение высоты
   let vh = window.innerHeight * 0.01;
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+}); //fix for fonts on different OS
+
+document.documentElement.setAttribute('data-useragent', navigator.userAgent);
 document.addEventListener("DOMContentLoaded", function () {
   //Инициализация плагина для версии для слабовидящих
-  new isvek.Bvi(); //
+  new isvek.Bvi();
 });
 //# sourceMappingURL=../sourcemaps/global.js.map

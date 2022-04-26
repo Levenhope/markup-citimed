@@ -1,6 +1,6 @@
 mixin complex-card(params)
     - var mod = params&&params.mod?params.mod:'';
-    +b.ARTICLE.complex-card(class='_' + mod)
+    +b.ARTICLE.complex-card(class=mod?'_'+mod:'')
         if params && params.mod === 'big'
             +e.header
                 +e.code 50.0.H139.900

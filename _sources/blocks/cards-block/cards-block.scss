@@ -6,14 +6,17 @@
     overflow: hidden;
   }
   &__content {
-    @media #{$media-not-mobile} {
-      display: grid;
-      grid-template-areas:
+    display: grid;
+    grid-template-areas:
       "title buttons"
-      "list list";
+      "list list"
+      "nav nav";
+    @media #{$media-phone-landscape} {
+      display: block;
     }
   }
   &__list {
+    grid-area: list;
     @media #{$media-mobile} {
       margin: 0 45px 15px -5px;
       .slick-list {
@@ -24,7 +27,6 @@
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
-      grid-area: list;
     }
   }
   &__item {
@@ -49,12 +51,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    @media #{$media-mobile} {
+    margin-bottom: 45px;
+    flex-direction: row-reverse;
+    @media #{$media-phone-landscape} {
+      flex-direction: row;
       justify-content: center;
-    }
-    @media #{$media-not-mobile} {
-      margin-bottom: 45px;
-      flex-direction: row-reverse;
+      margin-bottom: 0;
     }
   }
   &__slider-nav {
@@ -64,6 +66,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+      grid-area: nav;
     }
   }
 }

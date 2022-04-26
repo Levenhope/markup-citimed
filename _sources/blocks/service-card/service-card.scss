@@ -144,6 +144,9 @@
   }
   &__add {
     svg {
+      fill: $color-black;
+    }
+    &:hover svg {
       fill: $color-secondary;
     }
   }

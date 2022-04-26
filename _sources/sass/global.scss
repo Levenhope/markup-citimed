@@ -68,6 +68,9 @@ body .nomargin {
 .rub {
 	font-family: $font-rouble;
 	margin-left: .2rem;
+	html[data-useragent*='Mac OS X'] & {
+		font-family: $roboto;
+	}
 }
 
 .is-hide {display: none}

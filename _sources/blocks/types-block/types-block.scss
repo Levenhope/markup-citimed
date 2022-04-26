@@ -1,0 +1,51 @@
+.types-block {
+  margin: 100px 0 90px;
+  padding: 60px 0;
+  background-color: $color-bg-light;
+  background-image: url('../../assets/img/citymed-logo-bg.png'), url('../../assets/img/med-bg.png');
+  background-size: 374px 333px, 338px 359px;
+  background-position: 0 95%, bottom right;
+  background-repeat: no-repeat;
+  @media #{$media-mobile} {
+    margin: 60px 0;
+    padding: 50px 0 45px;
+    overflow: hidden;
+    background-image: url('../../assets/img/med-bg.png');
+    background-position: bottom right;
+    background-size: 181px, 192px;
+  }
+  &__content {
+    @media #{$media-not-mobile} {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__title {
+    @media #{$media-mobile} {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+    @media #{$media-not-mobile} {
+      width: 20%;
+      margin-right: 30px;
+      font-size: 26px;
+      line-height: 1.2;
+    }
+  }
+  &__title-accent {
+    font-weight: $font-weight-medium;
+    font-size: 28px;
+    @media #{$media-mobile} {
+      display: block;
+      font-size: 24px;
+    }
+  }
+  &__intext-img {
+    vertical-align: middle;
+  }
+  &__list {
+
+  }
+}

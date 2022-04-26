@@ -38,10 +38,19 @@ $(function() {
             }
             ]
         };
+        function sliderGridFix() {
+            let parentWidth = $('.cards-block__content', $context).width();
+            let sliderListWidth = window.innerWidth>1024?parentWidth:parentWidth-45;
+            $slider.width(sliderListWidth);
+        }
+        $slider.on('init', function() {
+            sliderGridFix();
+        });
+
         if (window.innerWidth < 1025) {
             $slider.slick(options);
         }
-        $(window).on('resize', function() {
+        window.addEventListener('resize', function(event) {
             if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
                 $slider.slick(options);
             }

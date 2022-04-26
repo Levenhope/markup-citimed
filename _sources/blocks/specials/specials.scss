@@ -7,12 +7,13 @@
   }
   &__content {
     position: relative;
-    @media #{$media-not-mobile} {
-      display: grid;
-      grid-template-areas:
+    display: grid;
+    grid-template-areas:
       "title buttons"
       "list list"
       "nav nav";
+    @media #{$media-phone-landscape} {
+      display: block;
     }
   }
   &__list {
@@ -42,12 +43,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    @media #{$media-mobile} {
+    margin-bottom: 45px;
+    flex-direction: row-reverse;
+    @media #{$media-phone-landscape} {
       justify-content: center;
-    }
-    @media #{$media-not-mobile} {
-      margin-bottom: 45px;
-      flex-direction: row-reverse;
+      flex-direction: row;
+      margin-bottom: 0;
     }
   }
   &__slider-nav {

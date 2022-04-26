@@ -46,10 +46,19 @@ $(function() {
             }
             ]
         };
+        function sliderGridFix() {
+            let parentWidth = $('.cards-block__content', $context).width();
+            let sliderListWidth = window.innerWidth>1024?parentWidth:parentWidth-45;
+            $slider.width(sliderListWidth);
+        }
+        $slider.on('init', function() {
+            sliderGridFix();
+        });
+
         if (window.innerWidth < 1025) {
             $slider.slick(options);
         }
-        $(window).on('resize', function() {
+        window.addEventListener('resize', function(event) {
             if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
                 $slider.slick(options);
             }
@@ -66,14 +75,6 @@ document.addEventListener("DOMContentLoaded", function(){
             menu.classList.add('is-open');
         }
     })
-});
-document.addEventListener("DOMContentLoaded", function(){
-    let searchLine = document.querySelectorAll('.search-line__input');
-    searchLine.forEach(function(line) {
-        if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
-            line.setAttribute('placeholder', line.dataset.placeholderMobile);
-        }
-    });
 });
 //page-header
 function fixedHeaderfix() {
@@ -146,8 +147,18 @@ $(function() {
         });
     });
 });
-//types-block
-
+//top-menu
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
+        let submenuItem = e.target.closest('.top-menu__submenu-item');
+        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
+            e.preventDefault();
+            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
+            parentMenu.classList.toggle('is-open');
+        }
+    })
+});
 //steps
 $(function() {
     function initSteps($slider, $context, options) {
@@ -197,16 +208,13 @@ $(function() {
         });
     });
 });
-//top-menu
 document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
-        let submenuItem = e.target.closest('.top-menu__submenu-item');
-        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
-            e.preventDefault();
-            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
-            parentMenu.classList.toggle('is-open');
+    let searchLine = document.querySelectorAll('.search-line__input');
+    searchLine.forEach(function(line) {
+        if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
+            line.setAttribute('placeholder', line.dataset.placeholderMobile);
         }
-    })
+    });
 });
+//types-block
 //# sourceMappingURL=../sourcemaps/blocks.js.map
