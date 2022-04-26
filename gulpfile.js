@@ -99,24 +99,25 @@ function modifySvg() {
         .pipe(gulp.dest(paths.base + paths.build + paths.svg));
 }
 
-            function buildHTML() {
-                return gulp.src(paths.srcpages + '*.pug')
-                    .pipe(pug({
-                        pretty: true
-                    }))
-                    .pipe(gulp.dest(paths.build));
-            }
+function buildHTML() {
+	return gulp.src(paths.srcpages + '*.pug')
+		.pipe(pug({
+			pretty: true
+		}))
+		.pipe(gulp.dest(paths.build))
+		.pipe(browserSync.stream());
+}
 
-            function watchFiles(done) {
-                if (isBuildOnly > 0) {
-                    log('Watcher is disabled');
-                    return done();
-                }
+function watchFiles(done) {
+	if (isBuildOnly > 0) {
+		log('Watcher is disabled');
+		return done();
+	}
 
-                gulp.watch([paths.srcpages + '*.pug', paths.srcpages + '**/*.pug', paths.blocks + '**/*.pug'], buildHTML).on('change', browserSync.reload);
-	gulp.watch(paths.blocks + '**/*.js', concatBlockJs).on('change', browserSync.reload);
-	gulp.watch([paths.sass + '**/*.scss', paths.blocks + '**/*.scss'], buildSass);
-	gulp.watch(paths.srcjs + '*.js', buildJs).on('change', browserSync.reload);
+	gulp.watch([paths.srcpages + '*.pug', paths.srcpages + '**/*.pug', paths.blocks + '**/*.pug'], buildHTML);
+	gulp.watch(paths.blocks + '**/*.js', concatBlockJs);
+	gulp.watch(paths.srcjs + '*.js', buildJs);
+	gulp.watch([paths.sass + '*.scss', paths.sass + '**/*.scss', paths.blocks + '**/*.scss'], buildSass).on('change', browserSync.reload);
 }
 
 function sync(done) {

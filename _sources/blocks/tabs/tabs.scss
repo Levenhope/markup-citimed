@@ -1,0 +1,37 @@
+.tabs-links {
+  color: $color-secondary-light;
+  a {
+    position: relative;
+    color: $color-secondary-light;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0.1em;
+      left: 0;
+      display: block;
+      width: 100%;
+      border-bottom: 1.5px solid $transparent;
+    }
+    &:hover {
+      text-decoration: none;
+      &:after {
+        border-color: currentColor;
+      }
+    }
+    &.is-active {
+      color: $color-black;
+      &:after {
+        border-color: currentColor;
+      }
+    }
+  }
+}
+.tabs-holder {
+  position: relative;
+}
+.tab {
+  display: none;
+  &.is-active {
+    display: block;
+  }
+}

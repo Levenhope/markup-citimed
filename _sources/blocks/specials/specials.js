@@ -1,6 +1,6 @@
 //specials
 $(function() {
-    $('.specials').each(function() {
+    $('.specials__tab').each(function() {
         let $context = $(this);
         let $slider = $('.specials__list', $context);
         let options = {
@@ -30,7 +30,7 @@ $(function() {
             ]
         };
         function sliderGridFix() {
-            let parentWidth = $('.specials__content', $context).width();
+            let parentWidth = $slider.closest('.specials__content').width();
             let sliderListWidth = window.innerWidth>1024?parentWidth:parentWidth-65;
             $slider.width(sliderListWidth);
         }
@@ -42,6 +42,10 @@ $(function() {
 
         window.addEventListener('resize', function(event) {
             sliderGridFix();
+        });
+
+        window.addEventListener('tabActivation', function(event) {
+            $slider.slick('setPosition')
         });
     });
 });

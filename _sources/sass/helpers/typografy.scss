@@ -1,24 +1,8 @@
-.h2, h2 {
+h2, .h2{
   margin-bottom: 30px;
   font-weight: $font-weight-medium;
   font-size: 30px;
   line-height: 1.6;
-  &_with-link {
-    color: $color-secondary-light;
-    a {
-      position: relative;
-      color: $color-black;
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0.1em;
-        left: 0;
-        display: block;
-        width: 100%;
-        border-bottom: 1.5px solid currentColor;
-      }
-    }
-  }
   @media #{$media-mobile} {
     font-size: 26px;
     line-height: 1.3;
