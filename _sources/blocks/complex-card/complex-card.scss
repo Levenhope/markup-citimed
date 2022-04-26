@@ -6,9 +6,10 @@
   background-color: $color-white;
   border-radius: 3px;
   overflow: hidden;
-  border: 1px solid $color-border;
+  border: 1px solid $color-border-dark;
   &_big {
     background-color: $color-bg-light;
+    border: none;
     @media #{$media-not-mobile} {
       min-height: 300px;
     }
@@ -178,6 +179,11 @@
     @media #{$media-mobile} {
       margin-bottom: 25px;
       font-size: 11px;
+    }
+  }
+  &__add {
+    svg {
+      fill: $color-secondary;
     }
   }
 }

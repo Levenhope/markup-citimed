@@ -26,7 +26,7 @@
     }
   }
   &__text {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: $font-weight-medium;
     #{$self}_text-secondary & {
       color: $color-secondary;

@@ -17,6 +17,7 @@
   }
   &__list {
     grid-area: list;
+    margin: 0 -15px;
     @media #{$media-mobile} {
       margin: 0 65px 15px -5px;
       .slick-list {

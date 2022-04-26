@@ -20,12 +20,25 @@
       gap: 20px;
     }
   }
+  &__title {
+    font-weight: $font-weight-medium;
+    font-size: 16px;
+    line-height: 1.75;
+    color: $color-black;
+    @media #{$media-mobile} {
+      margin-bottom: 6px;
+      font-size: 15px;
+      line-height: 1.47;
+    }
+  }
   &__text {
     font-size: 16px;
-    line-height: 1.7;
+    color: $color-text-light;
+    line-height: 1.75;
     @media #{$media-mobile} {
-      font-size: 15px;
       margin-bottom: 15px;
+      font-size: 14px;
+      line-height: 1.57;
     }
   }
   &__button {

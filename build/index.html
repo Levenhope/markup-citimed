@@ -15,6 +15,7 @@
     <script src="../assets/vendor/bvi/js/bvi.js"></script>
     <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
     <script src="../assets/vendor/slick/slick.min.js"></script>
+    <script src="../assets/vendor/sameheight/jquery.sameheight.js"></script>
     <script src="./js/global.js"></script>
     <script src="./js/blocks.js"></script>
     <title>Citimed - Главная</title>
@@ -183,7 +184,7 @@
         </div>
         <div class="content-center">
           <div class="main-screen__content">
-            <h1 class="main-screen__title h1">Сдать медицинские анализы<span class="main-screen__title-part">в Москве и Московской области</span>
+            <h1 class="main-screen__title h1">Сдать медицинские анализы<span class="main-screen__title-part"> в Москве и Московской области</span>
             </h1>
             <div class="main-screen__subtitle">У нас есть все виды исследований
             </div>
@@ -668,7 +669,7 @@
               <span class="no-brake">в <img class="steps__intext-img" src="../../assets/img/intext-logo.svg"/></span>
             </div>
             <ol class="steps__list">
-              <li class="steps__item">
+              <li class="steps__item" data-height-group="step-item">
                 <div class="steps__icon-holder"><img class="steps__icon" src="../../assets/img/choose-exams.svg" alt="" role="presentation"/>
                 </div>
                 <div class="steps__name-holder">
@@ -682,7 +683,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-height-group="step-item">
                 <div class="steps__icon-holder"><img class="steps__icon" src="../../assets/img/examination.svg" alt="" role="presentation"/>
                 </div>
                 <div class="steps__name-holder">
@@ -696,7 +697,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="steps__item">
+              <li class="steps__item" data-height-group="step-item">
                 <div class="steps__icon-holder"><img class="steps__icon" src="../../assets/img/get-results.svg" alt="" role="presentation"/>
                 </div>
                 <div class="steps__name-holder">
@@ -823,7 +824,11 @@
                 <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
               </svg>
             </div>
-            <div class="information__text text-styles"><b>Не&nbsp;хотите или не&nbsp;можете приехать в&nbsp;медицинский центр?</b><br/><span class="text-accent">Мы сами приедем к&nbsp;Вам!</span> Сдавайте анализы в&nbsp;привычной домашней атмосфере!
+            <div class="information__text-content text-styles">
+              <div class="information__title">Не&nbsp;хотите или не&nbsp;можете приехать в&nbsp;медицинский центр?
+              </div>
+              <div class="information__text"><span class="text-accent">Мы сами приедем к&nbsp;Вам!</span> Сдавайте анализы в&nbsp;привычной домашней атмосфере!
+              </div>
             </div><a class="information__button button button button_accent" href="#">Сдать анализы на дому</a>
           </div>
         </div>

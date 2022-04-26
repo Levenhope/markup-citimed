@@ -16,9 +16,16 @@ $(function() {
 
             }, {
 
-                breakpoint: 600,
+                breakpoint: 769,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
+                }
+
+            }, {
+
+                breakpoint: 525,
+                settings: {
+                    slidesToShow: 2
                 }
 
             }, {

@@ -8,6 +8,9 @@
   box-shadow: 0 0 6px rgba(34, 87, 142, 0.09);
   border-radius: 3px;
   overflow: hidden;
+  @media #{$media-mobile} {
+    box-shadow: 0px 3px 14px rgba(34, 87, 142, 0.23);
+  }
   &_double {
     background-color: $color-bg-light;
     box-shadow: none;
@@ -137,6 +140,11 @@
     white-space: nowrap;
     @media #{$media-mobile} {
       font-size: 18px;
+    }
+  }
+  &__add {
+    svg {
+      fill: $color-secondary;
     }
   }
 }

@@ -746,10 +746,11 @@ body .nomargin {
   background-color: #ffffff;
   border-radius: 3px;
   overflow: hidden;
-  border: 1px solid #EEF3F9;
+  border: 1px solid #E9EDF0;
 }
 .complex-card_big {
   background-color: #F2F7FD;
+  border: none;
 }
 @media screen and (min-width: 1025px) {
   .complex-card_big {
@@ -944,6 +945,9 @@ body .nomargin {
     font-size: 11px;
   }
 }
+.complex-card__add svg {
+  fill: #1C7ADD;
+}
 
 .complex-selection {
   margin: 115px 0 100px;
@@ -1131,7 +1135,7 @@ body .nomargin {
   }
 }
 .icon-link__text {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
 .icon-link_text-secondary .icon-link__text {
@@ -1209,14 +1213,29 @@ body .nomargin {
     gap: 20px;
   }
 }
+.information__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #0E3F60;
+}
+@media screen and (max-width: 1024px) {
+  .information__title {
+    margin-bottom: 6px;
+    font-size: 15px;
+    line-height: 1.47;
+  }
+}
 .information__text {
   font-size: 16px;
-  line-height: 1.7;
+  color: #57758F;
+  line-height: 1.75;
 }
 @media screen and (max-width: 1024px) {
   .information__text {
-    font-size: 15px;
     margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.57;
   }
 }
 .information__button {
@@ -1296,7 +1315,7 @@ body .nomargin {
 }
 @media screen and (max-width: 1024px) {
   .main-screen__title-part {
-    display: inline-block;
+    display: block;
     font-weight: 400;
     font-size: 17px;
   }
@@ -1325,32 +1344,37 @@ body .nomargin {
   }
 }
 .main-screen__menu {
-  padding: 0 30px;
+  display: flex;
+  padding: 15px 0;
+  width: 970px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
   background-color: #ffffff;
+  border-radius: 3px;
 }
 @media screen and (max-width: 1024px) {
   .main-screen__menu {
     box-shadow: 0px 3px 10px rgba(0, 114, 232, 0.2);
   }
 }
-@media screen and (min-width: 1025px) {
+@media screen and (max-width: 768px) {
   .main-screen__menu {
-    display: flex;
-    padding: 15px 0;
+    display: block;
+    width: 290px;
+    padding: 0 30px;
   }
 }
 .main-screen__menu-item {
   flex-grow: 1;
+  width: 33%;
+  border-right: 1px solid #D5E7FE;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .main-screen__menu-item {
+    width: 100%;
+    border-right: 0;
     border-bottom: 1px solid #D5E7FE;
-  }
-}
-@media screen and (min-width: 1025px) {
-  .main-screen__menu-item {
-    width: 33%;
-    border-right: 1px solid #D5E7FE;
   }
 }
 .main-screen__menu-item:last-child {
@@ -1363,14 +1387,23 @@ body .nomargin {
   height: 50px;
   width: 100%;
   padding: 0 15px;
+  font-size: 14px;
 }
 .main-screen__menu-item .icon-link__icon-holder {
   margin-right: 15px;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .main-screen__menu-item .icon-link {
     height: auto;
     padding: 25px 0;
+  }
+  .main-screen__menu-item .icon-link__icon {
+    width: 25px;
+    height: 25px;
+  }
+  .main-screen__menu-item .icon-link__text {
+    width: 130px;
+    text-align: left;
   }
 }
 
@@ -1867,6 +1900,11 @@ body .nomargin {
   border-radius: 3px;
   overflow: hidden;
 }
+@media screen and (max-width: 1024px) {
+  .service-card {
+    box-shadow: 0px 3px 14px rgba(34, 87, 142, 0.23);
+  }
+}
 .service-card_double {
   background-color: #F2F7FD;
   box-shadow: none;
@@ -2020,6 +2058,9 @@ body .nomargin {
     font-size: 18px;
   }
 }
+.service-card__add svg {
+  fill: #1C7ADD;
+}
 
 .specials {
   margin: 90px 0;
@@ -2041,6 +2082,7 @@ body .nomargin {
 }
 .specials__list {
   grid-area: list;
+  margin: 0 -15px;
 }
 @media screen and (max-width: 1024px) {
   .specials__list {
@@ -2400,5 +2442,60 @@ body .nomargin {
 .top-menu__submenu-link:hover {
   text-decoration: none;
   color: #1C7ADD;
+}
+
+.types-block {
+  margin: 100px 0 90px;
+  padding: 60px 0;
+  background-color: #F2F7FD;
+  background-image: url("../../assets/img/citymed-logo-bg.png"), url("../../assets/img/med-bg.png");
+  background-size: 374px 333px, 338px 359px;
+  background-position: 0 95%, bottom right;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1024px) {
+  .types-block {
+    margin: 60px 0;
+    padding: 50px 0 45px;
+    overflow: hidden;
+    background-image: url("../../assets/img/med-bg.png");
+    background-position: bottom right;
+    background-size: 181px, 192px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .types-block__content {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .types-block__title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .types-block__title {
+    width: 20%;
+    margin-right: 30px;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+}
+.types-block__title-accent {
+  font-weight: 500;
+  font-size: 28px;
+}
+@media screen and (max-width: 1024px) {
+  .types-block__title-accent {
+    display: block;
+    font-size: 24px;
+  }
+}
+.types-block__intext-img {
+  vertical-align: middle;
 }
 /*# sourceMappingURL=../sourcemaps/global.css.map */
