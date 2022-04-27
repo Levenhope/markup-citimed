@@ -1,0 +1,7 @@
+include ../accordion/accordion
+mixin faq-block(params)
+    +b.SECTION.faq-block
+        .content-center
+            +e.H2.title.h3 Как узнать результаты анализов
+            +e.accordion
+                +accordion()

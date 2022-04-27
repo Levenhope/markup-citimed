@@ -1,0 +1,51 @@
+.alphabet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 25px;
+  @media #{$media-tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media #{$media-phone-landscape} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media #{$media-phone} {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  &__section {
+    position: relative;
+    padding-left: 30px;
+    @media #{$media-phone-landscape} {
+      font-size: 20px;
+    }
+  }
+  &__letter {
+    position: absolute;
+    top: -0.05em;
+    left: 0;
+    color: $color-secondary;
+    font-weight: $font-weight-medium;
+    font-size: 20px;
+    line-height: 1;
+    @media #{$media-phone-landscape} {
+      font-size: 18px;
+    }
+  }
+  &__item {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: $color-text-light;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $color-secondary;
+    }
+    @media #{$media-phone-landscape} {
+      font-size: 14px;
+    }
+  }
+}

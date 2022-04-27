@@ -12,7 +12,7 @@
     overflow: hidden;
     background-image: url('../../assets/img/med-bg.png');
     background-position: bottom right;
-    background-size: 181px, 192px;
+    background-size: 181px 192px;
   }
   &__content {
     @media #{$media-not-mobile} {

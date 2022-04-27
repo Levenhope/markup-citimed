@@ -1,35 +1,35 @@
+include ../accordion/accordion
 mixin types-block()
     +b.SECTION.types-block
-        .content-center
-            +e.content
+        +e.header
+            .content-center
                 +e.title
                     +e.title-img-holder
-                        +e.IMG.title-img(src='../../assets/img/intext-logo.svg')
-                    +e.title-main более #[span.text-accent 1 500 видов анализов]
-                    +e.title доступны для клиентов в наших медицинских центрах
-                +e.OL.list
+                        +e.IMG.title-img(src='../../assets/img/intext-logo.svg' alt='citimed')
+                    +e.title-content
+                        +e.title-main более #[span.text-accent 1 500 видов анализов]
+                        +e.title-common доступны для клиентов в наших медицинских центрах
+                +b.UL.advantages
                     +e.LI.item
                         +e.icon-holder
-                            +e.IMG.icon(src='../../assets/img/choose-exams.svg')
-                        +e.name-holder
-                            +e.name Выбрать исследование
-                        +b.UL.check-list
-                            +e.LI.item В каталоге на сайте
-                            +e.LI.item По телефону колл-центра (работаем круглосуточно)
+                            +e.IMG.icon(src='../../assets/img/years.svg')
+                        +e.content
+                            +e.item-name Более 15 лет на рынке
+                            +e.item-text лабораторной диагностики
                     +e.LI.item
                         +e.icon-holder
-                            +e.IMG.icon(src='../../assets/img/examination.svg')
-                        +e.name-holder
-                            +e.name Сдать анализы
-                        +b.UL.check-list
-                            +e.LI.item В медицинском центре
-                            +e.LI.item Заказать выезд на дом
+                            +e.IMG.icon(src='../../assets/img/equip.svg')
+                        +e.content
+                            +e.item-name Современное оборудование,
+                            +e.item-text соответствующее мировым стандартам качества
                     +e.LI.item
                         +e.icon-holder
-                            +e.IMG.icon(src='../../assets/img/get-results.svg')
-                        +e.name-holder
-                            +e.name Получить результаты
-                        +b.UL.check-list
-                            +e.LI.item В личном кабинете
-                            +e.LI.item В медицинском центре
+                            +e.IMG.icon(src='../../assets/img/stuff.svg')
+                        +e.content
+                            +e.item-name Квалифицированные специалисты
+                            +e.item-text с большим опытом работы
+        +e.accordion-holder
+            .content-center
+                +e.accordion
+                    +accordion({mod: 'big'})
 

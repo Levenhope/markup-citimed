@@ -1,0 +1,38 @@
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  @media #{$media-phone-landscape} {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 40px;
+    max-width: 225px;
+    margin: auto;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    @media #{$media-phone-landscape} {
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  &__icon-holder {
+    margin-right: 15px;
+    @media #{$media-phone-landscape} {
+      margin-right: initial;
+      margin-bottom: 20px;
+    }
+  }
+  &__icon {
+    display: block;
+  }
+  &__item-name {
+    font-weight: $font-weight-medium;
+    font-size: 16px;
+  }
+  &__item-text {
+    font-size: 16px;
+    color: $color-text-light;
+  }
+}

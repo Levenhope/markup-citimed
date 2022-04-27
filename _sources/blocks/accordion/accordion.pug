@@ -1,29 +1,22 @@
-mixin accordion()
-    +b.SECTION.accordion
-        .content-center
-            +e.H2.title.h3 Как узнать результаты анализов
-            +e.UL.list
+include ../alphabet/alphabet
+mixin accordion(params)
+    - var isBig = params&&params.mod === 'big';
+    +b.SECTION.accordion(class=params&&params.mod?'_'+params.mod:'')
+        +e.UL.list
+            - for(var i = 0; i < 3; i++) {
                 +e.LI.item
                     +e.item-heading
-                        +svgUse(18, 11, 'icon-arrow-down-s')(class='accordion__arrow')
-                        +e.item-heading-text В личном кабинете пациента
+                        if !isBig
+                            +svgUse(18, 11, 'icon-arrow-down-s')(class='accordion__arrow')
+                            +e.item-heading-text В личном кабинете пациента
+                        if isBig
+                            +e.item-heading-text Анализы по органам и системам организма
+                            +svgUse(22, 22, 'icon-close')(class='accordion__toggle')
                     +e.item-content
-                        p В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.
-                        p
-                            a(href='#') Войти в кабинет
-                +e.LI.item
-                    +e.item-heading
-                        +svgUse(18, 11, 'icon-arrow-down-s')(class='accordion__arrow')
-                        +e.item-heading-text По электронной почте
-                    +e.item-content
-                        p В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.
-                        p
-                            a(href='#') Войти в кабинет
-                +e.LI.item
-                    +e.item-heading
-                        +svgUse(18, 11, 'icon-arrow-down-s')(class='accordion__arrow')
-                        +e.item-heading-text По электронной почте
-                    +e.item-content
-                        p В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.
-                        p
-                            a(href='#') Войти в кабинет
+                        if !isBig
+                            p В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.
+                            p
+                                a(href='#') Войти в кабинет
+                        if isBig
+                            +alphabet()
+            - }
