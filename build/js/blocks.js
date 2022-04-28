@@ -100,6 +100,122 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 });
+//map-block
+class MapBlock {
+    constructor(context) {
+        this.context = context;
+        this.map = null;
+        this.collection = null;
+
+        this.init = this.init.bind(this);
+        this.createMap = this.createMap.bind(this);
+        this.defaultPlacemarking = this.defaultPlacemarking.bind(this);
+        this.initBlockAPI = this.initBlockAPI.bind(this);
+        this.initToggle = this.initToggle.bind(this);
+        this.setPlacemark = this.setPlacemark.bind(this);
+    }
+    init() {
+        this.createMap();
+        this.defaultPlacemarking(this.context.querySelectorAll('.map-block__place'));
+        this.initBlockAPI();
+        this.initToggle();
+    }
+    initToggle() {
+        let self = this;
+        self.context.dataset.activeTab = this.context.querySelector('input[name="map-switch"]:checked').value;
+        this.context.querySelectorAll('input[name="map-switch"]').forEach(function(switcher) {
+            switcher.addEventListener('change', function(){
+                self.context.dataset.activeTab = self.context.querySelector('input[name="map-switch"]:checked').value;
+            });
+        })
+    }
+    createMap(){
+        this.map = new ymaps.Map("map", {
+            center: [55.76, 37.64],
+            zoom: 7,
+            controls: ['smallMapDefaultSet']
+        });
+        this.map.behaviors.disable('scrollZoom');
+        this.collection = new ymaps.GeoObjectCollection();
+    }
+    defaultPlacemarking(marks) {
+        let self = this;
+        marks.forEach(function(mark) {
+            let coordsArray = mark.dataset.coords.split(',')
+            self.setPlacemark({
+                placeInfo: mark.innerHTML,
+                coords: coordsArray,
+                coordsRaw: mark.dataset.coords,
+                color: mark.dataset.color,
+            });
+        });
+
+        this.map.geoObjects.add(this.collection);
+        this.map.setBounds(this.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
+    }
+    setPlacemark(mark) {
+        let self = this;
+        let element = this.context.querySelector('.map-block__place[data-coords="'+mark.coordsRaw+'"]');
+        let placemark = new ymaps.Placemark(
+            [parseFloat(mark.coords[0]), parseFloat(mark.coords[1])],
+            {
+                balloonContent: mark.placeInfo,
+            },
+            {
+                iconColor: mark.color,
+                balloonOffset: [0, -58],
+                hideIconOnBalloonOpen: false,
+            }
+        );
+        this.collection.add(placemark);
+
+        element.addEventListener('click', function () {
+            self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
+                placeItem.classList.remove('is-active');
+            });
+            element.classList.add('is-active');
+            if (!placemark.balloon.isOpen()) {
+                placemark.balloon.open();
+            } else {
+                placemark.balloon.close();
+            }
+            return false;
+        });
+    }
+    initBlockAPI() {
+        let self = this;
+        this.context.addEventListener('resize.block', function(event) {
+            setTimeout(function() {
+                if (self.map !== undefined) self.map.container.fitToViewport(true);
+            }, 200);
+            event.stopPropagation();
+        });
+
+        this.context.addEventListener('setPlacemark.block', function(event, mark) {
+            self.setPlacemark(mark);
+            event.stopPropagation();
+        });
+
+        this.context.addEventListener('setCenter.block', function(event, center, zoom) {
+            self.map.setCenter(center, zoom, {
+                duration: 600
+            });
+            event.stopPropagation();
+        });
+
+        this.context.addEventListener('destroy.block', function(event) {
+            if (self.map !== undefined) self.map.destroy();
+            event.stopPropagation();
+        });
+    }
+}
+document.addEventListener("DOMContentLoaded", function(){
+    document.querySelectorAll('.map-block').forEach(function(context) {
+        let mapBlock = new MapBlock(context);
+        ymaps.ready(mapBlock.init);
+    });
+});
+
 //page-header
 function fixedHeaderfix() {
     let headerHeight = document.querySelector('.page-header').clientHeight;
@@ -123,6 +239,14 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 window.addEventListener('resize', function(event) {
     fixedHeaderfix();
+});
+document.addEventListener("DOMContentLoaded", function(){
+    let searchLine = document.querySelectorAll('.search-line__input');
+    searchLine.forEach(function(line) {
+        if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
+            line.setAttribute('placeholder', line.dataset.placeholderMobile);
+        }
+    });
 });
 //specials
 $(function() {
@@ -175,29 +299,6 @@ $(function() {
         });
     });
 });
-document.addEventListener("DOMContentLoaded", function(){
-    let searchLine = document.querySelectorAll('.search-line__input');
-    searchLine.forEach(function(line) {
-        if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
-            line.setAttribute('placeholder', line.dataset.placeholderMobile);
-        }
-    });
-});
-//tabs-links
-const tabsEvent = new Event('tabActivation');
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let tabLink = e.target.closest('.tabs-links a');
-        let tabsHolder = e.target.closest('.tabs-holder');
-        if (!(tabLink && tabsHolder)) return;
-        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
-        tabsHolder.querySelector('.tab.is-active').classList.remove('is-active');
-        tabLink.closest('.tabs-links').querySelector('a.is-active').classList.remove('is-active');
-        tabLink.classList.add('is-active');
-        targetTab.classList.add('is-active');
-        window.dispatchEvent(tabsEvent);
-    })
-});
 //steps
 $(function() {
     function initSteps($slider, $context, options) {
@@ -247,8 +348,21 @@ $(function() {
         });
     });
 });
-//types-block
-
+//tabs-links
+const tabsEvent = new Event('tabActivation');
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let tabLink = e.target.closest('.tabs-links a');
+        let tabsHolder = e.target.closest('.tabs-holder');
+        if (!(tabLink && tabsHolder)) return;
+        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
+        tabsHolder.querySelector('.tab.is-active').classList.remove('is-active');
+        tabLink.closest('.tabs-links').querySelector('a.is-active').classList.remove('is-active');
+        tabLink.classList.add('is-active');
+        targetTab.classList.add('is-active');
+        window.dispatchEvent(tabsEvent);
+    })
+});
 //top-menu
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
@@ -261,4 +375,5 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 });
+//types-block
 //# sourceMappingURL=../sourcemaps/blocks.js.map

@@ -1,0 +1,158 @@
+include ../information/information
+mixin map-block()
+    section.map-block
+        .content-center
+            .map-block__heading
+                h2.h2.map-block__title Адреса медицинских центров
+                .map-block__counter
+                    +svgUse(22,28,'icon-pin')
+                    .map-block__counter-number 34 филиала
+                    .map-block__counter-text в Москве и Московской области
+            form.map-block__switch
+                label.map-block__switch-item
+                    input.map-block__switch-radio(type='radio' name='map-switch' value='list' checked)
+                    .map-block__switch-text Списком
+                label.map-block__switch-item
+                    input.map-block__switch-radio(type='radio' name='map-switch' value='map')
+                    .map-block__switch-text На карте
+            .map-block__content
+                .map-block__nav
+                    .map-block__place-list
+                        .map-block__place(data-coords='55.7855135689638,37.665407499999944' data-color='#956DC8')
+                            .map-block__place-content
+                                .map-block__place-header
+                                    +svgUse(20,24,'icon-pin-filled')(style="fill: #956DC8;" class="map-block__place-icon")
+                                    .map-block__arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+                                    .map-block__place-city Москва
+                                    .map-block__metro-n-time
+                                        span.map-block__metro м. Жулебино
+                                        span.map-block__allday 24/7
+                                    .map-block__adress ул. Генерала Кузнецова, 19к1
+                                .map-block__extra-info
+                                    .map-block__extra-block
+                                        .map-block__extra-title Телефон для записи
+                                        a.map-block__phone(href='tel:+74951212578') +7 (495) 121-25-78
+                                    .map-block__extra-block
+                                        .map-block__warning
+                                            +svgUse(14,14,'icon-clock')
+                                            span.map-block__warning-text Сегодня работает до 19:00
+                                        .map-block__time пн-пт: 7:00-19:00
+                                        .map-block__time сб: 7:30-16:30
+                                        .map-block__time вс: 7:30-14:30
+                                        a.map-block__block-link(href="#") Перейти на страницу филиала
+                        .map-block__place(data-coords='55.7855135689638,37.665407499999944' data-color='#956DC8')
+                            .map-block__place-content
+                                .map-block__place-header
+                                    +svgUse(20,24,'icon-pin-filled')(style="fill: #956DC8;" class="map-block__place-icon")
+                                    .map-block__arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+                                    .map-block__place-city Москва
+                                    .map-block__metro-n-time
+                                        span.map-block__metro м. Жулебино
+                                        span.map-block__allday 24/7
+                                    .map-block__adress ул. Генерала Кузнецова, 19к1
+                                .map-block__extra-info
+                                    .map-block__extra-block
+                                        .map-block__extra-title Телефон для записи
+                                        a.map-block__phone(href='tel:+74951212578') +7 (495) 121-25-78
+                                    .map-block__extra-block
+                                        .map-block__warning
+                                            +svgUse(14,14,'icon-clock')
+                                            span.map-block__warning-text Сегодня работает до 19:00
+                                        .map-block__time пн-пт: 7:00-19:00
+                                        .map-block__time сб: 7:30-16:30
+                                        .map-block__time вс: 7:30-14:30
+                                        a.map-block__block-link(href="#") Перейти на страницу филиала
+                        .map-block__place(data-coords='55.7855135689638,37.665407499999944' data-color='#956DC8')
+                            .map-block__place-content
+                                .map-block__place-header
+                                    +svgUse(20,24,'icon-pin-filled')(style="fill: #956DC8;" class="map-block__place-icon")
+                                    .map-block__arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+                                    .map-block__place-city Москва
+                                    .map-block__metro-n-time
+                                        span.map-block__metro м. Жулебино
+                                        span.map-block__allday 24/7
+                                    .map-block__adress ул. Генерала Кузнецова, 19к1
+                                .map-block__extra-info
+                                    .map-block__extra-block
+                                        .map-block__extra-title Телефон для записи
+                                        a.map-block__phone(href='tel:+74951212578') +7 (495) 121-25-78
+                                    .map-block__extra-block
+                                        .map-block__warning
+                                            +svgUse(14,14,'icon-clock')
+                                            span.map-block__warning-text Сегодня работает до 19:00
+                                        .map-block__time пн-пт: 7:00-19:00
+                                        .map-block__time сб: 7:30-16:30
+                                        .map-block__time вс: 7:30-14:30
+                                        a.map-block__block-link(href="#") Перейти на страницу филиала
+                        .map-block__place(data-coords='55.75504906897486,37.798052999999925' data-color='#F35150')
+                            .map-block__place-content
+                                .map-block__place-header
+                                    +svgUse(20,24,'icon-pin-filled')(style="fill: #F35150;" class="map-block__place-icon")
+                                    .map-block__arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+                                    .map-block__place-city Москва
+                                    .map-block__metro-n-time
+                                        span.map-block__metro м. Жулебино
+                                        span.map-block__allday 24/7
+                                    .map-block__adress ул. Генерала Кузнецова, 19к1
+                                .map-block__extra-info
+                                    .map-block__extra-block
+                                        .map-block__extra-title Телефон для записи
+                                        a.map-block__phone(href='tel:+74951212578') +7 (495) 121-25-78
+                                    .map-block__extra-block
+                                        .map-block__warning
+                                            +svgUse(14,14,'icon-clock')
+                                            span.map-block__warning-text Сегодня работает до 19:00
+                                        .map-block__time пн-пт: 7:00-19:00
+                                        .map-block__time сб: 7:30-16:30
+                                        .map-block__time вс: 7:30-14:30
+                                        a.map-block__block-link(href="#") Перейти на страницу филиала
+                        .map-block__place(data-coords='55.61727106909726,37.715686499999975' data-color='#ED9121')
+                            .map-block__place-content
+                                .map-block__place-header
+                                    +svgUse(20,24,'icon-pin-filled')(style="fill: #ED9121;" class="map-block__place-icon")
+                                    .map-block__arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+                                    .map-block__place-city Москва
+                                    .map-block__metro-n-time
+                                        span.map-block__metro м. Жулебино
+                                        span.map-block__allday 24/7
+                                    .map-block__adress ул. Генерала Кузнецова, 19к1
+                                .map-block__extra-info
+                                    .map-block__extra-block
+                                        .map-block__extra-title Телефон для записи
+                                        a.map-block__phone(href='tel:+74951212578') +7 (495) 121-25-78
+                                    .map-block__extra-block
+                                        .map-block__warning
+                                            +svgUse(14,14,'icon-clock')
+                                            span.map-block__warning-text Сегодня работает до 19:00
+                                        .map-block__time пн-пт: 7:00-19:00
+                                        .map-block__time сб: 7:30-16:30
+                                        .map-block__time вс: 7:30-14:30
+                                        a.map-block__block-link(href="#") Перейти на страницу филиала
+                        .map-block__place(data-coords='55.71078306903988,37.654098' data-color='#9DCE09')
+                            .map-block__place-content
+                                .map-block__place-header
+                                    +svgUse(20,24,'icon-pin-filled')(style="fill: #9DCE09;" class="map-block__place-icon")
+                                    .map-block__arrow.svg-icon-arrow-down-s-colored.svg-icon-arrow-down-s-colored-dims
+                                    .map-block__place-city Москва
+                                    .map-block__metro-n-time
+                                        span.map-block__metro м. Жулебино
+                                        span.map-block__allday 24/7
+                                    .map-block__adress ул. Генерала Кузнецова, 19к1
+                                .map-block__extra-info
+                                    .map-block__extra-block
+                                        .map-block__extra-title Телефон для записи
+                                        a.map-block__phone(href='tel:+74951212578') +7 (495) 121-25-78
+                                    .map-block__extra-block
+                                        .map-block__warning
+                                            +svgUse(14,14,'icon-clock')
+                                            span.map-block__warning-text Сегодня работает до 19:00
+                                        .map-block__time пн-пт: 7:00-19:00
+                                        .map-block__time сб: 7:30-16:30
+                                        .map-block__time вс: 7:30-14:30
+                                        a.map-block__block-link(href="#") Перейти на страницу филиала
+                    .map-block__more-buttons
+                        button.map-block__more-button.button.button_stroke Показать еще
+                    .map-block__info
+                        +information({mod: 'small'})
+                .map-block__map-holder
+                    .map-block__map(id='map' style="width: 100%; height: 100%")

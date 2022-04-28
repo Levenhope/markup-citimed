@@ -1,10 +1,23 @@
-mixin information()
-    +b.SECTION.information
+mixin information(params)
+    - var isSmall = params&&params.mod=='small';
+    +b.SECTION.information(class=params&&params.mod?'_'+params.mod:'')
         .content-center
             +e.content
                 +e.icon-holder
-                    +svgUse(29, 26, 'icon-home')
+                    +svgUse(29, 26, 'icon-home')(class='information__icon')
                 +e.text-content.text-styles
-                    +e.title Не&nbsp;хотите или не&nbsp;можете приехать в&nbsp;медицинский центр?
-                    +e.text #[span.text-accent Мы сами приедем к&nbsp;Вам!] Сдавайте анализы в&nbsp;привычной домашней атмосфере!
-                +e.A.button.button.button_accent(href='#') Сдать анализы на дому
+                    +e.title
+                        if isSmall
+                            | Не нашли медцентр рядом?
+                        else
+                            | Не&nbsp;хотите или не&nbsp;можете приехать в&nbsp;медицинский центр?
+                    +e.text
+                        if isSmall
+                            | Закажите услугу "Выезд на дом"
+                        else
+                            | #[span.text-accent Мы сами приедем к&nbsp;Вам!] Сдавайте анализы в&nbsp;привычной домашней атмосфере!
+
+                if isSmall
+                    +e.A.link(href='#') Подробнее
+                else
+                    +e.A.button.button.button_accent(href='#') Сдать анализы на дому
