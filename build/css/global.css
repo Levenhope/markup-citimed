@@ -1446,6 +1446,9 @@ html[data-useragent*="Mac OS X"] .rub {
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
+.information__link:hover {
+  text-decoration: none;
+}
 
 .main-screen {
   position: relative;
@@ -1610,6 +1613,11 @@ html[data-useragent*="Mac OS X"] .rub {
 .map-block {
   margin: 90px 0 115px;
 }
+@media screen and (max-width: 768px) {
+  .map-block {
+    margin: 60px 0;
+  }
+}
 .map-block__heading {
   display: flex;
   align-items: center;
@@ -1625,7 +1633,7 @@ html[data-useragent*="Mac OS X"] .rub {
 .map-block__title {
   margin-bottom: 0;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .map-block__title {
     margin-bottom: 8px;
   }
@@ -1701,6 +1709,8 @@ html[data-useragent*="Mac OS X"] .rub {
   .map-block__content {
     padding: 0;
     border-bottom: 0;
+    height: auto;
+    max-height: none;
   }
 }
 .map-block__nav {
@@ -1719,7 +1729,7 @@ html[data-useragent*="Mac OS X"] .rub {
     margin-right: 0;
   }
   [data-active-tab=map] .map-block__nav {
-    opacity: 0;
+    background-color: rgba(14, 63, 96, 0);
     pointer-events: none;
   }
 }
@@ -1736,7 +1746,7 @@ html[data-useragent*="Mac OS X"] .rub {
     z-index: 1;
     top: 0;
     left: 0;
-    height: 100%;
+    height: calc(100vh - 210px);
   }
 }
 .map-block__place-list {
@@ -1764,11 +1774,25 @@ html[data-useragent*="Mac OS X"] .rub {
     max-height: none;
     padding-right: 0;
   }
+  [data-active-tab=map] .map-block__place-list {
+    opacity: 0;
+    pointer-events: none;
+    max-height: calc(100vh - 200px);
+    overflow: hidden;
+  }
 }
 .map-block__place {
   cursor: pointer;
   border-bottom: 1px solid rgba(87, 117, 143, 0.3);
   transition: background-color ease 0.35s;
+}
+@media screen and (max-width: 768px) {
+  .map-block__place:nth-child(n+7) {
+    display: none;
+  }
+  .is-show-all .map-block__place:nth-child(n+7) {
+    display: block;
+  }
 }
 .map-block__place-content {
   font-size: 13px;
@@ -1867,29 +1891,48 @@ html[data-useragent*="Mac OS X"] .rub {
   bottom: 0;
   display: block;
   margin: auto;
+  transition: transform ease 0.35s;
+}
+.is-active .map-block__arrow {
+  transform: rotate(180deg);
 }
 .map-block__map .map-block__arrow {
   display: none;
 }
 .map-block__more-buttons {
-  display: flex;
+  display: none;
+  margin: 20px auto;
+  gap: 10px;
   align-items: center;
   justify-content: center;
 }
-.map-block__more-button {
-  display: none;
-  margin: 20px auto;
-}
 @media screen and (max-width: 768px) {
-  .map-block__more-button {
-    display: block;
+  .map-block__more-buttons {
+    display: flex;
   }
+  [data-active-tab=map] .map-block__more-buttons, .is-show-all .map-block__more-buttons {
+    display: none;
+  }
+}
+.map-block__more-button {
+  display: block;
 }
 .map-block__block-link {
   text-decoration: underline;
 }
-.map-block [class$=-balloon__close-button] {
-  width: 40px;
+.map-block [class*="-balloon "] {
+  box-shadow: 0 5px 15px -7px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  background-color: #fff;
+}
+@media screen and (max-width: 768px) {
+  .map-block [class*="-balloon "] {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15), 0 5px 15px -7px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+  }
+}
+.map-block [class$=-balloon__layout], .map-block [class$=-balloon__content] {
+  background-color: rgba(14, 63, 96, 0);
 }
 .map-block [class$=-balloon__tail] {
   display: none;

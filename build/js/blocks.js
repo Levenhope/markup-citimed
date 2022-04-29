@@ -113,12 +113,14 @@ class MapBlock {
         this.initBlockAPI = this.initBlockAPI.bind(this);
         this.initToggle = this.initToggle.bind(this);
         this.setPlacemark = this.setPlacemark.bind(this);
+        this.initShowMoreBtn = this.initShowMoreBtn.bind(this);
     }
     init() {
         this.createMap();
         this.defaultPlacemarking(this.context.querySelectorAll('.map-block__place'));
         this.initBlockAPI();
         this.initToggle();
+        this.initShowMoreBtn();
     }
     initToggle() {
         let self = this;
@@ -128,6 +130,13 @@ class MapBlock {
                 self.context.dataset.activeTab = self.context.querySelector('input[name="map-switch"]:checked').value;
             });
         })
+    }
+    initShowMoreBtn() {
+        let self = this;
+        let showMoreBtn = this.context.querySelector('.map-block__more-button');
+        showMoreBtn.addEventListener('click', function(){
+            self.context.classList.add('is-show-all');
+        });
     }
     createMap(){
         this.map = new ymaps.Map("map", {
@@ -163,8 +172,9 @@ class MapBlock {
             },
             {
                 iconColor: mark.color,
-                balloonOffset: [0, -58],
+                balloonOffset: [90, -15],
                 hideIconOnBalloonOpen: false,
+                balloonCloseButton: false,
             }
         );
         this.collection.add(placemark);

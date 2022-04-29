@@ -117,7 +117,7 @@ function watchFiles(done) {
 	gulp.watch([paths.srcpages + '*.pug', paths.srcpages + '**/*.pug', paths.blocks + '**/*.pug'], buildHTML);
 	gulp.watch(paths.blocks + '**/*.js', concatBlockJs);
 	gulp.watch(paths.srcjs + '*.js', buildJs);
-	gulp.watch([paths.sass + '*.scss', paths.sass + '**/*.scss', paths.blocks + '**/*.scss'], buildSass).on('change', browserSync.reload);
+	gulp.watch([paths.sass + '*.scss', paths.sass + '**/*.scss', paths.blocks + '**/*.scss'], buildSass);
 }
 
 function sync(done) {
@@ -140,8 +140,8 @@ var build = gulp.parallel(
 		concatBlockJs,
 		buildHTML,
 		modifySvg,
-		watchFiles
 	),
+	watchFiles,
 	sync
 );
 

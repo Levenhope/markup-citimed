@@ -98,5 +98,8 @@
     font-size: 14px;
     line-height: 1.15;
     letter-spacing: 0.02em;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
