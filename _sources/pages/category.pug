@@ -1,0 +1,49 @@
+extends ./layouts/default
+include ../blocks/search-line/search-line
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/service-buttons/service-buttons
+include ../blocks/cards-block/cards-block
+include ../blocks/complex-selection/complex-selection
+include ../blocks/specials/specials
+include ../blocks/accordion/accordion
+include ../blocks/map-block/map-block
+include ../blocks/faq-block/faq-block
+include ../blocks/catalog-nav/catalog-nav
+include ../blocks/info-bar/info-bar
+include ../blocks/cart-panel/cart-panel
+include ../blocks/category-nav/category-nav
+include ../blocks/seo-tabs/seo-tabs
+include ../blocks/mobile-nav-holder/mobile-nav-holder
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Анализ крови'
+
+block content
+    main.page-content
+        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
+        +breadcrumbs({items:[{name: 'Главная', href: 'index.html'},{name: 'Анализы', href: 'catalog.html'}, {name: 'Анализ крови'}]})
+        .content-center
+            +b.page-cols
+                +e.title
+                    h1.h2= $pageTitle
+                +e.side-col
+                    .hide-mobile
+                        +catalog-nav()
+                        +info-bar()
+                        +cart-panel()
+                        +catalog-nav()
+                +e.main-col
+                    +category-nav()
+                    +service-buttons()
+                    +cards-block-compact()
+                    +cards-block-extra()
+                    +complex-selection({isCompact: true, wideFirst: true})
+                    .hide-desktop
+                        +info-bar()
+                        +mobile-nav-holder()
+                    +specials({isCompact: true})
+                    +accordion({mod: 'big'})
+                    +seo-tabs()
+        +map-block()
+        +faq-block()

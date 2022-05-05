@@ -33,12 +33,30 @@ mixin cards-block-compact(params)
     +b.SECTION.cards-block._compact
         +e.content
             +e.H2.title.h3 Популярные исследования
-            +e.list(data-compact=true)
-                +e.item
-                    +compact-card()
-                +e.item
-                    +compact-card()
-                +e.item
-                    +compact-card({added: true})
-                +e.item
-                    +compact-card({discount: true, limits: true})
+            +e.group
+                +e.H3.group-title.h4 Общий анализ крови
+                +e.list(data-compact=true)
+                    +e.item
+                        +compact-card()
+                    +e.item
+                        +compact-card()
+                    +e.item
+                        +compact-card({added: true})
+                    +e.item
+                        +compact-card({discount: true, limits: true})
+            +e.group
+                +e.H3.group-title.h4 Общий анализ крови
+                +e.list(data-compact=true)
+                    +e.item
+                        +compact-card()
+                    +e.item
+                        +compact-card()
+mixin cards-block-extra(params)
+    +b.SECTION.cards-block._compact
+        +e.content
+            +e.H2.title.h3 Группа крови и Резус-фактор
+            +e.group
+                +e.H3.group-title.h4 Общий анализ крови
+                +e.list(data-compact=true)
+                    +e.item
+                        +compact-card()

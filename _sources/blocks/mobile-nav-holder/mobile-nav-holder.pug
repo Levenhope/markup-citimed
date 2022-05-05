@@ -1,0 +1,15 @@
+include ../catalog-nav/catalog-nav
+mixin mobile-nav-holder()
+    +b.SECTION.mobile-nav-holder.tabs-holder
+        +e.A.link._light.tabs-link(href='javascript:;' data-target='#catalog-tab')
+            +e.icon-holder
+                +e.IMG.icon(src='../assets/img/catalog.svg' alt='')
+            +e.link-text Каталог анализов
+        +e.tab.tab(id='catalog-tab')
+            +catalog-nav()
+        +e.A.link._medium.tabs-link(href='javascript:;' data-target='#complex-tab')
+            +e.icon-holder
+                +e.IMG.icon(src='../assets/img/complexes.svg' alt='')
+            +e.link-text Комплексы анализов
+        +e.tab.tab(id='complex-tab')
+            +catalog-nav()

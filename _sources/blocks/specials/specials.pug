@@ -11,7 +11,7 @@ mixin specials(params)
         +specials-wrap(isCompact)
             +e.content.tabs-holder
                 if (!isCompact)
-                    +e.H2.title.h2.tabs-links #[a.is-active(data-target='#special-tab' href='javascript:;') Акции] и #[a(data-target='#news-tab' href='javascript:;') Новости]
+                    +e.H2.title._tabs-links.h2.tabs-links #[a.tabs-link.is-active(data-target='#special-tab' href='javascript:;') Акции] и #[a.tabs-link(data-target='#news-tab' href='javascript:;') Новости]
                 else
                     +e.H2.title.h3 Акции
                 +e.tabs

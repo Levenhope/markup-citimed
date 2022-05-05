@@ -40,6 +40,9 @@
     }
   }
   &__item {
+    &_wide {
+      grid-column: 1/3;
+    }
     @media #{$media-phone-landscape} {
       margin: 10px 0;
       &:nth-last-child(3) {

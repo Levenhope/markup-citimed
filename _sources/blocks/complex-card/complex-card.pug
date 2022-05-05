@@ -1,7 +1,10 @@
 mixin complex-card(params)
-    - var mod = params&&params.mod?params.mod:'';
-    +b.ARTICLE.complex-card(class=mod?'_'+mod:'')
-        if params && params.mod === 'big'
+    - var isBig = params&&params.isBig;
+    - var isWide = params&&params.isWide;
+    - var bigClass = isBig ? "complex-card_big" : "";
+    - var wideClass = isWide ? "complex-card_wide" : "";
+    +b.ARTICLE.complex-card(class=bigClass+' '+wideClass)
+        if isBig
             +e.header
                 +e.code 50.0.H139.900
                 +e.duration
@@ -9,7 +12,7 @@ mixin complex-card(params)
                     +e.duration-text 4 дня
         +e.content
             +e.A.title(href='#') Диагностика сосудистых заболеваний головного мозга
-            if params && params.mod==='big'
+            if isBig
                 +e.A.tip(href='#') Что входит в состав комплекса
             +e.footer
                 +e.price 4 600 #[span.rub ₽]

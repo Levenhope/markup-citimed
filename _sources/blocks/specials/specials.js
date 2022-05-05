@@ -81,7 +81,9 @@ $(function() {
             });
 
             window.addEventListener('tabActivation', function(event) {
-                $slider.slick('setPosition')
+                if ($slider.is('.slick-initialized')) {
+                    $slider.slick('setPosition');
+                }
             });
         }
     });

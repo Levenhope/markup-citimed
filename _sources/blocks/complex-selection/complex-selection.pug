@@ -13,18 +13,21 @@ mixin complex-selection(params)
                 +e.H2.title(class=isCompact?'h3':'h2') Популярные комплексы анализов
                 if isCompact
                     +e.list
-                        +e.item._big
+                        +e.item._big(class=params&&params.wideFirst?'_wide':'')
                             +complex-card({
                                 img: '../assets/img/complex-card-img.png',
                                 imgMob: '../assets/img/complex-card-img-mob.png',
-                                mod: 'big'
+                                isBig: true,
+                                isWide: true
                             })
-                        +e.item._big
-                            +complex-card({
-                                img: '../assets/img/complex-card-img.png',
-                                imgMob: '../assets/img/complex-card-img-mob.png',
-                                mod: 'big'
-                            })
+                        if (!(params&&params.wideFirst))
+                            +e.item._big
+                                +complex-card({
+                                    img: '../assets/img/complex-card-img.png',
+                                    imgMob: '../assets/img/complex-card-img-mob.png',
+                                    isBig: true,
+                                    isWide: true
+                                })
                     +e.list-compact
                         +e.item
                             +compact-card()
