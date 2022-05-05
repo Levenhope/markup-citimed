@@ -1,0 +1,20 @@
+mixin cart-panel()
+    +b.cart-panel
+        +e.header
+            +svgUse(30, 30, 'icon-cart')
+            +e.text
+                +e.title В корзине
+                +e.counter 2 исследования
+            +e.total 4 600 #[span.rub ₽]
+        +e.content
+            +e.UL.links
+                +e.LI.item
+                    +e.A.link(href='#') Каталог исследований
+                +e.LI.item
+                    +e.A.link(href='#') Акции и скидки
+                +e.LI.item
+                    +e.A.link(href='#') Адреса медицинских центров
+                +e.LI.item
+                    +e.A.link(href='#') Сдать анализы на дому
+            +e.buttons
+                a.button.button_white(href='#') Перейти в корзину

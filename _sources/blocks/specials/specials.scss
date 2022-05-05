@@ -2,8 +2,15 @@
   $self: &;
   margin: 90px 0;
   overflow: hidden;
+  .page-cols__main-col & {
+    margin: 50px 0 60px;
+  }
   @media #{$media-mobile} {
     margin: 60px 0;
+    .page-cols__main-col & {
+      margin: 30px -15px 60px;
+      padding: 0 15px;
+    }
   }
   &__content {
     position: relative;
@@ -20,17 +27,46 @@
   }
   &__list {
     margin: 0 -15px;
+    #{$self}_compact & {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      margin: 0;
+    }
     @media #{$media-mobile} {
       margin: 0 65px 15px -5px;
       .slick-list {
         overflow: visible;
       }
+      #{$self}_compact & {
+        margin: 0;
+      }
+    }
+    @media #{$media-phone} {
+      #{$self}_compact & {
+        display: block;
+        margin: 0 65px 15px -5px;
+      }
     }
   }
   &__item {
     margin: 0 15px;
+    #{$self}_compact & {
+      margin: 0;
+      &:nth-child(n+3) {
+        display: none;
+      }
+    }
     @media #{$media-mobile} {
       margin: 0 5px;
+    }
+    @media #{$media-phone} {
+      #{$self}_compact & {
+        margin: 0 5px;
+        &:nth-child(n+3) {
+          display: block;
+        }
+      }
     }
   }
   &__title {
@@ -50,6 +86,9 @@
       justify-content: center;
       flex-direction: row;
       margin-bottom: 0;
+      #{$self}_compact & {
+        margin-top: 30px;
+      }
     }
   }
   &__slider-nav {
@@ -58,11 +97,19 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    #{$self}_compact & {
+      display: none;
+    }
     @media #{$media-not-mobile} {
       margin-top: 35px;
     }
     @media #{$media-desktop} {
       justify-content: center;
+    }
+    @media #{$media-phone} {
+      #{$self}_compact & {
+        display: flex;
+      }
     }
   }
   &__slider-arrow {

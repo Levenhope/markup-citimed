@@ -1,0 +1,42 @@
+extends ./layouts/default
+include ../blocks/search-line/search-line
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/service-buttons/service-buttons
+include ../blocks/cards-block/cards-block
+include ../blocks/complex-selection/complex-selection
+include ../blocks/specials/specials
+include ../blocks/accordion/accordion
+include ../blocks/map-block/map-block
+include ../blocks/faq-block/faq-block
+include ../blocks/catalog-nav/catalog-nav
+include ../blocks/info-bar/info-bar
+include ../blocks/cart-panel/cart-panel
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Каталог'
+
+block content
+    main.page-content
+        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
+        +breadcrumbs({items:[{name: 'Главная', href: 'index.html'}, {name: 'Анализы на дому'}]})
+        .content-center
+            +b.page-cols
+                +e.title
+                    h1.h2= $pageTitle
+                +e.side-col
+                    +catalog-nav()
+                    .hide-mobile
+                        +info-bar()
+                        +cart-panel()
+                        +catalog-nav()
+                +e.main-col
+                    +service-buttons()
+                    +cards-block-compact()
+                    +complex-selection({isCompact: true})
+                    .hide-desktop
+                        +info-bar()
+                    +specials({isCompact: true})
+                    +accordion({mod: 'big'})
+        +map-block()
+        +faq-block()

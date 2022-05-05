@@ -44,7 +44,7 @@
             </svg></span><span class="icon-link__text">+7 (495) 121-25-78</span></a><a class="icon-link icon-link_icon-dark-mobile icon-link_no-text-mobile icon-link_text-uppercase page-header__search-icon" href="#"><span class="icon-link__icon-holder">
             <svg class="icon-link__icon" width="16" height="16">
               <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
-            </svg></span><span class="icon-link__text">Поиск анализов</span></a><a class="icon-link icon-link_text-uppercase is-hide-mobile" href="#"><span class="icon-link__icon-holder">
+            </svg></span><span class="icon-link__text">Поиск анализов</span></a><a class="icon-link icon-link_text-uppercase hide-mobile" href="#"><span class="icon-link__icon-holder">
             <svg class="icon-link__icon" width="16" height="20">
               <use xlink:href="./svg/symbol/sprite.svg#icon-doc"></use>
             </svg></span><span class="icon-link__text">Получить результат</span></a>
@@ -157,22 +157,24 @@
             </div>
             <div class="page-header__mobile-search-line">
               <div class="search-line search-line search-line_mobile-menu">
-                <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Поиск анализов" data-placeholder-mobile=""/>
-                  <button class="search-line__button search-line__button_reset" type="reset">
-                    <svg class="search-line__button-icon bvi-hide" width="14" height="14">
-                      <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
-                    </svg>
-                    <div class="search-line__reset-text bvi-show">Сбросить
-                    </div>
-                  </button>
-                  <button class="search-line__button search-line__button_submit" type="submit">
-                    <svg class="search-line__button-icon bvi-hide" width="18" height="18">
-                      <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
-                    </svg>
-                    <div class="search-line__submit-text bvi-show">Найти
-                    </div>
-                  </button>
-                </form>
+                <div class="search-line__content">
+                  <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Поиск анализов" data-placeholder-mobile=""/>
+                    <button class="search-line__button search-line__button_reset" type="reset">
+                      <svg class="search-line__button-icon bvi-hide" width="14" height="14">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                      </svg>
+                      <div class="search-line__reset-text bvi-show">Сбросить
+                      </div>
+                    </button>
+                    <button class="search-line__button search-line__button_submit" type="submit">
+                      <svg class="search-line__button-icon bvi-hide" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+                      </svg>
+                      <div class="search-line__submit-text bvi-show">Найти
+                      </div>
+                    </button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
@@ -191,41 +193,43 @@
             </div>
             <div class="main-screen__search">
               <div class="search-line search-line search-line_round">
-                <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Быстрый поиск нужного исследования..." data-placeholder-mobile="Поиск нужного исследования..."/>
-                  <button class="search-line__button search-line__button_reset" type="reset">
-                    <svg class="search-line__button-icon bvi-hide" width="14" height="14">
-                      <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
-                    </svg>
-                    <div class="search-line__reset-text bvi-show">Сбросить
+                <div class="search-line__content">
+                  <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Быстрый поиск нужного исследования..." data-placeholder-mobile="Поиск нужного исследования..."/>
+                    <button class="search-line__button search-line__button_reset" type="reset">
+                      <svg class="search-line__button-icon bvi-hide" width="14" height="14">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                      </svg>
+                      <div class="search-line__reset-text bvi-show">Сбросить
+                      </div>
+                    </button>
+                    <button class="search-line__button search-line__button_submit" type="submit">
+                      <svg class="search-line__button-icon bvi-hide" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+                      </svg>
+                      <div class="search-line__submit-text bvi-show">Найти
+                      </div>
+                    </button>
+                  </form>
+                  <div class="search-line__tags">
+                    <div class="search-line__tags-title">Часто ищут:
                     </div>
-                  </button>
-                  <button class="search-line__button search-line__button_submit" type="submit">
-                    <svg class="search-line__button-icon bvi-hide" width="18" height="18">
-                      <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
-                    </svg>
-                    <div class="search-line__submit-text bvi-show">Найти
-                    </div>
-                  </button>
-                </form>
-                <div class="search-line__tags">
-                  <div class="search-line__tags-title">Часто ищут:
+                    <ul class="search-line__tags-list">
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
+                      </li>
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">COVID-19</a>
+                      </li>
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">Диабет</a>
+                      </li>
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
+                      </li>
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">COVID-19</a>
+                      </li>
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">Диабет</a>
+                      </li>
+                      <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
+                      </li>
+                    </ul>
                   </div>
-                  <ul class="search-line__tags-list">
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
-                    </li>
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">COVID-19</a>
-                    </li>
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">Диабет</a>
-                    </li>
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
-                    </li>
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">COVID-19</a>
-                    </li>
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">Диабет</a>
-                    </li>
-                    <li class="search-line__tag-item"><a class="search-line__tag" href="#">клинический анализ крови</a>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>
@@ -557,7 +561,7 @@
                     <div class="accordion__item-heading">
                       <div class="accordion__item-heading-text">Анализы по органам и системам организма
                       </div>
-                      <svg class="accordion__toggle" width="22" height="22">
+                      <svg class="accordion__toggle" width="16" height="16">
                         <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
                       </svg>
                     </div>
@@ -572,7 +576,7 @@
                     <div class="accordion__item-heading">
                       <div class="accordion__item-heading-text">Анализы по органам и системам организма
                       </div>
-                      <svg class="accordion__toggle" width="22" height="22">
+                      <svg class="accordion__toggle" width="16" height="16">
                         <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
                       </svg>
                     </div>
@@ -587,7 +591,7 @@
                     <div class="accordion__item-heading">
                       <div class="accordion__item-heading-text">Анализы по органам и системам организма
                       </div>
-                      <svg class="accordion__toggle" width="22" height="22">
+                      <svg class="accordion__toggle" width="16" height="16">
                         <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
                       </svg>
                     </div>
@@ -1094,17 +1098,17 @@
             <div class="specials__tabs">
               <div class="specials__tab tab is-active" id="special-tab">
                 <div class="specials__list">
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
                 </div>
                 <div class="specials__slider-nav">
@@ -1124,17 +1128,17 @@
               </div>
               <div class="specials__tab tab" id="news-tab">
                 <div class="specials__list">
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
-                  <div class="specials__item"><a class="article-card"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                  <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img-1.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
                   </div>
                 </div>
                 <div class="specials__slider-nav">

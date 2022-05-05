@@ -1,12 +1,22 @@
 include ../article-card/article-card
-mixin specials()
-    +b.SECTION.specials
+mixin specials-wrap(isCompact)
+    if (!!isCompact)
+        block
+    else
         .content-center
+            block
+mixin specials(params)
+    - var isCompact = params&&params.isCompact;
+    +b.SECTION.specials(class=isCompact?'_compact':'')
+        +specials-wrap(isCompact)
             +e.content.tabs-holder
-                +e.H2.title.h2.tabs-links #[a.is-active(data-target='#special-tab' href='javascript:;') Акции] и #[a(data-target='#news-tab' href='javascript:;') Новости]
+                if (!isCompact)
+                    +e.H2.title.h2.tabs-links #[a.is-active(data-target='#special-tab' href='javascript:;') Акции] и #[a(data-target='#news-tab' href='javascript:;') Новости]
+                else
+                    +e.H2.title.h3 Акции
                 +e.tabs
                     +e.tab.tab.is-active(id='special-tab')
-                        +e.list
+                        +e.list(data-compact=isCompact)
                             +e.item
                                 +article-card({img: '../assets/img/article-card-img.jpg'})
                             +e.item
@@ -25,25 +35,26 @@ mixin specials()
                             +e.slider-pages
                             +e.BUTTON.slider-arrow.button._control._next
                                 +svgUse(10, 8, 'icon-arrow-down-s')
-                    +e.tab.tab(id='news-tab')
-                        +e.list
-                            +e.item
-                                +article-card({img: '../assets/img/article-card-img-1.jpg'})
-                            +e.item
-                                +article-card({img: '../assets/img/article-card-img-1.jpg'})
-                            +e.item
-                                +article-card({img: '../assets/img/article-card-img-1.jpg'})
-                            +e.item
-                                +article-card({img: '../assets/img/article-card-img-1.jpg'})
-                            +e.item
-                                +article-card({img: '../assets/img/article-card-img-1.jpg'})
-                            +e.item
-                                +article-card({img: '../assets/img/article-card-img-1.jpg'})
-                        +e.slider-nav
-                            +e.BUTTON.slider-arrow.button._control._prev
-                                +svgUse(10, 8, 'icon-arrow-down-s')
-                            +e.slider-pages
-                            +e.BUTTON.slider-arrow.button._control._next
-                                +svgUse(10, 8, 'icon-arrow-down-s')
+                    if (!isCompact)
+                        +e.tab.tab(id='news-tab')
+                            +e.list(data-compact=isCompact)
+                                +e.item
+                                    +article-card({img: '../assets/img/article-card-img-1.jpg'})
+                                +e.item
+                                    +article-card({img: '../assets/img/article-card-img-1.jpg'})
+                                +e.item
+                                    +article-card({img: '../assets/img/article-card-img-1.jpg'})
+                                +e.item
+                                    +article-card({img: '../assets/img/article-card-img-1.jpg'})
+                                +e.item
+                                    +article-card({img: '../assets/img/article-card-img-1.jpg'})
+                                +e.item
+                                    +article-card({img: '../assets/img/article-card-img-1.jpg'})
+                            +e.slider-nav
+                                +e.BUTTON.slider-arrow.button._control._prev
+                                    +svgUse(10, 8, 'icon-arrow-down-s')
+                                +e.slider-pages
+                                +e.BUTTON.slider-arrow.button._control._next
+                                    +svgUse(10, 8, 'icon-arrow-down-s')
                 +e.buttons
                     a.button.button_stroke(href='#') Все акции

@@ -1,0 +1,19 @@
+mixin service-buttons()
+    +b.service-buttons
+        +e.items
+            +e.A.item._map.button._two-lines(href='#')
+                +svgUse(22,28,'icon-pin')
+                +e.text
+                    +e.main-line Карта #[span.hide-desktop наших] медцентров
+                    +e.subline Работаем без выходных
+            +e.A.item._at-home.button._two-lines.hide-mobile(href='#')
+                +svgUse(29,26,'icon-home')
+                +e.text
+                    +e.main-line Сдать анализы на дому
+                    +e.subline Выезд 24/7
+            +e.A.item._call.button._two-lines.hide-mobile(href='tel:+74951212578')
+                +svgUse(31,25,'icon-call-time-colored')
+                +e.text
+                    +e.main-line +7 (495) 121-25-78
+                    +e.subline Круглосуточный колл-центр
+            +e.text-item.hide-desktop Вы можете сдать #[a(href='#') анализы с выездом на дом]

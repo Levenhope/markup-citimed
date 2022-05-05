@@ -1,6 +1,7 @@
 .button {
-  display: block;
+  display: flex;
   padding: 18px 32px;
+  justify-content: center;
   text-align: center;
   color: $color-secondary;
   font-size: 16px;
@@ -11,6 +12,11 @@
   border: 1px solid $transparent;
   box-shadow: none;
   transition: color ease .35s, background-color ease .35s, box-shadow ease .35s, border-color ease .35s;
+  svg {
+    display: block;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
   &:hover {
     text-decoration: none;
   }
@@ -33,7 +39,15 @@
       box-shadow: 0 0 4px rgba(243, 81, 80, 0.4);
     }
   }
+  &_white {
+    box-shadow: 0 2px 6px rgba(34, 87, 142, 0.17);
+    &:hover {
+      background-color: darken($color-white, .2);
+      box-shadow: 0 0 0 rgba(243, 81, 80, 0);
+    }
+  }
   &_control {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,10 +57,6 @@
     padding: 0;
     box-shadow: 0 2px 6px rgba(34, 87, 142, 0.15);
     border: 1px solid rgba(87, 117, 143, 0);
-    svg {
-      display: block;
-      fill: currentColor;
-    }
     &.slick-disabled, &:disabled, &.is-disabled {
       box-shadow: 0 0 0 rgba(34, 87, 142, 0);
       border-color: rgba(87, 117, 143, 0.29);
@@ -54,10 +64,39 @@
         fill: #57758F;
       }
     }
+    &.is-added {
+      background-color: $color-secondary;
+      > svg {
+        fill: $color-white;
+      }
+    }
     @media #{$media-not-mobile} {
       &:hover {
         box-shadow: 0 0 2px rgba(34, 87, 142, 0.15);
       }
+    }
+  }
+  &__remove {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: -5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 100%;
+    background-color: $color-white;
+    border: 1px solid rgba($color-text-light, .15);
+    > svg {
+      fill: $color-accent;
+    }
+    .is-added & {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
   &_prev {

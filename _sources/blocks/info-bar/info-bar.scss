@@ -1,0 +1,31 @@
+.info-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 15px 25px;
+  background: $color-white;
+  box-shadow: 0 3px 16px rgba(34, 87, 142, 0.13);
+  border-radius: 6px;
+  .page-cols__side-col & {
+    width: 100%;
+  }
+  .page-cols__main-col & {
+    margin: auto;
+  }
+  &__img-holder {
+    width: 40px;
+    flex-shrink: 0;
+  }
+  &__img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__text {
+    max-width: 240px;
+    font-weight: $font-weight-medium;
+    font-size: 13px;
+    line-height: 1.54;
+  }
+}

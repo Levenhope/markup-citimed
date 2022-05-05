@@ -1,0 +1,10 @@
+mixin breadcrumbs(params)
+    +b.breadcrumbs
+        .content-center
+            +e('ul').list
+                each item in params.items
+                    +e('li').item
+                        if item.href
+                            +e('a').link(href=item.href)= item.name
+                        else
+                            +e('span').link.is-current= item.name

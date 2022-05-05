@@ -2,15 +2,24 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px 25px;
+  .page-cols__main-col & {
+    grid-template-columns: repeat(3, 1fr);
+  }
   @media #{$media-tablet} {
     grid-template-columns: repeat(3, 1fr);
   }
   @media #{$media-phone-landscape} {
     grid-template-columns: repeat(2, 1fr);
+    .page-cols__main-col & {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   @media #{$media-phone} {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+    .page-cols__main-col & {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   &__section {
     position: relative;

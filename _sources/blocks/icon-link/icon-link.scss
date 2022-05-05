@@ -42,6 +42,9 @@
       text-transform: none;
       font-weight: $font-weight-normal;
     }
+    .page-footer & {
+      color: #2D4962;
+    }
     @media #{$media-mobile} {
       #{$self}__text_mobile + & {
         display: none;

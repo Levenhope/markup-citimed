@@ -3,6 +3,7 @@ $(function() {
     $('.cards-block').each(function() {
         let $context = $(this);
         let $slider = $('.cards-block__list', $context);
+        let isCompact = $slider.attr('data-compact');
         let options = {
             infinite: false,
             dots: true,
@@ -43,19 +44,21 @@ $(function() {
             let sliderListWidth = window.innerWidth>1024?'auto':parentWidth-45;
             $slider.width(sliderListWidth);
         }
-        $slider.on('init', function() {
-            sliderGridFix();
-        });
-
-        if (window.innerWidth < 1025) {
-            $slider.slick(options);
-        }
-        window.addEventListener('resize', function(event) {
-            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-                $slider.slick(options);
-            } else {
+        if (!isCompact) {
+            $slider.on('init', function() {
                 sliderGridFix();
+            });
+
+            if (window.innerWidth < 1025) {
+                $slider.slick(options);
             }
-        });
+            window.addEventListener('resize', function(event) {
+                if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                    $slider.slick(options);
+                } else {
+                    sliderGridFix();
+                }
+            });
+        }
     });
 });

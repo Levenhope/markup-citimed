@@ -101,11 +101,5 @@
   &__accordion {
     position: relative;
     z-index: 5;
-    background-color: $color-white;
-    box-shadow: 0 3px 10px rgba(0, 114, 232, 0.2);
-    padding: 20px 50px;
-    @media #{$media-mobile} {
-      padding: 10px 20px;
-    }
   }
 }

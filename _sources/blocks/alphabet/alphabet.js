@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function(){
     alphabets.forEach(function(alphabet){
         let items = Array.prototype.slice.call(alphabet.querySelectorAll('.alphabet__item'));
         let sortedItems = items.sort(function(a, b){
-            if(a.innerText<b.innerText) return -1;
-            if(a.innerText>b.innerText) return 1;
+            if(a.textContent<b.textContent) return -1;
+            if(a.textContent>b.textContent) return 1;
             return 0;
         });
         alphabet.innerHTML = '';

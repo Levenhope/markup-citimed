@@ -1,25 +1,56 @@
 include ../complex-card/complex-card
-mixin complex-selection()
-    +b.SECTION.complex-selection
+mixin complex-selection-wrap(isCompact)
+    if (!!isCompact)
+        block
+    else
         .content-center
+            block
+mixin complex-selection(params)
+    - var isCompact = params&&params.isCompact;
+    +b.SECTION.complex-selection(class=isCompact?'_compact':'')
+        +complex-selection-wrap(isCompact)
             +e.content
-                +e.H2.title.h2 Популярные комплексы анализов
-                +e.list
-                    +e.item._big
-                        +complex-card({img: '../assets/img/complex-card-img.png', imgMob: '../assets/img/complex-card-img-mob.png', mod: 'big'})
-                    +e.item._big
-                        +complex-card({img: '../assets/img/complex-card-img.png', imgMob: '../assets/img/complex-card-img-mob.png', mod: 'big'})
-                    +e.item
-                        +complex-card()
-                    +e.item
-                        +complex-card()
-                    +e.item
-                        +complex-card()
-                    +e.item
-                        +complex-card()
-                    +e.item
-                        +complex-card()
-                    +e.item
-                        +complex-card()
-                +e.buttons
-                    a.button.button_stroke(href='#') Все комплексы
+                +e.H2.title(class=isCompact?'h3':'h2') Популярные комплексы анализов
+                if isCompact
+                    +e.list
+                        +e.item._big
+                            +complex-card({
+                                img: '../assets/img/complex-card-img.png',
+                                imgMob: '../assets/img/complex-card-img-mob.png',
+                                mod: 'big'
+                            })
+                        +e.item._big
+                            +complex-card({
+                                img: '../assets/img/complex-card-img.png',
+                                imgMob: '../assets/img/complex-card-img-mob.png',
+                                mod: 'big'
+                            })
+                    +e.list-compact
+                        +e.item
+                            +compact-card()
+                        +e.item
+                            +compact-card()
+                        +e.item
+                            +compact-card()
+                        +e.item
+                            +compact-card()
+                else
+                    +e.list
+                        +e.item._big
+                            +complex-card({img: '../assets/img/complex-card-img.png', imgMob: '../assets/img/complex-card-img-mob.png', mod: 'big'})
+                        +e.item._big
+                            +complex-card({img: '../assets/img/complex-card-img.png', imgMob: '../assets/img/complex-card-img-mob.png', mod: 'big'})
+                        +e.item
+                            +complex-card()
+                        +e.item
+                            +complex-card()
+                        +e.item
+                            +complex-card()
+                        +e.item
+                            +complex-card()
+                        +e.item
+                            +complex-card()
+                        +e.item
+                            +complex-card()
+                    +e.buttons
+                        a.button.button_stroke(href='#') Все комплексы

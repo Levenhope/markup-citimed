@@ -97,12 +97,12 @@ body .nomargin {
 }
 
 @media #{$media-mobile} {
-	.is-hide-mobile {
+	.hide-mobile {
 		display: none !important;
 	}
 }
 @media #{$media-not-mobile} {
-	.is-hide-desktop {
+	.hide-desktop {
 		display: none !important;
 	}
 }

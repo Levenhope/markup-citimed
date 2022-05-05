@@ -1,0 +1,19 @@
+.page-cols {
+  @media #{$media-not-mobile} {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    grid-template-areas:
+            "title side"
+            "main side";
+    gap: 0 50px;
+    &__title {
+      grid-area: title;
+    }
+    &__main-col {
+      grid-area: main;
+    }
+    &__side-col {
+      grid-area: side;
+    }
+  }
+}

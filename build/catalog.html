@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="../assets/fonts/PTRouble/RUBSN.woff2" rel="preload" as="font">
+    <link rel="stylesheet" href="../assets/vendor/bvi/css/bvi.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/vendor/slick/slick.css" type="text/css">
+    <link rel="stylesheet" href="./svg/css/sprite.css" type="text/css">
+    <link href="./css/global.css" type="text/css" rel="stylesheet">
+    <script src="../assets/vendor/bvi/js/bvi.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../assets/vendor/slick/slick.min.js"></script>
+    <script src="../assets/vendor/sameheight/jquery.sameheight.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/blocks.js"></script>
+    <title>Citimed - Каталог</title>
+  </head>
+  <body class="page">
+    <header class="page-header">
+      <div class="page-header__top">
+        <div class="content-center">
+          <div class="page-header__container">
+            <button class="page-header__toggle">
+              <svg class="page-header__toggle-icon" width="16" height="20">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-mobile-menu"></use>
+              </svg>
+              <div class="page-header__toggle-text bvi-show">Меню
+              </div>
+            </button><a class="page-header__logo" href="/build/index.html">
+            <svg width="140" height="36">
+              <use xlink:href="./svg/symbol/sprite.svg#logo-header"></use>
+            </svg></a><a class="icon-link icon-link_icon-accent icon-link_text-secondary icon-link_no-text-mobile icon-link_text-uppercase" href="#"><span class="icon-link__icon-holder">
+            <svg class="icon-link__icon" width="16" height="20">
+              <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+            </svg></span><span class="icon-link__text">Адреса медицинских центров</span></a><a class="icon-link icon-link_icon-accent icon-link_icon-dark-mobile icon-link_text-bigger icon-link_no-brake icon-link_no-text-mobile" href="tel:+74951212578"><span class="icon-link__icon-holder">
+            <svg class="icon-link__icon" width="30" height="23">
+              <use xlink:href="./svg/symbol/sprite.svg#icon-call-time"></use>
+            </svg></span><span class="icon-link__text">+7 (495) 121-25-78</span></a><a class="icon-link icon-link_icon-dark-mobile icon-link_no-text-mobile icon-link_text-uppercase page-header__search-icon" href="#"><span class="icon-link__icon-holder">
+            <svg class="icon-link__icon" width="16" height="16">
+              <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+            </svg></span><span class="icon-link__text">Поиск анализов</span></a><a class="icon-link icon-link_text-uppercase hide-mobile" href="#"><span class="icon-link__icon-holder">
+            <svg class="icon-link__icon" width="16" height="20">
+              <use xlink:href="./svg/symbol/sprite.svg#icon-doc"></use>
+            </svg></span><span class="icon-link__text">Получить результат</span></a>
+            <div class="page-header__profile-holder">
+              <div class="profile-compact"><a class="profile-compact__link" href="javascript:;">
+                <svg class="profile-compact__icon" width="16" height="16">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-profile"></use>
+                </svg><span class="bvi-show">Меню профиля</span><span class="profile-compact__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></span></a>
+                <div class="profile-compact__dropdown">
+                </div>
+              </div>
+            </div>
+            <div class="page-header__cart-holder">
+              <div class="cart-compact"><a class="cart-compact__link" href="javascript:;">
+                <svg class="cart-compact__icon" width="20" height="20">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                </svg><span class="bvi-show">Корзина</span><span class="cart-compact__counter">12</span></a>
+                <div class="cart-compact__dropdown">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page-header__menu-holder">
+        <button class="page-header__toggle page-header__toggle_close">
+          <svg class="page-header__toggle-icon" width="16" height="16">
+            <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+          </svg>
+          <div class="page-header__toggle-text bvi-show">Закрыть меню
+          </div>
+        </button>
+        <nav class="top-menu">
+          <div class="content-center">
+            <ul class="top-menu__menu">
+              <li class="top-menu__menu-item is-parent"><a class="top-menu__menu-link" href="test-inner.html"><span class="top-menu__item-text">Анализы и цены</span></a>
+                <div class="top-menu__submenu-holder">
+                  <div class="content-center">
+                    <ul class="top-menu__submenu">
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Анализы крови</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Анализы на гормоны</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Аллергологические исследования</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Генодиагностика наследственных заболеваний</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Анализы мочи</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Онкомаркеры</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Диагностика инфекций</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Химико-токсикологические исследования</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Анализы кала</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Маркеры аутоиммунных заболеваний</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Микробиологические исследования</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Гистологические исследования</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Биохимические анализы</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Анализы на иммунный статуc</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Цитологические исследования</span></a>
+                      </li>
+                      <li class="top-menu__submenu-item"><a class="top-menu__submenu-link" href="test-inner.html"><span class="top-menu__subitem-text">Генетические исследования</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="test-inner.html"><span class="top-menu__item-text">Тесты на COVID-19</span></a>
+              </li>
+              <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="test-inner.html"><span class="top-menu__item-text">Комплексные исследования</span></a>
+              </li>
+              <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="test-inner.html"><span class="top-menu__item-text">Анализы на дому</span></a>
+              </li>
+              <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="test-inner.html">
+                <svg class="top-menu__link-icon" width="12" height="12">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-hot"></use>
+                </svg><span class="top-menu__item-text">Акции</span></a>
+              </li>
+              <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="test-inner.html"><span class="top-menu__item-text">О центре</span></a>
+              </li>
+              <li class="top-menu__menu-item"><a class="top-menu__menu-link" href="test-inner.html"><span class="top-menu__item-text">Другие медицинские услуги</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <div class="page-header__mobile-part">
+          <div class="content-center">
+            <div class="page-header__mobile-link"><a class="icon-link" href="#"><span class="icon-link__icon-holder">
+              <svg class="icon-link__icon" width="14" height="16">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-doc"></use>
+              </svg></span><span class="icon-link__text">Получить результат</span></a>
+            </div>
+            <div class="page-header__mobile-link"><a class="icon-link" href="#"><span class="icon-link__icon-holder">
+              <svg class="icon-link__icon" width="12" height="16">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+              </svg></span><span class="icon-link__text">Адреса медицинских центров</span></a>
+            </div>
+            <div class="page-header__mobile-link"><a class="icon-link icon-link_no-brake" href="tel:+74951212578"><span class="icon-link__icon-holder">
+              <svg class="icon-link__icon" width="26" height="23">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-call-time"></use>
+              </svg></span><span class="icon-link__text">+7 (495) 121-25-78</span></a>
+            </div>
+            <div class="page-header__mobile-search-line">
+              <div class="search-line search-line search-line_mobile-menu">
+                <div class="search-line__content">
+                  <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Поиск анализов" data-placeholder-mobile=""/>
+                    <button class="search-line__button search-line__button_reset" type="reset">
+                      <svg class="search-line__button-icon bvi-hide" width="14" height="14">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                      </svg>
+                      <div class="search-line__reset-text bvi-show">Сбросить
+                      </div>
+                    </button>
+                    <button class="search-line__button search-line__button_submit" type="submit">
+                      <svg class="search-line__button-icon bvi-hide" width="18" height="18">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+                      </svg>
+                      <div class="search-line__submit-text bvi-show">Найти
+                      </div>
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page-content">
+      <div class="search-line search-line search-line_panel">
+        <div class="search-line__content">
+          <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Быстрый поиск нужного исследования..." data-placeholder-mobile="Поиск нужного исследования..."/>
+            <button class="search-line__button search-line__button_reset" type="reset">
+              <svg class="search-line__button-icon bvi-hide" width="14" height="14">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+              </svg>
+              <div class="search-line__reset-text bvi-show">Сбросить
+              </div>
+            </button>
+            <button class="search-line__button search-line__button_submit" type="submit">
+              <svg class="search-line__button-icon bvi-hide" width="18" height="18">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
+              </svg>
+              <div class="search-line__submit-text bvi-show">Найти исследование
+              </div>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="breadcrumbs">
+        <div class="content-center">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a>
+            </li>
+            <li class="breadcrumbs__item"><span class="breadcrumbs__link is-current">Анализы на дому</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-center">
+        <div class="page-cols">
+          <div class="page-cols__title">
+            <h1 class="h2">Каталог</h1>
+          </div>
+          <div class="page-cols__side-col">
+            <div class="catalog-nav">
+              <div class="catalog-nav__group">
+                <div class="catalog-nav__group-title">
+                  <div class="catalog-nav__title-text">Часто ищут
+                  </div>
+                  <div class="catalog-nav__arrow">
+                  </div>
+                </div>
+                <ul class="catalog-nav__list">
+                  <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">COVID-19</span><span class="catalog-nav__link-counter">10</span></a>
+                  </li>
+                  <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">Исследование крови</span><span class="catalog-nav__link-counter">101</span></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="catalog-nav__group">
+                <div class="catalog-nav__group-title">
+                  <div class="catalog-nav__title-text">Анализ крови
+                  </div>
+                  <div class="catalog-nav__arrow">
+                  </div>
+                </div>
+                <ul class="catalog-nav__list">
+                  <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">Клинические анализы крови</span><span class="catalog-nav__link-counter">10</span></a>
+                  </li>
+                  <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">Группа крови и Резус-фактор</span><span class="catalog-nav__link-counter">101</span></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="hide-mobile">
+              <div class="info-bar">
+                <div class="info-bar__img-holder"><img class="info-bar__img" src="../assets/img/shot.svg" alt="" role="presentation"/>
+                </div>
+                <div class="info-bar__text">Стоимость анализов указана без&nbsp;учета взятия биоматериала
+                </div>
+              </div>
+              <div class="cart-panel">
+                <div class="cart-panel__header">
+                  <svg width="30" height="30">
+                    <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                  </svg>
+                  <div class="cart-panel__text">
+                    <div class="cart-panel__title">В корзине
+                    </div>
+                    <div class="cart-panel__counter">2 исследования
+                    </div>
+                  </div>
+                  <div class="cart-panel__total">4 600 <span class="rub">₽</span>
+                  </div>
+                </div>
+                <div class="cart-panel__content">
+                  <ul class="cart-panel__links">
+                    <li class="cart-panel__item"><a class="cart-panel__link" href="#">Каталог исследований</a>
+                    </li>
+                    <li class="cart-panel__item"><a class="cart-panel__link" href="#">Акции и скидки</a>
+                    </li>
+                    <li class="cart-panel__item"><a class="cart-panel__link" href="#">Адреса медицинских центров</a>
+                    </li>
+                    <li class="cart-panel__item"><a class="cart-panel__link" href="#">Сдать анализы на дому</a>
+                    </li>
+                  </ul>
+                  <div class="cart-panel__buttons"><a class="button button_white" href="#">Перейти в корзину</a>
+                  </div>
+                </div>
+              </div>
+              <div class="catalog-nav">
+                <div class="catalog-nav__group">
+                  <div class="catalog-nav__group-title">
+                    <div class="catalog-nav__title-text">Часто ищут
+                    </div>
+                    <div class="catalog-nav__arrow">
+                    </div>
+                  </div>
+                  <ul class="catalog-nav__list">
+                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">COVID-19</span><span class="catalog-nav__link-counter">10</span></a>
+                    </li>
+                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">Исследование крови</span><span class="catalog-nav__link-counter">101</span></a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="catalog-nav__group">
+                  <div class="catalog-nav__group-title">
+                    <div class="catalog-nav__title-text">Анализ крови
+                    </div>
+                    <div class="catalog-nav__arrow">
+                    </div>
+                  </div>
+                  <ul class="catalog-nav__list">
+                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">Клинические анализы крови</span><span class="catalog-nav__link-counter">10</span></a>
+                    </li>
+                    <li class="catalog-nav__item"><a class="catalog-nav__link" href="#"><span class="catalog-nav__link-name">Группа крови и Резус-фактор</span><span class="catalog-nav__link-counter">101</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-cols__main-col">
+            <div class="service-buttons">
+              <div class="service-buttons__items"><a class="service-buttons__item service-buttons__item_map button button_two-lines" href="#">
+                <svg width="22" height="28">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+                </svg><span class="service-buttons__text"><span class="service-buttons__main-line">Карта <span class="hide-desktop">наших</span> медцентров</span><span class="service-buttons__subline">Работаем без выходных</span></span></a><a class="service-buttons__item service-buttons__item_at-home button button_two-lines hide-mobile" href="#">
+                <svg width="29" height="26">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
+                </svg><span class="service-buttons__text"><span class="service-buttons__main-line">Сдать анализы на дому</span><span class="service-buttons__subline">Выезд 24/7</span></span></a><a class="service-buttons__item service-buttons__item_call button button_two-lines hide-mobile" href="tel:+74951212578">
+                <svg width="31" height="25">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-call-time-colored"></use>
+                </svg><span class="service-buttons__text"><span class="service-buttons__main-line">+7 (495) 121-25-78</span><span class="service-buttons__subline">Круглосуточный колл-центр</span></span></a>
+                <div class="service-buttons__text-item hide-desktop">Вы можете сдать <a href="#">анализы с выездом на дом</a>
+                </div>
+              </div>
+            </div>
+            <section class="cards-block cards-block_compact">
+              <div class="cards-block__content">
+                <h2 class="cards-block__title h3">Популярные исследования
+                </h2>
+                <div class="cards-block__list" data-compact="data-compact">
+                  <div class="cards-block__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cards-block__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cards-block__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control is-added">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="cards-block__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                          <div class="compact-card__note">Есть <a href="#">ограничения</a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price compact-card__price_discount">
+                          <div class="compact-card__old-price">3 600 <span class="rub">₽</span>
+                          </div>
+                          <div class="compact-card__current-price">2 600 <span class="rub">₽</span>
+                          </div>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="complex-selection complex-selection_compact">
+              <div class="complex-selection__content">
+                <h2 class="complex-selection__title h3">Популярные комплексы анализов
+                </h2>
+                <div class="complex-selection__list">
+                  <div class="complex-selection__item complex-selection__item_big">
+                    <article class="complex-card complex-card_big">
+                      <div class="complex-card__header">
+                        <div class="complex-card__code">50.0.H139.900
+                        </div>
+                        <div class="complex-card__duration">
+                          <svg class="complex-card__duration-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg>
+                          <div class="complex-card__duration-text">4 дня
+                          </div>
+                        </div>
+                      </div>
+                      <div class="complex-card__content"><a class="complex-card__title" href="#">Диагностика сосудистых заболеваний головного мозга</a><a class="complex-card__tip" href="#">Что входит в состав комплекса</a>
+                        <div class="complex-card__footer">
+                          <div class="complex-card__price">4 600 <span class="rub">₽</span>
+                          </div>
+                          <button class="complex-card__add button button button_control">
+                            <svg class="complex-card__add-icon" width="18" height="18">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="complex-card__img-holder">
+                        <picture class="complex-card__img"><source srcset="../assets/img/complex-card-img-mob.png" media="(max-width: 1024px)"/><img class="complex-card__img" src="../assets/img/complex-card-img.png" alt="" role="presentation"/>
+                        </picture>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="complex-selection__item complex-selection__item_big">
+                    <article class="complex-card complex-card_big">
+                      <div class="complex-card__header">
+                        <div class="complex-card__code">50.0.H139.900
+                        </div>
+                        <div class="complex-card__duration">
+                          <svg class="complex-card__duration-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg>
+                          <div class="complex-card__duration-text">4 дня
+                          </div>
+                        </div>
+                      </div>
+                      <div class="complex-card__content"><a class="complex-card__title" href="#">Диагностика сосудистых заболеваний головного мозга</a><a class="complex-card__tip" href="#">Что входит в состав комплекса</a>
+                        <div class="complex-card__footer">
+                          <div class="complex-card__price">4 600 <span class="rub">₽</span>
+                          </div>
+                          <button class="complex-card__add button button button_control">
+                            <svg class="complex-card__add-icon" width="18" height="18">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="complex-card__img-holder">
+                        <picture class="complex-card__img"><source srcset="../assets/img/complex-card-img-mob.png" media="(max-width: 1024px)"/><img class="complex-card__img" src="../assets/img/complex-card-img.png" alt="" role="presentation"/>
+                        </picture>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="complex-selection__list-compact">
+                  <div class="complex-selection__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="complex-selection__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="complex-selection__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="complex-selection__item">
+                    <article class="compact-card">
+                      <div class="compact-card__content">
+                        <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
+                        </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
+                        <div class="compact-card__content-bottom">
+                          <ul class="compact-card__tags">
+                            <li class="compact-card__tag">кровь с EDTA
+                            </li>
+                            <li class="compact-card__tag">количественный
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="compact-card__duration">
+                        <svg class="compact-card__duration-icon" width="18" height="18">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg>
+                        <div class="compact-card__duration-text">1 день
+                        </div>
+                      </div>
+                      <div class="compact-card__footer">
+                        <div class="compact-card__price">2 600 <span class="rub">₽</span>
+                        </div>
+                        <button class="compact-card__add button button button_control">
+                          <svg class="compact-card__add-icon" width="18" height="18">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
+                          </svg><span class="button__remove">
+                            <svg class="compact-card__remove-icon" width="7" height="7">
+                              <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                            </svg></span>
+                        </button>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="hide-desktop">
+              <div class="info-bar">
+                <div class="info-bar__img-holder"><img class="info-bar__img" src="../assets/img/shot.svg" alt="" role="presentation"/>
+                </div>
+                <div class="info-bar__text">Стоимость анализов указана без&nbsp;учета взятия биоматериала
+                </div>
+              </div>
+            </div>
+            <section class="specials specials_compact">
+              <div class="specials__content tabs-holder">
+                <h2 class="specials__title h3">Акции
+                </h2>
+                <div class="specials__tabs">
+                  <div class="specials__tab tab is-active" id="special-tab">
+                    <div class="specials__list" data-compact="data-compact">
+                      <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                      </div>
+                      <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                      </div>
+                      <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                      </div>
+                      <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                      </div>
+                      <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                      </div>
+                      <div class="specials__item"><a class="article-card" href="#"><span class="article-card__img-holder"><img class="article-card__img" src="../assets/img/article-card-img.jpg" alt="Cрочный ПЦР-тест на COVID-19 за 45 минут!" title=""/></span><span class="article-card__content"><span class="article-card__title">Cрочный ПЦР-тест на COVID-19 за 45 минут!</span><span class="article-card__text"><span class="article-card__desc">Только в филиалах у метро Киевская, Молодежная, Отрадное и в Одинцово срочный ПЦР-тест на COVID-19 -</span><span class="article-card__price text-accent"> 2 700&nbsp;руб</span></span></span></a>
+                      </div>
+                    </div>
+                    <div class="specials__slider-nav">
+                      <button class="specials__slider-arrow button button_control button_prev">
+                        <svg width="10" height="8">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-arrow-down-s"></use>
+                        </svg>
+                      </button>
+                      <div class="specials__slider-pages">
+                      </div>
+                      <button class="specials__slider-arrow button button_control button_next">
+                        <svg width="10" height="8">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-arrow-down-s"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="specials__buttons"><a class="button button_stroke" href="#">Все акции</a>
+                </div>
+              </div>
+            </section>
+            <section class="accordion accordion_big">
+              <ul class="accordion__list">
+                <li class="accordion__item">
+                  <div class="accordion__item-heading">
+                    <div class="accordion__item-heading-text">Анализы по органам и системам организма
+                    </div>
+                    <svg class="accordion__toggle" width="16" height="16">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                    </svg>
+                  </div>
+                  <div class="accordion__item-content">
+                    <section class="alphabet">
+                      <!--Принимает просто список тэгов А, далее сам через js сортирует, форматирует и маркирует
+                      --><a class="alphabet__item" href="#">Ю</a><a class="alphabet__item" href="#">Я</a><a class="alphabet__item" href="#">A</a><a class="alphabet__item" href="#">Иммунная система</a><a class="alphabet__item" href="#">Костная система</a><a class="alphabet__item" href="#">Желудочно-кишечный тракт</a><a class="alphabet__item" href="#">Костно-мышечная система</a><a class="alphabet__item" href="#">Кроветворение</a><a class="alphabet__item" href="#">Надпочечники</a><a class="alphabet__item" href="#">Нервная система</a><a class="alphabet__item" href="#">Обследование (чекап)</a><a class="alphabet__item" href="#">Паращитовидная железа</a><a class="alphabet__item" href="#">Печень</a><a class="alphabet__item" href="#">Поджелудочная железа</a><a class="alphabet__item" href="#">Почки</a><a class="alphabet__item" href="#">Предстательная железа</a><a class="alphabet__item" href="#">Репродуктивная система (половые гормоны)</a><a class="alphabet__item" href="#">Сердечно-сосудистая система</a><a class="alphabet__item" href="#">Система гемостаза (свертывание крови)</a><a class="alphabet__item" href="#">Суставы</a><a class="alphabet__item" href="#">Щитовидная железа</a>
+                    </section>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <div class="accordion__item-heading">
+                    <div class="accordion__item-heading-text">Анализы по органам и системам организма
+                    </div>
+                    <svg class="accordion__toggle" width="16" height="16">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                    </svg>
+                  </div>
+                  <div class="accordion__item-content">
+                    <section class="alphabet">
+                      <!--Принимает просто список тэгов А, далее сам через js сортирует, форматирует и маркирует
+                      --><a class="alphabet__item" href="#">Ю</a><a class="alphabet__item" href="#">Я</a><a class="alphabet__item" href="#">A</a><a class="alphabet__item" href="#">Иммунная система</a><a class="alphabet__item" href="#">Костная система</a><a class="alphabet__item" href="#">Желудочно-кишечный тракт</a><a class="alphabet__item" href="#">Костно-мышечная система</a><a class="alphabet__item" href="#">Кроветворение</a><a class="alphabet__item" href="#">Надпочечники</a><a class="alphabet__item" href="#">Нервная система</a><a class="alphabet__item" href="#">Обследование (чекап)</a><a class="alphabet__item" href="#">Паращитовидная железа</a><a class="alphabet__item" href="#">Печень</a><a class="alphabet__item" href="#">Поджелудочная железа</a><a class="alphabet__item" href="#">Почки</a><a class="alphabet__item" href="#">Предстательная железа</a><a class="alphabet__item" href="#">Репродуктивная система (половые гормоны)</a><a class="alphabet__item" href="#">Сердечно-сосудистая система</a><a class="alphabet__item" href="#">Система гемостаза (свертывание крови)</a><a class="alphabet__item" href="#">Суставы</a><a class="alphabet__item" href="#">Щитовидная железа</a>
+                    </section>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <div class="accordion__item-heading">
+                    <div class="accordion__item-heading-text">Анализы по органам и системам организма
+                    </div>
+                    <svg class="accordion__toggle" width="16" height="16">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                    </svg>
+                  </div>
+                  <div class="accordion__item-content">
+                    <section class="alphabet">
+                      <!--Принимает просто список тэгов А, далее сам через js сортирует, форматирует и маркирует
+                      --><a class="alphabet__item" href="#">Ю</a><a class="alphabet__item" href="#">Я</a><a class="alphabet__item" href="#">A</a><a class="alphabet__item" href="#">Иммунная система</a><a class="alphabet__item" href="#">Костная система</a><a class="alphabet__item" href="#">Желудочно-кишечный тракт</a><a class="alphabet__item" href="#">Костно-мышечная система</a><a class="alphabet__item" href="#">Кроветворение</a><a class="alphabet__item" href="#">Надпочечники</a><a class="alphabet__item" href="#">Нервная система</a><a class="alphabet__item" href="#">Обследование (чекап)</a><a class="alphabet__item" href="#">Паращитовидная железа</a><a class="alphabet__item" href="#">Печень</a><a class="alphabet__item" href="#">Поджелудочная железа</a><a class="alphabet__item" href="#">Почки</a><a class="alphabet__item" href="#">Предстательная железа</a><a class="alphabet__item" href="#">Репродуктивная система (половые гормоны)</a><a class="alphabet__item" href="#">Сердечно-сосудистая система</a><a class="alphabet__item" href="#">Система гемостаза (свертывание крови)</a><a class="alphabet__item" href="#">Суставы</a><a class="alphabet__item" href="#">Щитовидная железа</a>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+      <section class="map-block">
+        <div class="content-center">
+          <div class="map-block__heading">
+            <h2 class="h2 map-block__title">Адреса медицинских центров</h2>
+            <div class="map-block__counter">
+              <svg width="22" height="28">
+                <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+              </svg>
+              <div class="map-block__counter-number">34 филиала</div>
+              <div class="map-block__counter-text">в Москве и Московской области</div>
+            </div>
+          </div>
+          <form class="map-block__switch">
+            <label class="map-block__switch-item">
+              <input class="map-block__switch-radio" type="radio" name="map-switch" value="list" checked="checked"/>
+              <div class="map-block__switch-text">Списком</div>
+            </label>
+            <label class="map-block__switch-item">
+              <input class="map-block__switch-radio" type="radio" name="map-switch" value="map"/>
+              <div class="map-block__switch-text">На карте</div>
+            </label>
+          </form>
+          <div class="map-block__content">
+            <div class="map-block__nav">
+              <div class="map-block__place-list">
+                <div class="map-block__place" data-coords="55.81060670847578,37.382617280311756" data-color="#9a0937">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #9a0937;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-block__place" data-coords="55.93808256881881,37.31405849999992" data-color="#d3790d">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #d3790d;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-block__place" data-coords="55.7855135689638,37.665407499999944" data-color="#956DC8">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #956DC8;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-block__place" data-coords="55.75504906897486,37.798052999999925" data-color="#F35150">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #F35150;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-block__place" data-coords="55.61727106909726,37.715686499999975" data-color="#ED9121">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #ED9121;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-block__place" data-coords="55.71078306903988,37.654098" data-color="#9DCE09">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #9DCE09;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="map-block__place" data-coords="55.75504906897486,37.798052999999925" data-color="#09ceb7">
+                  <div class="map-block__place-content">
+                    <div class="map-block__place-header">
+                      <svg class="map-block__place-icon" width="20" height="24" style="fill: #09ceb7;">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                      </svg>
+                      <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                      <div class="map-block__place-city">Москва</div>
+                      <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                      <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                    </div>
+                    <div class="map-block__extra-info">
+                      <div class="map-block__extra-block">
+                        <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                      </div>
+                      <div class="map-block__extra-block">
+                        <div class="map-block__warning">
+                          <svg width="14" height="14">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                          </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                        </div>
+                        <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                        <div class="map-block__time">сб: 7:30-16:30</div>
+                        <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__more-buttons">
+                <button class="map-block__more-button button button_stroke">Показать еще</button>
+              </div>
+              <div class="map-block__info">
+                <section class="information information_small">
+                  <div class="content-center">
+                    <div class="information__content">
+                      <div class="information__icon-holder">
+                        <svg class="information__icon" width="29" height="26">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
+                        </svg>
+                      </div>
+                      <div class="information__text-content text-styles">
+                        <div class="information__title">Не нашли медцентр рядом?
+                        </div>
+                        <div class="information__text">Закажите услугу "Выезд на дом"
+                        </div>
+                      </div><a class="information__link" href="#">Подробнее</a>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="map-block__map-holder">
+              <div class="map-block__map" id="map" style="width: 100%; height: 100%"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="faq-block">
+        <div class="content-center">
+          <h2 class="faq-block__title h3">Как узнать результаты анализов
+          </h2>
+          <div class="faq-block__accordion">
+            <section class="accordion">
+              <ul class="accordion__list">
+                <li class="accordion__item">
+                  <div class="accordion__item-heading">
+                    <svg class="accordion__arrow" width="18" height="11">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-arrow-down-s"></use>
+                    </svg>
+                    <div class="accordion__item-heading-text">В личном кабинете пациента
+                    </div>
+                  </div>
+                  <div class="accordion__item-content">
+                    <p>В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.</p>
+                    <p><a href="#">Войти в кабинет</a></p>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <div class="accordion__item-heading">
+                    <svg class="accordion__arrow" width="18" height="11">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-arrow-down-s"></use>
+                    </svg>
+                    <div class="accordion__item-heading-text">В личном кабинете пациента
+                    </div>
+                  </div>
+                  <div class="accordion__item-content">
+                    <p>В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.</p>
+                    <p><a href="#">Войти в кабинет</a></p>
+                  </div>
+                </li>
+                <li class="accordion__item">
+                  <div class="accordion__item-heading">
+                    <svg class="accordion__arrow" width="18" height="11">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-arrow-down-s"></use>
+                    </svg>
+                    <div class="accordion__item-heading-text">В личном кабинете пациента
+                    </div>
+                  </div>
+                  <div class="accordion__item-content">
+                    <p>В личном кабинете результаты анализов появляются сразу же, как только они готовы. А еще там хранится архив результатов.</p>
+                    <p><a href="#">Войти в кабинет</a></p>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="content-center">
+        <div class="page-footer__container">
+          <div class="page-footer__grid">
+            <div class="page-footer__logo-holder">
+              <svg class="page-footer__logo" width="253" height="60">
+                <use xlink:href="./svg/symbol/sprite.svg#logo-footer"></use>
+              </svg>
+            </div>
+            <div class="page-footer__nav">
+              <div class="page-footer__menu">
+                <div class="footer-menu">
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item footer-menu__item footer-menu__item_title"><a class="footer-menu__link footer-menu__toggle" href="test-inner.html">О центре<span class="footer-menu__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></span></a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">О нас</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Лицензии</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Акции</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Новости</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="page-footer__menu">
+                <div class="footer-menu">
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item footer-menu__item footer-menu__item_title"><a class="footer-menu__link footer-menu__toggle" href="test-inner.html">Анализы и цены<span class="footer-menu__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></span></a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Каталог анализов</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Анализы на дому</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Информация об оплате</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Результаты анализов</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="page-footer__menu">
+                <div class="footer-menu">
+                  <ul class="footer-menu__list">
+                    <li class="footer-menu__item footer-menu__item footer-menu__item_title"><a class="footer-menu__link footer-menu__toggle" href="test-inner.html">Другие услуги<span class="footer-menu__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></span></a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Медицинские справки</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Медицинские книжки</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Профосмотры</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">Диагностика</a>
+                    </li>
+                    <li class="footer-menu__item"><a class="footer-menu__link" href="test-inner.html">СанОбработка</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="page-footer__contacts">
+              <div class="footer-menu footer-menu footer-menu_single">
+                <ul class="footer-menu__list">
+                  <li class="footer-menu__item footer-menu__item footer-menu__item_title"><a class="footer-menu__link" href="test-inner.html">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="page-footer__phone"><a class="icon-link icon-link_icon-accent icon-link_text-bigger icon-link_no-brake" href="tel:+74951212578"><span class="icon-link__icon-holder">
+                <svg class="icon-link__icon" width="30" height="23">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-call-time"></use>
+                </svg></span><span class="icon-link__text">+7 (495) 121-25-78</span></a>
+              </div>
+              <div class="page-footer__work-hours">
+                <div class="page-footer__work-hours-line">Время работы колл-центра:
+                </div>
+                <div class="page-footer__work-hours-line">Пн-Вс:&nbsp;<b>Круглосуточно</b>
+                </div>
+              </div><a class="page-footer__places-link" href="#">Адреса медцентров</a>
+            </div>
+            <div class="page-footer__social">
+              <div class="page-footer__social-links">
+                <div class="page-footer__social-title">Присоединяйтесь к нам:
+                </div>
+                <ul class="page-footer__social-list">
+                  <li class="page-footer__social-item"><a class="page-footer__social-link" href="" target="_blank">
+                    <div class="bvi-show">Telegram</div>
+                    <div class="bvi-hide">
+                      <svg width="20" height="20">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-telegram"></use>
+                      </svg>
+                    </div></a>
+                  </li>
+                  <li class="page-footer__social-item"><a class="page-footer__social-link" href="" target="_blank">
+                    <div class="bvi-show">ВКонтакте</div>
+                    <div class="bvi-hide">
+                      <svg width="24" height="20">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-vk"></use>
+                      </svg>
+                    </div></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="page-footer__social-help"><a class="icon-link icon-link_text-smaller bvi-open" href="#"><span class="icon-link__icon-holder">
+                <svg class="icon-link__icon" width="25" height="16">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-eye"></use>
+                </svg></span><span class="icon-link__text">Версия для слабовидящих</span></a>
+              </div>
+            </div>
+            <div class="page-footer__bottom">
+              <div class="page-footer__copyright"><span class="page-footer__copyright-text">© 2022 СитиМед. Все права защищены</span><a class="page-footer__policy" href="#">Политика конфиденциальности</a>
+              </div><a class="page-footer__dev-holder" href="/" target="_blank"><img class="page-footer__dev-img" src="../assets/img/logo-dev.svg" alt="Webolution" title=""/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

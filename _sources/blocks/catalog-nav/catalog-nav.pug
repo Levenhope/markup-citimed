@@ -1,0 +1,28 @@
+mixin catalog-nav()
+    +b.catalog-nav
+        +e.group
+            +e.group-title
+                +e.title-text Часто ищут
+                +e.arrow
+            +e.UL.list
+                +e.LI.item
+                    +e.A.link(href="#")
+                        +e.link-name COVID-19
+                        +e.link-counter 10
+                +e.LI.item
+                    +e.A.link(href="#")
+                        +e.link-name Исследование крови
+                        +e.link-counter 101
+        +e.group
+            +e.group-title
+                +e.title-text Анализ крови
+                +e.arrow
+            +e.UL.list
+                +e.LI.item
+                    +e.A.link(href="#")
+                        +e.link-name Клинические анализы крови
+                        +e.link-counter 10
+                +e.LI.item
+                    +e.A.link(href="#")
+                        +e.link-name Группа крови и Резус-фактор
+                        +e.link-counter 101

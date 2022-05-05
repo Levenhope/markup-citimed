@@ -1,0 +1,98 @@
+.catalog-nav {
+  margin: 20px 0;
+  padding: 20px 30px 35px;
+  background-color: $color-bg-light;
+  @media #{$media-mobile} {
+    margin-bottom: 30px;
+    padding: 0;
+    background-color: $transparent;
+  }
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 25px;
+      padding-bottom: 35px;
+      border-bottom: 1px dashed $color-border-dotted;
+      @media #{$media-mobile} {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+    @media #{$media-mobile} {
+      border-bottom: 1px dashed $color-border-dotted;
+      transition: padding ease-out .35s;
+      &.is-open {
+        padding-bottom: 20px;
+      }
+      &:first-child {
+        border-top: 1px dashed $color-border-dotted;
+      }
+    }
+  }
+  &__list {
+    @media #{$media-mobile} {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height ease-out .35s;
+      .is-open & {
+        max-height: 10000px;
+      }
+    }
+  }
+  &__arrow {
+    display: none;
+    @media #{$media-mobile} {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 7px;
+      height: 7px;
+      margin: auto;
+      opacity: .84;
+      border: 1px solid $color-secondary;
+      border-width: 0 1px 1px 0;
+      transform: rotate(-45deg);
+      transition: transform ease .35s;
+      .is-open & {
+        transform: rotate(45deg);
+      }
+    }
+  }
+  &__group-title {
+    position: relative;
+    margin-bottom: 9px;
+    font-weight: $font-weight-medium;
+    font-size: 16px;
+    line-height: 1.38;
+    @media #{$media-mobile} {
+      margin-bottom: 0;
+      padding: 20px 0;
+      font-weight: $font-weight-normal;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: $color-text-light;
+    &:hover {
+      text-decoration: none;
+      color: $color-secondary;
+    }
+    @media #{$media-mobile} {
+      display: block;
+    }
+  }
+  &__link-name {
+    @media #{$media-mobile} {
+      color: $color-secondary;
+      margin-right: .2em;
+    }
+  }
+}

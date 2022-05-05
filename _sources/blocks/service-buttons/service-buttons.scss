@@ -1,0 +1,94 @@
+.service-buttons {
+  $self: &;
+  &__items {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    @media #{$media-mobile} {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    padding: 10px 23px;
+    text-align: left;
+    svg {
+      margin-right: 15px;
+    }
+    &_map {
+      @media #{$media-mobile} {
+        color: $color-black;
+        background-color: $color-bg-light;
+        svg {
+          width: 15px;
+          fill: $color-accent;
+        }
+      }
+      @media #{$media-not-mobile} {
+        color: $color-white;
+        background-color: #2B95E4;
+      }
+    }
+    &_at-home {
+      background-color: #F4F8FD;
+      svg {
+        fill: $color-accent;
+      }
+    }
+    &_call {
+      padding-top: 3px;
+      padding-bottom: 3px;
+      svg {
+        margin-right: 0;
+        margin-top: -3px;
+      }
+    }
+  }
+  &__main-line {
+    display: block;
+    margin-bottom: 2px;
+    color: $color-text;
+    font-weight: $font-weight-medium;
+    font-size: 13px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    #{$self}__item_map & {
+      color: inherit;
+    }
+    #{$self}__item_call & {
+      white-space: nowrap;
+      font-size: 18px;
+      letter-spacing: initial;
+    }
+    @media #{$media-mobile} {
+      font-weight: $font-weight-semibold;
+      font-size: 12px;
+    }
+  }
+  &__subline {
+    display: block;
+    font-size: 13px;
+    color: $color-text-light;
+    #{$self}__item_map & {
+      color: $color-text-light-white;
+      @media #{$media-mobile} {
+        color: $color-text-light;
+      }
+    }
+    #{$self}__item_call & {
+      margin-left: -25px;
+      text-align: right;
+    }
+    @media #{$media-mobile} {
+      font-size: 11px;
+    }
+  }
+  &__text-item {
+    margin: 15px -3px;
+    font-size: 13px;
+    a {
+      color: $color-accent;
+      text-decoration: underline;
+    }
+  }
+}
