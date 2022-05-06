@@ -1,0 +1,23 @@
+.tags {
+  margin-bottom: 30px;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__tag {
+    display: flex;
+    font-size: 15px;
+    line-height: 1.7;
+    color: $color-secondary-medium;
+    &:after {
+      content: '|';
+      margin: 0 .4rem;
+    }
+    &:last-child:after {
+      display: none;
+    }
+    @media #{$media-mobile} {
+      font-size: 12px;
+    }
+  }
+}

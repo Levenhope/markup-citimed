@@ -1,0 +1,87 @@
+.detail-control {
+  margin-bottom: 30px;
+  padding: 35px 35px 40px;
+  background: $color-bg-light;
+  border-radius: 3px;
+  @media #{$media-phone} {
+    padding: 20px;
+  }
+  &__block {
+    padding: 20px 0 12px;
+    border-bottom: 1px dashed rgba($color-border-dotted, .17);
+    @media #{$media-phone} {
+      padding-bottom: 10px;
+      &_info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+    }
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  &__code {
+    font-size: 14px;
+  }
+  &__code-number {
+    color: $color-text-light;
+  }
+  &__price {
+    margin-bottom: 15px;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: $font-weight-medium;
+    @media #{$media-phone} {
+      font-size: 22px;
+      margin-bottom: 3px;
+    }
+  }
+  &__extra-item {
+    margin-bottom: 5px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__extra-price {
+    margin-right: 15px;
+    font-weight: $font-weight-medium;
+    font-size: 16px;
+  }
+  &__extra-name {
+    display: inline-flex;
+    align-items: center;
+    margin-right: .2em;
+    font-size: 14px;
+    color: $color-text-light;
+  }
+  &__info-item {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.47;
+    svg {
+      flex-shrink: 0;
+      margin-right: 15px;
+      margin-bottom: 4px;
+      display: inline-block;
+      fill: $color-black;
+    }
+    @media #{$media-phone} {
+      align-items: flex-start;
+      max-width: 130px;
+    }
+  }
+  &__info-content {
+  }
+  &__info-title {
+    font-size: 13px;
+    color: rgba(87, 117, 143, 0.5);
+  }
+}

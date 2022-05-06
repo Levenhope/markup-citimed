@@ -1,0 +1,39 @@
+.info-tip {
+  position: relative;
+  display: inline-flex;
+  margin-left: 0.2em;
+  &__toggle {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    border-radius: 100%;
+    border: 1.5px solid $color-secondary;
+    &:before {
+      content: '!';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      line-height: 14px;
+      font-size: 12px;
+      text-align: center;
+      color: $color-secondary;
+    }
+  }
+  &__modal {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    padding: 20px;
+    background-color: $color-white;
+    border-radius: 3px;
+    box-shadow: $shadow;
+    display: none;
+    :hover > & {
+      display: block;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 .svg-icon-arrow-down-s {
-	background: url("sprite-0feaa6bc.svg") 93.67521367521367% 23.24159021406728% no-repeat;
+	background: url("sprite-27acf631.svg") 93.67521367521367% 23.24159021406728% no-repeat;
 }
 
 .svg-icon-arrow-down-s-dims {
@@ -8,7 +8,7 @@
 }
 
 .svg-icon-arrow-down-s-colored {
-	background: url("sprite-0feaa6bc.svg") 95.38461538461539% 23.24159021406728% no-repeat;
+	background: url("sprite-27acf631.svg") 95.38461538461539% 23.24159021406728% no-repeat;
 }
 
 .svg-icon-arrow-down-s-colored-dims {
@@ -17,7 +17,7 @@
 }
 
 .svg-icon-call-time {
-	background: url("sprite-0feaa6bc.svg") 86.3716814159292% 19.35483870967742% no-repeat;
+	background: url("sprite-27acf631.svg") 86.3716814159292% 19.35483870967742% no-repeat;
 }
 
 .svg-icon-call-time-dims {
@@ -26,7 +26,7 @@
 }
 
 .svg-icon-call-time-colored {
-	background: url("sprite-0feaa6bc.svg") 91.68141592920354% 19.35483870967742% no-repeat;
+	background: url("sprite-27acf631.svg") 91.68141592920354% 19.35483870967742% no-repeat;
 }
 
 .svg-icon-call-time-colored-dims {
@@ -35,7 +35,7 @@
 }
 
 .svg-icon-cart {
-	background: url("sprite-0feaa6bc.svg") 64% 40.12738853503185% no-repeat;
+	background: url("sprite-27acf631.svg") 64% 40.12738853503185% no-repeat;
 }
 
 .svg-icon-cart-dims {
@@ -44,7 +44,7 @@
 }
 
 .svg-icon-clock {
-	background: url("sprite-0feaa6bc.svg") 67.24436741767764% 40% no-repeat;
+	background: url("sprite-27acf631.svg") 70.7105719237435% 40% no-repeat;
 }
 
 .svg-icon-clock-dims {
@@ -53,7 +53,7 @@
 }
 
 .svg-icon-close {
-	background: url("sprite-0feaa6bc.svg") 70.12089810017271% 39.74763406940063% no-repeat;
+	background: url("sprite-27acf631.svg") 73.57512953367876% 39.74763406940063% no-repeat;
 }
 
 .svg-icon-close-dims {
@@ -62,7 +62,7 @@
 }
 
 .svg-icon-doc {
-	background: url("sprite-0feaa6bc.svg") 59.067357512953365% 48.56230031948882% no-repeat;
+	background: url("sprite-27acf631.svg") 59.067357512953365% 48.56230031948882% no-repeat;
 }
 
 .svg-icon-doc-dims {
@@ -71,7 +71,7 @@
 }
 
 .svg-icon-eye {
-	background: url("sprite-0feaa6bc.svg") 96.14035087719299% 18.92744479495268% no-repeat;
+	background: url("sprite-27acf631.svg") 96.14035087719299% 18.92744479495268% no-repeat;
 }
 
 .svg-icon-eye-dims {
@@ -80,7 +80,7 @@
 }
 
 .svg-icon-home {
-	background: url("sprite-0feaa6bc.svg") 85.00881834215167% 28.896103896103895% no-repeat;
+	background: url("sprite-27acf631.svg") 85.00881834215167% 28.896103896103895% no-repeat;
 }
 
 .svg-icon-home-dims {
@@ -88,8 +88,17 @@
 	height: 25px;
 }
 
+.svg-icon-home-small {
+	background: url("sprite-27acf631.svg") 67.47826086956522% 40.12738853503185% no-repeat;
+}
+
+.svg-icon-home-small-dims {
+	width: 20px;
+	height: 19px;
+}
+
 .svg-icon-hot {
-	background: url("sprite-0feaa6bc.svg") 95.02572898799313% 27.725856697819314% no-repeat;
+	background: url("sprite-27acf631.svg") 95.02572898799313% 27.725856697819314% no-repeat;
 }
 
 .svg-icon-hot-dims {
@@ -98,7 +107,7 @@
 }
 
 .svg-icon-mobile-menu {
-	background: url("sprite-0feaa6bc.svg") 100% 18.808777429467085% no-repeat;
+	background: url("sprite-27acf631.svg") 100% 18.808777429467085% no-repeat;
 }
 
 .svg-icon-mobile-menu-dims {
@@ -107,7 +116,7 @@
 }
 
 .svg-icon-percent {
-	background: url("sprite-0feaa6bc.svg") 60.105448154657296% 41.042345276872965% no-repeat;
+	background: url("sprite-27acf631.svg") 60.105448154657296% 41.042345276872965% no-repeat;
 }
 
 .svg-icon-percent-dims {
@@ -116,7 +125,7 @@
 }
 
 .svg-icon-pin {
-	background: url("sprite-0feaa6bc.svg") 61.8307426597582% 48.56230031948882% no-repeat;
+	background: url("sprite-27acf631.svg") 61.8307426597582% 48.56230031948882% no-repeat;
 }
 
 .svg-icon-pin-dims {
@@ -125,7 +134,7 @@
 }
 
 .svg-icon-pin-filled {
-	background: url("sprite-0feaa6bc.svg") 88.69565217391305% 28.896103896103895% no-repeat;
+	background: url("sprite-27acf631.svg") 88.69565217391305% 28.896103896103895% no-repeat;
 }
 
 .svg-icon-pin-filled-dims {
@@ -134,7 +143,7 @@
 }
 
 .svg-icon-profile {
-	background: url("sprite-0feaa6bc.svg") 72.88428324697755% 39.74763406940063% no-repeat;
+	background: url("sprite-27acf631.svg") 76.3385146804836% 39.74763406940063% no-repeat;
 }
 
 .svg-icon-profile-dims {
@@ -143,7 +152,7 @@
 }
 
 .svg-icon-search {
-	background: url("sprite-0feaa6bc.svg") 75.64766839378238% 39.74763406940063% no-repeat;
+	background: url("sprite-27acf631.svg") 79.10189982728843% 39.74763406940063% no-repeat;
 }
 
 .svg-icon-search-dims {
@@ -152,7 +161,7 @@
 }
 
 .svg-icon-telegram {
-	background: url("sprite-0feaa6bc.svg") 65.04347826086956% 48.56230031948882% no-repeat;
+	background: url("sprite-27acf631.svg") 65.04347826086956% 48.56230031948882% no-repeat;
 }
 
 .svg-icon-telegram-dims {
@@ -161,7 +170,7 @@
 }
 
 .svg-icon-vk {
-	background: url("sprite-0feaa6bc.svg") 92.81961471103328% 27.899686520376175% no-repeat;
+	background: url("sprite-27acf631.svg") 92.81961471103328% 27.899686520376175% no-repeat;
 }
 
 .svg-icon-vk-dims {
@@ -170,7 +179,7 @@
 }
 
 .svg-logo-bg {
-	background: url("sprite-0feaa6bc.svg") 0 0 no-repeat;
+	background: url("sprite-27acf631.svg") 0 0 no-repeat;
 }
 
 .svg-logo-bg-dims {
@@ -179,7 +188,7 @@
 }
 
 .svg-logo-dev {
-	background: url("sprite-0feaa6bc.svg") 76.16926503340757% 19.736842105263158% no-repeat;
+	background: url("sprite-27acf631.svg") 76.16926503340757% 19.736842105263158% no-repeat;
 }
 
 .svg-logo-dev-dims {
@@ -188,7 +197,7 @@
 }
 
 .svg-logo-footer {
-	background: url("sprite-0feaa6bc.svg") 100% 0 no-repeat;
+	background: url("sprite-27acf631.svg") 100% 0 no-repeat;
 }
 
 .svg-logo-footer-dims {
@@ -197,7 +206,7 @@
 }
 
 .svg-logo-header {
-	background: url("sprite-0feaa6bc.svg") 75.16483516483517% 30.06756756756757% no-repeat;
+	background: url("sprite-27acf631.svg") 75.16483516483517% 30.06756756756757% no-repeat;
 }
 
 .svg-logo-header-dims {

@@ -1,0 +1,42 @@
+.info-block {
+  position: relative;
+  margin: 40px 0 60px;
+  padding: 15px 35px 40px 75px;
+  box-shadow: 0 4px 16px rgba(34, 87, 142, 0.06);
+  border-radius: 6px;
+  &:before {
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: $color-secondary;
+    border-radius: 6px;
+  }
+  @media #{$media-phone} {
+    padding: 15px 0 35px 30px;
+  }
+  &__icon-holder {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 38px;
+    @media #{$media-phone} {
+      display: none;
+    }
+  }
+  &__icon {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__text {
+    font-size: 15px;
+    line-height: 1.87;
+    color: $color-black;
+    @media #{$media-phone} {
+      font-size: 14px;
+    }
+  }
+}

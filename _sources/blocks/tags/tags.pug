@@ -1,0 +1,6 @@
+mixin tags(params)
+    - var items = params&&params.items?params.items:false;
+    +b.tags
+        +e.UL.list
+            each item in items
+                +e.LI.tag= item

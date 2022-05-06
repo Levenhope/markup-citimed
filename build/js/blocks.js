@@ -1,3 +1,11 @@
+//accorion
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let item = e.target.closest('.accordion__item-heading');
+        if (item < 1) return;
+        item.closest('.accordion__item').classList.toggle('is-open');
+    })
+});
 //alphabet
 document.addEventListener("DOMContentLoaded", function(){
     let alphabets = document.querySelectorAll('.alphabet');
@@ -19,14 +27,6 @@ document.addEventListener("DOMContentLoaded", function(){
             alphabet.lastChild.lastChild.append(sortedItem);
         });
     });
-});
-//accorion
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let item = e.target.closest('.accordion__item-heading');
-        if (item < 1) return;
-        item.closest('.accordion__item').classList.toggle('is-open');
-    })
 });
 //cards-block
 $(function() {
@@ -237,14 +237,6 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-document.addEventListener("DOMContentLoaded", function(){
-    let searchLine = document.querySelectorAll('.search-line__input');
-    searchLine.forEach(function(line) {
-        if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
-            line.setAttribute('placeholder', line.dataset.placeholderMobile);
-        }
-    });
-});
 //page-header
 function fixedHeaderfix() {
     let headerHeight = document.querySelector('.page-header').clientHeight;
@@ -269,89 +261,14 @@ document.addEventListener("DOMContentLoaded", function(){
 window.addEventListener('resize', function(event) {
     fixedHeaderfix();
 });
-//steps
-$(function() {
-    function initSteps($slider, $context, options) {
-        $slider.on("init afterChange", function(event, slick, currentSlide){
-            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
-            $(".steps__total-number", $context).text(slick.slideCount);
-        });
-        $slider.slick(options);
-    }
-    $('.steps').each(function() {
-        let $context = $(this);
-        let $slider = $('.steps__list', $context);
-        let options = {
-            infinite: false,
-            dots: false,
-            mobileFirst: true,
-            prevArrow: $('.steps__slider-arrow.button_prev', $context),
-            nextArrow: $('.steps__slider-arrow.button_next', $context),
-            responsive: [{
-                breakpoint: 769,
-                settings: "unslick"
-
-            }, {
-
-                breakpoint: 483,
-                settings: {
-                    slidesToShow: 2,
-                }
-
-            }, {
-
-                breakpoint: 300,
-                settings: {
-                    slidesToShow: 1
-                }
-
-            }
-            ]
-        };
-        if (window.innerWidth < 1025) {
-            initSteps($slider, $context, options);
+document.addEventListener("DOMContentLoaded", function(){
+    let searchLine = document.querySelectorAll('.search-line__input');
+    searchLine.forEach(function(line) {
+        if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
+            line.setAttribute('placeholder', line.dataset.placeholderMobile);
         }
-        $(window).on('resize', function() {
-            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-                initSteps($slider, $context, options);
-            }
-        });
     });
 });
-//tabs-links
-const tabsEvent = new Event('tabActivation');
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let tabLink = e.target.closest('.tabs-link');
-        let tabsHolder = e.target.closest('.tabs-holder');
-        if (!(tabLink && tabsHolder)) return;
-        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
-        let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
-        activeTabs.forEach(function(activeTab) {
-            activeTab.classList.remove('is-active');
-        });
-        tabsHolder.querySelectorAll('.tabs-link.is-active').forEach(function(activeLink) {
-            activeLink.classList.remove('is-active');
-        });
-        tabLink.classList.add('is-active');
-        targetTab.classList.add('is-active');
-        window.dispatchEvent(tabsEvent);
-    })
-});
-//top-menu
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
-        let submenuItem = e.target.closest('.top-menu__submenu-item');
-        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
-            e.preventDefault();
-            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
-            parentMenu.classList.toggle('is-open');
-        }
-    })
-});
-//types-block
-
 //specials
 $(function() {
     $('.specials__tab').each(function() {
@@ -442,4 +359,86 @@ $(function() {
         }
     });
 });
+//steps
+$(function() {
+    function initSteps($slider, $context, options) {
+        $slider.on("init afterChange", function(event, slick, currentSlide){
+            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
+            $(".steps__total-number", $context).text(slick.slideCount);
+        });
+        $slider.slick(options);
+    }
+    $('.steps').each(function() {
+        let $context = $(this);
+        let $slider = $('.steps__list', $context);
+        let options = {
+            infinite: false,
+            dots: false,
+            mobileFirst: true,
+            prevArrow: $('.steps__slider-arrow.button_prev', $context),
+            nextArrow: $('.steps__slider-arrow.button_next', $context),
+            responsive: [{
+                breakpoint: 769,
+                settings: "unslick"
+
+            }, {
+
+                breakpoint: 483,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
+            }
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            initSteps($slider, $context, options);
+        }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                initSteps($slider, $context, options);
+            }
+        });
+    });
+});
+//tabs-links
+const tabsEvent = new Event('tabActivation');
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let tabLink = e.target.closest('.tabs-link');
+        let tabsHolder = e.target.closest('.tabs-holder');
+        if (!(tabLink && tabsHolder)) return;
+        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
+        let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
+        activeTabs.forEach(function(activeTab) {
+            activeTab.classList.remove('is-active');
+        });
+        tabsHolder.querySelectorAll('.tabs-link.is-active').forEach(function(activeLink) {
+            activeLink.classList.remove('is-active');
+        });
+        tabLink.classList.add('is-active');
+        targetTab.classList.add('is-active');
+        window.dispatchEvent(tabsEvent);
+    })
+});
+//top-menu
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
+        let submenuItem = e.target.closest('.top-menu__submenu-item');
+        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
+            e.preventDefault();
+            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
+            parentMenu.classList.toggle('is-open');
+        }
+    })
+});
+//types-block
 //# sourceMappingURL=../sourcemaps/blocks.js.map

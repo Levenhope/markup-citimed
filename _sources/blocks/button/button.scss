@@ -1,6 +1,7 @@
 .button {
   display: flex;
   padding: 18px 32px;
+  align-items: center;
   justify-content: center;
   text-align: center;
   color: $color-secondary;
@@ -11,7 +12,7 @@
   background-color: $color-white;
   border: 1px solid $transparent;
   box-shadow: none;
-  transition: color ease .35s, background-color ease .35s, box-shadow ease .35s, border-color ease .35s;
+  transition: color ease .35s, background-color ease .35s, background-position ease .35s, background-size ease .35s, box-shadow ease .35s, border-color ease .35s;
   svg {
     display: block;
     fill: currentColor;
@@ -76,6 +77,16 @@
       }
     }
   }
+  &_filled {
+    color: $color-white;
+    background-image: linear-gradient(89.84deg, #1B77DC -0.35%, #35A8EA 99.03%);
+    background-size: 100% 100%;
+    background-position: center center;
+    box-shadow: 0 2px 6px rgba(34, 87, 142, 0.17);
+    &:hover {
+      background-size: 200% 100%;
+    }
+  }
   &__remove {
     opacity: 0;
     pointer-events: none;
@@ -107,6 +118,11 @@
   &_next {
     svg {
       transform: rotate(-90deg) translate(0, 2px);
+    }
+  }
+  &__text {
+    svg + & {
+      margin-left: 10px;
     }
   }
 }

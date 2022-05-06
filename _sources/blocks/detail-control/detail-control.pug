@@ -1,0 +1,31 @@
+include ../info-tip/info-tip
+mixin detail-control()
+    +b.SECTION.detail-control
+        +e.block
+            +e.code
+                +e.SPAN.code-title Исследование /
+                +e.SPAN.code-number  1.0.D1.202
+        +e.block._price
+            +e.price 4 600 #[span.rub ₽]
+            +e.UL.extra-list
+                +e.LI.extra-item
+                    +e.SPAN.extra-price +200 #[span.rub ₽]
+                    +e.SPAN.extra-name
+                        | Взятие биоматериала
+                        +info-tip()
+        +e.block._info
+            +e.info-item._duration
+                +svgUse(20, 20, 'icon-clock')
+                +e.info-content
+                    +e.info-title Срок
+                    +e.info-value 1 день
+            +e.info-item._at-home
+                +svgUse(20, 18, 'icon-home-small')
+                +e.info-content
+                    +e.info-value Можно сдать #[span.text-accent дома]
+        +e.block._buttons
+            +e.BUTTON.button.button.button_filled
+                +svgUse(22, 21, 'icon-cart')
+                span.button__text В корзину
+
+
