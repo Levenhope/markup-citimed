@@ -7,13 +7,16 @@ mixin specials-wrap(isCompact)
             block
 mixin specials(params)
     - var isCompact = params&&params.isCompact;
+    - var isOneTab = params&&params.oneTab;
     +b.SECTION.specials(class=isCompact?'_compact':'')
         +specials-wrap(isCompact)
             +e.content.tabs-holder
-                if (!isCompact)
+                if (!isCompact&&!isOneTab)
                     +e.H2.title._tabs-links.h2.tabs-links #[a.tabs-link.is-active(data-target='#special-tab' href='javascript:;') Акции] и #[a.tabs-link(data-target='#news-tab' href='javascript:;') Новости]
-                else
+                else if (isCompact)
                     +e.H2.title.h3 Акции
+                else
+                    +e.H2.title.h2 Акции
                 +e.tabs
                     +e.tab.tab.is-active(id='special-tab')
                         +e.list(data-compact=isCompact)
@@ -35,7 +38,7 @@ mixin specials(params)
                             +e.slider-pages
                             +e.BUTTON.slider-arrow.button._control._next
                                 +svgUse(10, 8, 'icon-arrow-down-s')
-                    if (!isCompact)
+                    if (!isCompact&&!isOneTab)
                         +e.tab.tab(id='news-tab')
                             +e.list(data-compact=isCompact)
                                 +e.item

@@ -52,7 +52,7 @@ $(function() {
         function sliderGridFix() {
             let parentWidth = $slider.closest('.specials__content').width();
             let compactTemplate = $slider.closest('.specials_compact');
-            let sliderListWidth = (window.innerWidth>1024)||compactTemplate?parentWidth:parentWidth-65;
+            let sliderListWidth = (window.innerWidth>1024)||compactTemplate?parentWidth+30:parentWidth-65;
             $slider.width(sliderListWidth);
         }
         $slider.on('init', function() {

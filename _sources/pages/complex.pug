@@ -17,12 +17,12 @@ include ../blocks/mobile-nav-holder/mobile-nav-holder
 block global_vars
     -
         $bodyMods = ['']
-        $pageTitle = 'Анализ крови'
+        $pageTitle = 'Комплексные исследования'
 
 block content
     main.page-content
         +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
-        +breadcrumbs({items:[{name: 'Главная', href: 'index.html'},{name: 'Анализы', href: 'catalog.html'}, {name: 'Анализ крови'}]})
+        +breadcrumbs({items:[{name: 'Главная', href: 'index.html'}, {name: 'Комплексные исследования'}]})
         .content-center
             +b.page-cols
                 +e.title
@@ -32,18 +32,11 @@ block content
                         +catalog-nav()
                         +info-bar()
                         +cart-panel()
-                        +catalog-nav()
                 +e.main-col
-                    +category-nav()
-                    +service-buttons()
-                    +cards-block-compact({isGroup: true})
-                    +cards-block-extra()
-                    +complex-selection({isCompact: true, wideFirst: true})
                     .hide-desktop
-                        +info-bar()
-                        +mobile-nav-holder()
-                    +specials({isCompact: true})
-                    +accordion({mod: 'big'})
-                    +seo-tabs()
+                        +category-nav()
+                    +service-buttons()
+                    +cards-block-compact()
         +map-block()
+        +specials({oneTab: true})
         +faq-block()
