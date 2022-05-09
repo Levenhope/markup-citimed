@@ -22,7 +22,8 @@ mixin compact-card(params)
                     +e.current-price 2 600 #[span.rub ₽]
             else
                 +e.price 2 600 #[span.rub ₽]
-            +e.BUTTON.add.button.button_control(class=params&&params.added?'is-added':'')
-                +svgUse(18, 18, 'icon-cart')(class='compact-card__add-icon')
+            +e.BUTTON.add.button.button_cart(class=params&&params.added?'is-added':'')
+                span.button__inner
+                    +svgUse(18, 18, 'icon-cart')(class='compact-card__add-icon')
                 span.button__remove
                     +svgUse(7, 7, 'icon-close')(class='compact-card__remove-icon')

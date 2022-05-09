@@ -51,12 +51,13 @@ mixin cards-block-compact(params)
                         +compact-card({added: true})
                     +e.item
                         +compact-card({discount: true, limits: true})
-            +cards-groups-wrap(isGroup)
-                +e.list(data-compact=true)
-                    +e.item
-                        +compact-card()
-                    +e.item
-                        +compact-card()
+            if (isGroup)
+                +cards-groups-wrap(isGroup)
+                    +e.list(data-compact=true)
+                        +e.item
+                            +compact-card()
+                        +e.item
+                            +compact-card()
 mixin cards-block-extra(params)
     +b.SECTION.cards-block._compact
         +e.content
