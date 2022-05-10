@@ -1,0 +1,11 @@
+include ../compact-card/compact-card
+mixin cart-cards-list
+    +b.cart-cards-list
+        +e.item
+            +compact-card({onlyRemove: true})
+        +e.item
+            +compact-card({onlyRemove: true})
+    h2.h3 Дополнительные услуги
+    +b.cart-cards-list
+        +e.item
+            +compact-card-extra()

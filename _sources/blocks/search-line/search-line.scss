@@ -1,5 +1,8 @@
 .search-line {
   $self: &;
+  &_cart {
+    margin-bottom: 30px;
+  }
   &__inner {
     #{$self}_panel & {
       padding: 20px 0;
@@ -55,6 +58,13 @@
         background-color: $color-white;
       }
     }
+    #{$self}_cart & {
+      padding-left: 40px;
+      padding-right: 35px;
+      border: 1px solid rgba(87, 117, 143, 0.15);
+      border-radius: 60px;
+      background-color: $color-white;
+    }
     .bvi-active & {
       border: 2px solid black;
     }
@@ -91,7 +101,7 @@
           color: $color-white;
         }
       }
-      #{$self}_on-page & {
+      #{$self}_on-page &, #{$self}_cart & {
         color: $color-text-light;
       }
     }
@@ -154,6 +164,9 @@
       line-height: 1.14;
       letter-spacing: 0.02em;
       text-transform: uppercase;
+      #{$self}_cart & {
+        display: none;
+      }
     }
   }
   &__button-icon {
@@ -161,6 +174,9 @@
     fill: $color-secondary;
     #{$self}_round & {
       fill: $color-white;
+    }
+    #{$self}_cart & {
+      fill: $color-text-light;
     }
   }
   &__tags {

@@ -1,0 +1,28 @@
+extends ./layouts/default
+include ../blocks/search-line/search-line
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/cart-total/cart-total
+include ../blocks/cart-cards-list/cart-cards-list
+
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Корзина'
+
+block content
+    main.page-content.page-content_light-bg
+        +breadcrumbs({
+            items: [{name: 'Главная', href: 'index.html'}, {name: 'Корзина'}]
+        })
+        .content-center
+            +e.title
+                h1.h2 Состав заказа
+            +b.page-cols
+                +e.main-col._cart
+                    +search-line({
+                        placeholder: 'Хотите добавить еще что-нибудь?',
+                        template: 'cart',
+                    })
+                    +cart-cards-list()
+                +e.side-col
+                    +cart-total()

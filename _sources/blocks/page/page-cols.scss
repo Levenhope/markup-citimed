@@ -19,4 +19,24 @@
       grid-area: side;
     }
   }
+  &__main-col {
+    &_cart {
+      @media #{$media-mobile} {
+        display: flex;
+        flex-direction: column;
+        .cart-cards-list:first-of-type {
+          order: 1;
+        }
+        .cart-cards-list:last-of-type {
+          order: 4;
+        }
+        .search-line {
+          order: 2;
+        }
+        .h3 {
+          order: 3;
+        }
+      }
+    }
+  }
 }
