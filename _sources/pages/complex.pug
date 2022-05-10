@@ -34,7 +34,36 @@ block content
                         +cart-panel()
                 +e.main-col
                     .hide-desktop
-                        +category-nav()
+                        +category-nav({
+                            items: [
+                                {
+                                    name: 'Комплексная диагностика',
+                                    count: 13
+                                },
+                                {
+                                    name: 'Белковый и аминокислотный обмен',
+                                    count: 16
+                                },
+                                {
+                                    name: 'Витамины',
+                                    count: 20
+                                },
+                                {
+                                    name: 'Углеводный обмен',
+                                    count: 11
+                                },
+                                {
+                                    name: 'Липидный обмен',
+                                    count: 19
+                                },
+                                {
+                                    name: 'Обмен железа',
+                                    count: 7
+                                },
+                                {
+                                    name: 'Кардиомаркёры',
+                                    count: 4
+                                }]})
                     +service-buttons()
                     +cards-block-compact()
         +map-block()

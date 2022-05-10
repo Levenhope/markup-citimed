@@ -1,5 +1,8 @@
 .category-nav {
   margin-bottom: 54px;
+  .tabs-holder & {
+    margin-bottom: 0;
+  }
   @media #{$media-phone} {
     margin-bottom: 25px;
   }
@@ -11,7 +14,7 @@
   }
   &__item {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding-left: 15px;
     &:before {
       content: '';
@@ -29,6 +32,7 @@
   &__link {
     display: inline-block;
     font-size: 15px;
+    line-height: 1.2;
     text-transform: none;
     border-bottom: 1px dashed currentColor;
     &:hover {

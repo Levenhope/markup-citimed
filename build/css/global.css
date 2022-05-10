@@ -257,6 +257,14 @@ table {
   }
 }
 
+.text-styles h5, .h5 {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #0E3F60;
+}
+
 .text-accent {
   color: #F35150;
 }
@@ -1268,6 +1276,9 @@ svg + .button__text {
 .category-nav {
   margin-bottom: 54px;
 }
+.tabs-holder .category-nav {
+  margin-bottom: 0;
+}
 @media screen and (max-width: 600px) {
   .category-nav {
     margin-bottom: 25px;
@@ -1285,7 +1296,7 @@ svg + .button__text {
 }
 .category-nav__item {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding-left: 15px;
 }
 .category-nav__item:before {
@@ -1303,6 +1314,7 @@ svg + .button__text {
 .category-nav__link {
   display: inline-block;
   font-size: 15px;
+  line-height: 1.2;
   text-transform: none;
   border-bottom: 1px dashed currentColor;
 }
@@ -3543,6 +3555,9 @@ svg + .button__text {
   flex-wrap: wrap;
   margin-bottom: 28px;
 }
+.seo-tabs_borders .seo-tabs__nav {
+  margin-bottom: 15px;
+}
 @media screen and (max-width: 600px) {
   .seo-tabs__nav {
     display: none;
@@ -3604,6 +3619,11 @@ svg + .button__text {
   line-height: 1.87;
   color: #57758F;
   padding: 20px 0 25px;
+}
+.seo-tabs__tabs {
+  padding: 20px 0;
+  border: 1px solid #EEF3F9;
+  border-width: 1px 0 1px 0;
 }
 
 .service-buttons__items {

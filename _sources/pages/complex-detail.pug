@@ -1,0 +1,45 @@
+extends ./layouts/default
+include ../blocks/search-line/search-line
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/service-buttons/service-buttons
+include ../blocks/cards-block/cards-block
+include ../blocks/complex-selection/complex-selection
+include ../blocks/specials/specials
+include ../blocks/accordion/accordion
+include ../blocks/map-block/map-block
+include ../blocks/faq-block/faq-block
+include ../blocks/catalog-nav/catalog-nav
+include ../blocks/info-bar/info-bar
+include ../blocks/cart-panel/cart-panel
+include ../blocks/category-nav/category-nav
+include ../blocks/seo-tabs/seo-tabs
+include ../blocks/mobile-nav-holder/mobile-nav-holder
+include ../blocks/tags/tags
+include ../blocks/info-block/info-block
+include ../blocks/detail-control/detail-control
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Клинический анализ крови без лейкоцитарной формулы (венозная кровь)'
+
+block content
+    main.page-content
+        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
+        +breadcrumbs({items:[{name: 'Главная', href: 'index.html'}, {name: 'Исследования крови', href: 'index.html'}, {name: 'Клинический анализ крови без лейкоцитарной формулы (венозная кровь)'}]})
+        .content-center
+            +b.page-cols
+                +e.title
+                    h1.h2= $pageTitle
+                    +tags({items: ['кровь с EDTA', 'количественный']})
+                +e.side-col
+                    +detail-control()
+                +e.main-col
+                    .text-styles.text-block
+                        p Качественное определение РНК бета-коронавируса SARS-CoV-2 (возбудителя COVID-19) в соскобе клеток ротоглотки методом ПЦР в режиме реального времени.
+                    +info-block()
+                    +info-tabs({borders: true})
+                    +cards-block-compact()
+        +map-block()
+        .content-center.hide-desktop
+            +mobile-nav-holder()
+        +faq-block()

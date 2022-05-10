@@ -39,6 +39,13 @@
     font-size: 16px;
   }
 }
+.text-styles h5, .h5 {
+  margin-bottom: 15px;
+  font-weight: $font-weight-medium;
+  font-size: 16px;
+  line-height: 1.75;
+  color: $color-black;
+}
 
 .text-accent {
   color: $color-accent;

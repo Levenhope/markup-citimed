@@ -1,4 +1,5 @@
 .seo-tabs {
+  $self: &;
   margin: 70px 0 90px;
   @media #{$media-phone} {
     margin: 40px 0 60px;
@@ -12,6 +13,9 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin-bottom: 28px;
+    #{$self}_borders & {
+      margin-bottom: 15px;
+    }
     @media #{$media-phone} {
       display: none;
     }
@@ -72,5 +76,10 @@
     line-height: 1.87;
     color: $color-text-light;
     padding: 20px 0 25px;
+  }
+  &__tabs {
+    padding: 20px 0;
+    border: 1px solid $color-border;
+    border-width: 1px 0 1px 0;
   }
 }
