@@ -1,0 +1,20 @@
+include ../cards-block/cards-block
+mixin search-tabs()
+    +b.search-tabs.tabs-holder
+        +e.nav.tabs-links
+            +e.A.link.tabs-link.is-active(data-target='#search-found' href='javascript:;')
+                +e.link-name Найдено
+                +e.link-count 100
+            +e.A.link.tabs-link(data-target='#search-research' href='javascript:;')
+                +e.link-name Исследования
+                +e.link-count 90
+            +e.A.link.tabs-link(data-target='#serach-complexes' href='javascript:;')
+                +e.link-name Комплексы
+                +e.link-count 90
+        +e.tabs.tabs
+            +e.tab.tab.is-active(id='search-found')
+                +cards-block-compact({noTitle: true})
+            +e.tab.tab(id='search-research')
+                +cards-block-compact({noTitle: true})
+            +e.tab.tab(id='serach-complexes')
+                +cards-block-compact({noTitle: true})

@@ -1,10 +1,20 @@
 .search-line {
   $self: &;
-  &_panel {
-    padding: 20px 0;
-    background: linear-gradient(89.84deg, #1B77DC -0.35%, #35A8EA 99.03%);
-    @media #{$media-mobile} {
-      padding: 16px 0;
+  &__inner {
+    #{$self}_panel & {
+      padding: 20px 0;
+      background: linear-gradient(89.84deg, #1B77DC -0.35%, #35A8EA 99.03%);
+      @media #{$media-mobile} {
+        padding: 16px 0;
+      }
+    }
+    #{$self}_on-page & {
+      margin-bottom: 30px;
+      border-radius: 6px;
+      @media #{$media-phone} {
+        margin: 0 -20px 15px;
+        border-radius: 0;
+      }
     }
   }
   &__content {
@@ -39,6 +49,12 @@
         background-color: $color-white;
       }
     }
+    #{$self}_on-page & {
+      @media #{$media-mobile} {
+        padding-left: 24px;
+        background-color: $color-white;
+      }
+    }
     .bvi-active & {
       border: 2px solid black;
     }
@@ -60,6 +76,11 @@
         color: $color-white;
       }
     }
+    #{$self}_on-page & {
+      @media #{$media-mobile} {
+        color: $color-text-light;
+      }
+    }
     @include placeholder() {
       color: rgba(87, 117, 143, 0.5);
       #{$self}_round & {
@@ -69,6 +90,9 @@
         @media #{$media-mobile} {
           color: $color-white;
         }
+      }
+      #{$self}_on-page & {
+        color: $color-text-light;
       }
     }
   }
@@ -169,5 +193,19 @@
   &__tag {
     color: inherit;
     font-weight: $font-weight-medium;
+  }
+  &__request {
+    margin-bottom: 30px;
+    font-weight: $font-weight-medium;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    @media #{$media-phone} {
+      margin-bottom: 20px;
+    }
+  }
+  &__request-text {
+    color: $color-text-light;
   }
 }

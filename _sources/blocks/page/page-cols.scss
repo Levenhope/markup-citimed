@@ -6,6 +6,9 @@
             "title side"
             "main side";
     gap: 0 50px;
+    &_no-title {
+      grid-template-areas: "main side";
+    }
     &__title {
       grid-area: title;
     }

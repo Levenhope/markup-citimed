@@ -1,11 +1,15 @@
-mixin cart-panel()
+mixin cart-panel(params)
     +b.cart-panel
         +e.header
             +svgUse(30, 30, 'icon-cart')
-            +e.text
-                +e.title В корзине
-                +e.counter 2 исследования
-            +e.total 4 600 #[span.rub ₽]
+            if params&&params.isEmpty
+                +e.text._empty
+                    +e.title В вашу корзину ничего не добавлено
+            else
+                +e.text
+                    +e.title В корзине
+                    +e.counter 2 исследования
+                +e.total 4 600 #[span.rub ₽]
         +e.content
             +e.UL.links
                 +e.LI.item

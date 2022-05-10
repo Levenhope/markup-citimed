@@ -1,0 +1,40 @@
+extends ./layouts/default
+include ../blocks/search-line/search-line
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/search-tabs/search-tabs
+include ../blocks/cart-panel/cart-panel
+include ../blocks/catalog-nav/catalog-nav
+include ../blocks/info-bar/info-bar
+include ../blocks/faq-block/faq-block
+
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Поиск'
+
+block content
+    main.page-content
+        +breadcrumbs({
+            items: [{name: 'Главная', href: 'index.html'}, {name: 'Поиск'}]
+        })
+        .content-center
+            +e.title
+                h1.h2= $pageTitle
+            +search-line({
+                placeholder: 'Быстрый поиск нужного исследования...',
+                placeholderMobile: 'Поиск нужного исследования...',
+                btnText: 'Найти исследование',
+                template: 'panel',
+                onPage: true,
+                request: 'Кровь'
+            })
+            +b.page-cols._no-title
+                +e.side-col
+                    .hide-mobile
+                        +cart-panel({isEmpty: true})
+                        +catalog-nav()
+                        +info-bar()
+                +e.main-col
+                    +search-tabs()
+            +faq-block()
+

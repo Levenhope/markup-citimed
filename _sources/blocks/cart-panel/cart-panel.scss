@@ -1,4 +1,5 @@
 .cart-panel {
+  $self: &;
   margin: 20px 0;
   background-color: $color-bg-light;
   border-radius: 3px;
@@ -15,10 +16,19 @@
       fill: $color-white;
     }
   }
+  &__text {
+    &_empty {
+      max-width: 150px;
+    }
+  }
   &__title {
     font-size: 13px;
     line-height: 1.7;
     color: $color-text-light-white;
+    #{$self}__text_empty & {
+      line-height: 1.3;
+      font-weight: $font-weight-medium;
+    }
   }
   &__counter {
     font-weight: $font-weight-medium;

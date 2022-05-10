@@ -38,9 +38,11 @@ mixin cards-groups-wrap(isGroup)
         block
 mixin cards-block-compact(params)
     - var isGroup = params&&params.isGroup;
+    - var noTitle = params&&params.noTitle;
     +b.SECTION.cards-block._compact
         +e.content
-            +e.H2.title.h3 Популярные исследования
+            if !noTitle
+                +e.H2.title.h3 Популярные исследования
             +cards-groups-wrap(isGroup)
                 +e.list(data-compact=true)
                     +e.item

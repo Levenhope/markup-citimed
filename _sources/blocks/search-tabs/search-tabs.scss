@@ -1,0 +1,58 @@
+.search-tabs {
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    border-bottom: 1px solid rgba(87, 117, 143, 0.13);
+    @media #{$media-phone} {
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+  &__link {
+    position: relative;
+    display: block;
+    padding: 10px 0 15px;
+    font-weight: $font-weight-medium;
+    font-size: 16px;
+    line-height: 1.4;
+    color: rgba(87, 117, 143, 0.65);
+    &:hover {
+      text-decoration: none;
+    }
+    &.is-active {
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 5px;
+        background: $color-accent;
+        border-radius: 10px;
+      }
+    }
+    @media #{$media-phone} {
+      padding: 5px 0;
+      font-size: 13px;
+    }
+  }
+  &__link-name {
+    .is-active &, :hover > & {
+      color: $color-black;
+    }
+    @media #{$media-phone} {
+      display: block;
+    }
+  }
+  &__link-count {
+    margin-left: .2em;
+    font-size: 14px;
+    font-weight: $font-weight-normal;
+    @media #{$media-phone} {
+      display: block;
+      margin-left: 0;
+      font-size: 12px;
+    }
+  }
+}
