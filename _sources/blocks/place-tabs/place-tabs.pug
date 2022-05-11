@@ -1,0 +1,27 @@
+mixin place-tabs()
+    +b.place-tabs.tabs-holder
+        +e.nav.tabs-links
+            +e.A.link.tabs-link.is-active(data-target='#place-center' href='javascript:;')
+                +e.link-icon-holder
+                    +svgUse(18, 23, 'icon-pin')
+                +e.link-text В #[span.hide-mobile медицинском] центре
+            +e.A.link.tabs-link(data-target='#place-home' href='javascript:;')
+                +e.link-icon-holder
+                    +svgUse(25, 21, 'icon-home')
+                +e.link-text На дому
+        +e.tabs.tabs
+            +e.tab.tab.is-active(id='place-center')
+                +e.medcenter-choice.is-hidden
+                    +e.BUTTON.choice-button.button._stroke
+                        +svgUse(18, 23, 'icon-pin')
+                        .button__text Выбрать медцентр
+                    +e.medcenter-places
+                        +e.places-count 34 филиала
+                        +e.places-text в Москве и Московской области
+                +e.medcenter-selected
+                    +e.medcenter-place
+                        +e.selected-title Вы выбрали:
+                        +e.selected-place г. Москва, ул. Генерала Кузнецова, 19к1
+                    +e.BUTTON.button.button._stroke Изменить
+            +e.tab.tab(id='place-home')
+                .test

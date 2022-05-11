@@ -1,0 +1,68 @@
+.place-tabs {
+  margin-bottom: 25px;
+  &__nav {
+    display: flex;
+    gap: 10px;
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 13px 40px 10px 30px;
+    font-weight: $font-weight-medium;
+    font-size: 14px;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: $color-black;
+    background-color: rgba(29, 122, 221, 0.06);
+    border-radius: 3px 3px 0 0;
+    svg {
+      margin-right: 15px;
+      fill: $color-accent;
+    }
+    &.is-active {
+      background-color: $color-white;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__tabs {
+    padding: 30px;
+    background-color: $color-white;
+  }
+  &__choice-button {
+    margin-right: 45px;
+    text-transform: uppercase;
+    font-weight: $font-weight-medium;
+  }
+  &__medcenter-choice {
+    display: flex;
+    align-items: center;
+  }
+  &__places-count {
+    font-weight: $font-weight-medium;
+    font-size: 16px;
+  }
+  &__medcenter-places {
+    @media #{$media-phone} {
+      display: none;
+    }
+  }
+  &__places-text, &__selected-title {
+    font-size: 13px;
+    line-height: 1.5;
+    color: $color-text-light;
+  }
+  &__medcenter-selected {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__selected-place {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+}

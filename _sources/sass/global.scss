@@ -96,6 +96,10 @@ body .nomargin {
 	margin-right: auto;
 }
 
+.is-hidden {
+	display: none !important;
+}
+
 @media #{$media-mobile} {
 	.hide-mobile {
 		display: none !important;

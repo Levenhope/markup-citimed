@@ -19,7 +19,7 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="./js/global.js"></script>
     <script src="./js/blocks.js"></script>
-    <title>Citimed - Корзина</title>
+    <title>Citimed - Оформление заказа</title>
   </head>
   <body class="page">
     <header class="page-header">
@@ -189,7 +189,7 @@
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a>
             </li>
-            <li class="breadcrumbs__item"><span class="breadcrumbs__link is-current">Корзина</span>
+            <li class="breadcrumbs__item"><span class="breadcrumbs__link is-current">Оформление заказа</span>
             </li>
           </ul>
         </div>
@@ -197,110 +197,48 @@
       <div class="content-center">
         <div class="page-cols">
           <div class="page-cols__title">
-            <h1 class="h2">Состав заказа</h1>
+            <h1 class="h2">Где бы Вы хотели сдать анализы?</h1>
           </div>
-          <div class="page-cols__main-col page-cols__main-col_cart">
-            <div class="search-line search-line_cart">
-              <div class="search-line__inner">
-                <div class="search-line__content">
-                  <form class="search-line__form" method="GET"><input class="search-line__input" type="search" placeholder="Хотите добавить еще что-нибудь?" data-placeholder-mobile=""/>
-                    <button class="search-line__button search-line__button_reset" type="reset">
-                      <svg class="search-line__button-icon bvi-hide" width="14" height="14">
-                        <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+          <div class="page-cols__main-col">
+            <div class="place-tabs tabs-holder">
+              <div class="place-tabs__nav tabs-links"><a class="place-tabs__link tabs-link is-active" data-target="#place-center" href="javascript:;"><span class="place-tabs__link-icon-holder">
+                <svg width="18" height="23">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+                </svg></span><span class="place-tabs__link-text">В <span class="hide-mobile">медицинском</span> центре</span></a><a class="place-tabs__link tabs-link" data-target="#place-home" href="javascript:;"><span class="place-tabs__link-icon-holder">
+                <svg width="25" height="21">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
+                </svg></span><span class="place-tabs__link-text">На дому</span></a>
+              </div>
+              <div class="place-tabs__tabs tabs">
+                <div class="place-tabs__tab tab is-active" id="place-center">
+                  <div class="place-tabs__medcenter-choice is-hidden">
+                    <button class="place-tabs__choice-button button button_stroke">
+                      <svg width="18" height="23">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
                       </svg>
-                      <div class="search-line__reset-text bvi-show">Сбросить
-                      </div>
+                      <div class="button__text">Выбрать медцентр</div>
                     </button>
-                    <button class="search-line__button search-line__button_submit" type="submit">
-                      <svg class="search-line__button-icon bvi-hide" width="18" height="18">
-                        <use xlink:href="./svg/symbol/sprite.svg#icon-search"></use>
-                      </svg>
-                      <div class="search-line__submit-text bvi-show">Найти
+                    <div class="place-tabs__medcenter-places">
+                      <div class="place-tabs__places-count">34 филиала
                       </div>
+                      <div class="place-tabs__places-text">в Москве и Московской области
+                      </div>
+                    </div>
+                  </div>
+                  <div class="place-tabs__medcenter-selected">
+                    <div class="place-tabs__medcenter-place">
+                      <div class="place-tabs__selected-title">Вы выбрали:
+                      </div>
+                      <div class="place-tabs__selected-place">г. Москва, ул. Генерала Кузнецова, 19к1
+                      </div>
+                    </div>
+                    <button class="place-tabs__button button button_stroke">Изменить
                     </button>
-                  </form>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div class="cart-cards-list">
-              <div class="cart-cards-list__item">
-                <article class="compact-card">
-                  <div class="compact-card__content">
-                    <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
-                    </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
-                    <div class="compact-card__content-bottom">
-                      <ul class="compact-card__tags">
-                        <li class="compact-card__tag">кровь с EDTA
-                        </li>
-                        <li class="compact-card__tag">количественный
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="compact-card__duration">
-                    <svg class="compact-card__duration-icon" width="18" height="18">
-                      <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
-                    </svg>
-                    <div class="compact-card__duration-text">1 день
-                    </div>
-                  </div>
-                  <div class="compact-card__footer">
-                    <div class="compact-card__price">2 600 <span class="rub">₽</span>
-                    </div>
-                    <button class="compact-card__remove button button button_control">
-                      <svg width="14" height="14">
-                        <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </article>
-              </div>
-              <div class="cart-cards-list__item">
-                <article class="compact-card">
-                  <div class="compact-card__content">
-                    <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
-                    </div><a class="compact-card__title" href="#">Кортизол в слюне, метод ВЭЖХ-МС</a>
-                    <div class="compact-card__content-bottom">
-                      <ul class="compact-card__tags">
-                        <li class="compact-card__tag">кровь с EDTA
-                        </li>
-                        <li class="compact-card__tag">количественный
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="compact-card__duration">
-                    <svg class="compact-card__duration-icon" width="18" height="18">
-                      <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
-                    </svg>
-                    <div class="compact-card__duration-text">1 день
-                    </div>
-                  </div>
-                  <div class="compact-card__footer">
-                    <div class="compact-card__price">2 600 <span class="rub">₽</span>
-                    </div>
-                    <button class="compact-card__remove button button button_control">
-                      <svg width="14" height="14">
-                        <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
-                      </svg>
-                    </button>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <h2 class="h3">Дополнительные услуги</h2>
-            <div class="cart-cards-list">
-              <div class="cart-cards-list__item">
-                <article class="compact-card compact-card_cart-extra">
-                  <div class="compact-card__content">
-                    <div class="compact-card__code"><span class="compact-card__code-title">Исследование /</span><span class="compact-card__code-number"> 1.0.D1.202</span>
-                    </div><a class="compact-card__title" href="#">Взятие венозной крови</a>
-                  </div>
-                  <div class="compact-card__footer">
-                    <div class="compact-card__price">200 <span class="rub">₽</span>
-                    </div>
-                  </div>
-                </article>
+                <div class="place-tabs__tab tab" id="place-home">
+                  <div class="test"></div>
+                </div>
               </div>
             </div>
           </div>

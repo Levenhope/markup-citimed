@@ -15,9 +15,9 @@ block content
             items: [{name: 'Главная', href: 'index.html'}, {name: 'Корзина'}]
         })
         .content-center
-            +e.title
-                h1.h2 Состав заказа
             +b.page-cols
+                +e.title
+                    h1.h2 Состав заказа
                 +e.main-col._cart
                     +search-line({
                         placeholder: 'Хотите добавить еще что-нибудь?',

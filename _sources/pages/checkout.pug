@@ -1,0 +1,24 @@
+extends ./layouts/default
+include ../blocks/search-line/search-line
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/cart-total/cart-total
+include ../blocks/place-tabs/place-tabs
+
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Оформление заказа'
+
+block content
+    main.page-content.page-content_light-bg
+        +breadcrumbs({
+            items: [{name: 'Главная', href: 'index.html'}, {name: 'Оформление заказа'}]
+        })
+        .content-center
+            +b.page-cols
+                +e.title
+                    h1.h2 Где бы Вы хотели сдать анализы?
+                +e.main-col
+                    +place-tabs()
+                +e.side-col
+                    +cart-total()
