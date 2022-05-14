@@ -479,6 +479,33 @@ html[data-useragent*="Mac OS X"] .rub {
   display: none !important;
 }
 
+.footnote {
+  margin-top: 25px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 13px;
+  line-height: 1.2;
+  color: #57758F;
+}
+.footnote__icon-holder {
+  flex-shrink: 0;
+  width: 23px;
+}
+.footnote__icon {
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .footnote {
+    margin-top: 20px;
+    align-items: flex-start;
+  }
+  .footnote__icon-holder {
+    width: 16px;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .hide-mobile {
     display: none !important;

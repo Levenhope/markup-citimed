@@ -100,6 +100,30 @@ body .nomargin {
 .is-hidden {
 	display: none !important;
 }
+.footnote {
+	margin-top: 25px;
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	font-size: 13px;
+	line-height: 1.2;
+	color: $color-text-light;
+	&__icon-holder {
+		flex-shrink: 0;
+		width: 23px;
+	}
+	&__icon {
+		display: block;
+		width: 100%;
+	}
+	@media #{$media-phone-landscape} {
+		margin-top: 20px;
+		align-items: flex-start;
+		&__icon-holder {
+			width: 16px;
+		}
+	}
+}
 
 @media #{$media-mobile} {
 	.hide-mobile {

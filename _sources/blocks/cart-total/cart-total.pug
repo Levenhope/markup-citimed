@@ -37,7 +37,7 @@ mixin cart-total-checkout()
                 +e.total-price 5 200 #[span.rub ₽]
         +e.block
             +e.buttons
-                +e.A.submit.button.button_filled(href='#') Подтвердить заказ
+                +e.BUTTON.submit.button.button_filled(type='submit') Подтвердить заказ
                 +e.A.edit-link(href='#') Отредактировать заказ
             +e.footnote
                 p Оформляя заказ, вы принимаете условия #[a.policylink(href='#' target='_blank') Соглашения об обработке персональных данных]
