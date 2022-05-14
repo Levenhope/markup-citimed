@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link href="../assets/fonts/PTRouble/RUBSN.woff2" rel="preload" as="font">
+    <link rel="stylesheet" href="../assets/vendor/bvi/css/bvi.min.css" type="text/css">
+    <link rel="stylesheet" href="../assets/vendor/slick/slick.css" type="text/css">
+    <link rel="stylesheet" href="../assets/vendor/select2/select2.css" type="text/css">
+    <link rel="stylesheet" href="./svg/css/sprite.css" type="text/css">
+    <link rel="stylesheet" href="../assets/vendor/fancybox/fancybox.css">
+    <link href="./css/global.css" type="text/css" rel="stylesheet">
+    <script src="../assets/vendor/bvi/js/bvi.js"></script>
+    <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="../assets/vendor/slick/slick.min.js"></script>
+    <script src="../assets/vendor/select2/select2.min.js"></script>
+    <script src="../assets/vendor/sameheight/jquery.sameheight.js"></script>
+    <script src="../assets/vendor/jquery.maskedinput/jquery.maskedinput.js"></script>
+    <script src="../assets/vendor/fancybox/fancybox.umd.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="./js/global.js"></script>
+    <script src="./js/blocks.js"></script>
+    <title>Citimed - undefined</title>
+  </head>
+  <div class="modal-content">
+    <section class="map-block">
+      <div class="content-center">
+        <div class="map-block__heading">
+          <h2 class="h2 map-block__title">Адреса медицинских центров</h2>
+          <div class="map-block__counter">
+            <svg width="22" height="28">
+              <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
+            </svg>
+            <div class="map-block__counter-number">34 филиала</div>
+            <div class="map-block__counter-text">в Москве и Московской области</div>
+          </div>
+        </div>
+        <form class="map-block__switch">
+          <label class="map-block__switch-item">
+            <input class="map-block__switch-radio" type="radio" name="map-switch" value="list" checked="checked"/>
+            <div class="map-block__switch-text">Списком</div>
+          </label>
+          <label class="map-block__switch-item">
+            <input class="map-block__switch-radio" type="radio" name="map-switch" value="map"/>
+            <div class="map-block__switch-text">На карте</div>
+          </label>
+        </form>
+        <div class="map-block__content">
+          <div class="map-block__nav">
+            <div class="map-block__place-list">
+              <div class="map-block__place" data-coords="55.81060670847578,37.382617280311756" data-color="#9a0937">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #9a0937;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__place" data-coords="55.93808256881881,37.31405849999992" data-color="#d3790d">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #d3790d;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__place" data-coords="55.7855135689638,37.665407499999944" data-color="#956DC8">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #956DC8;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__place" data-coords="55.75504906897486,37.798052999999925" data-color="#F35150">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #F35150;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__place" data-coords="55.61727106909726,37.715686499999975" data-color="#ED9121">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #ED9121;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__place" data-coords="55.71078306903988,37.654098" data-color="#9DCE09">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #9DCE09;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="map-block__place" data-coords="55.75504906897486,37.798052999999925" data-color="#09ceb7">
+                <div class="map-block__place-content">
+                  <div class="map-block__place-header">
+                    <svg class="map-block__place-icon" width="20" height="24" style="fill: #09ceb7;">
+                      <use xlink:href="./svg/symbol/sprite.svg#icon-pin-filled"></use>
+                    </svg>
+                    <div class="map-block__arrow svg-icon-arrow-down-s-colored svg-icon-arrow-down-s-colored-dims"></div>
+                    <div class="map-block__place-city">Москва</div>
+                    <div class="map-block__metro-n-time"><span class="map-block__metro">м. Жулебино</span><span class="map-block__allday">24/7</span></div>
+                    <div class="map-block__adress">ул. Генерала Кузнецова, 19к1</div>
+                  </div>
+                  <div class="map-block__extra-info">
+                    <div class="map-block__extra-block">
+                      <div class="map-block__extra-title">Телефон для записи</div><a class="map-block__phone" href="tel:+74951212578">+7 (495) 121-25-78</a>
+                    </div>
+                    <div class="map-block__extra-block">
+                      <div class="map-block__warning">
+                        <svg width="14" height="14">
+                          <use xlink:href="./svg/symbol/sprite.svg#icon-clock"></use>
+                        </svg><span class="map-block__warning-text">Сегодня работает до 19:00</span>
+                      </div>
+                      <div class="map-block__time">пн-пт: 7:00-19:00</div>
+                      <div class="map-block__time">сб: 7:30-16:30</div>
+                      <div class="map-block__time">вс: 7:30-14:30</div><a class="map-block__block-link" href="#">Перейти на страницу филиала</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="map-block__more-buttons">
+              <button class="map-block__more-button button button_stroke">Показать еще</button>
+            </div>
+            <div class="map-block__info">
+              <section class="information information_small">
+                <div class="content-center">
+                  <div class="information__content">
+                    <div class="information__icon-holder">
+                      <svg class="information__icon" width="29" height="26">
+                        <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
+                      </svg>
+                    </div>
+                    <div class="information__text-content text-styles">
+                      <div class="information__title">Не нашли медцентр рядом?
+                      </div>
+                      <div class="information__text">Закажите услугу "Выезд на дом"
+                      </div>
+                    </div><a class="information__link" href="#">Подробнее</a>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="map-block__map-holder">
+            <div class="map-block__map" id="map" style="width: 100%; height: 100%"></div>
+          </div>
+        </div>
+      </div>
+      <div class="map-block__bottom-info">
+        <section class="information information_medium">
+          <div class="content-center">
+            <div class="information__content">
+              <div class="information__icon-holder">
+                <svg class="information__icon" width="29" height="26">
+                  <use xlink:href="./svg/symbol/sprite.svg#icon-home"></use>
+                </svg>
+              </div>
+              <div class="information__text-content text-styles">
+                <div class="information__title">Не нашли медцентр рядом?
+                </div>
+                <div class="information__text">Закажите услугу "Выезд на дом"
+                </div>
+              </div><a class="information__button button button button_accent" href="#">Подробнее</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </div>
+</html>

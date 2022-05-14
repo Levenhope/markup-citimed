@@ -5,3 +5,30 @@ mixin cart-compact()
             span.bvi-show Корзина
             +e.SPAN.counter 12
         +e.dropdown
+            +e.block
+                +e.title
+                    +e.SPAN.title-text Корзина
+                    +e.SPAN.title-counter (12)
+            +e.block
+                +e.UL.list
+                    +e.LI.item
+                        +e.item-name Клинический анализ крови без лейкоцитарной формулы (венозная кровь)
+                        +e.item-price 4 800 #[span.rub ₽]
+                        +e.BUTTON.remove.button.button_control
+                            +svgUse(8, 8, 'icon-close')
+                    +e.LI.item
+                        +e.item-name Клинический анализ крови без лейкоцитарной формулы (венозная кровь)
+                        +e.item-price 4 800 #[span.rub ₽]
+                        +e.BUTTON.remove.button.button_control
+                            +svgUse(8, 8, 'icon-close')
+                +e.list-title Дополнительные услуги
+                +e.UL.list
+                    +e.LI.item
+                        +e.item-name Взятие биоматериала
+                        +e.item-price + 200 #[span.rub ₽]
+            +e.block
+                +e.total
+                    +e.total-content
+                        +e.total-title Итого:
+                        +e.total-price 5 200 #[span.rub ₽]
+                    +e.A.checkout.button.button_filled(href='./checkout.html') Оформить

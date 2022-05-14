@@ -1,5 +1,6 @@
 mixin information(params)
     - var isSmall = params&&params.mod=='small';
+    - var isMedium = params&&params.mod=='medium';
     +b.SECTION.information(class=params&&params.mod?'_'+params.mod:'')
         .content-center
             +e.content
@@ -7,17 +8,19 @@ mixin information(params)
                     +svgUse(29, 26, 'icon-home')(class='information__icon')
                 +e.text-content.text-styles
                     +e.title
-                        if isSmall
+                        if isSmall||isMedium
                             | Не нашли медцентр рядом?
                         else
                             | Не&nbsp;хотите или не&nbsp;можете приехать в&nbsp;медицинский центр?
                     +e.text
-                        if isSmall
+                        if isSmall||isMedium
                             | Закажите услугу "Выезд на дом"
                         else
                             | #[span.text-accent Мы сами приедем к&nbsp;Вам!] Сдавайте анализы в&nbsp;привычной домашней атмосфере!
 
                 if isSmall
                     +e.A.link(href='#') Подробнее
+                else if isMedium
+                    +e.A.button.button.button_accent(href='#') Подробнее
                 else
                     +e.A.button.button.button_accent(href='#') Сдать анализы на дому

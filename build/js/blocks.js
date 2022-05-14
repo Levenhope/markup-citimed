@@ -1,11 +1,3 @@
-//accorion
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let item = e.target.closest('.accordion__item-heading');
-        if (item < 1) return;
-        item.closest('.accordion__item').classList.toggle('is-open');
-    })
-});
 //alphabet
 document.addEventListener("DOMContentLoaded", function(){
     let alphabets = document.querySelectorAll('.alphabet');
@@ -27,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function(){
             alphabet.lastChild.lastChild.append(sortedItem);
         });
     });
+});
+//accorion
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let item = e.target.closest('.accordion__item-heading');
+        if (item < 1) return;
+        item.closest('.accordion__item').classList.toggle('is-open');
+    })
 });
 //cards-block
 $(function() {
@@ -92,23 +92,20 @@ $(function() {
         }
     });
 });
+//cart-compact
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let item = e.target.closest('.cart-compact__link');
+        if (item < 1) return;
+        item.closest('.cart-compact').classList.toggle('is-open');
+    })
+});
 //catalog-nav
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
         if (e.target.closest('.catalog-nav__group-title') < 1) return;
         let menu = e.target.closest('.catalog-nav__group');
         menu.classList.toggle('is-open');
-    })
-});
-//page-footer
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.footer-menu__toggle') < 1) return;
-        let menu = e.target.closest('.footer-menu');
-        if (!menu.classList.contains('is-open')) {
-            e.preventDefault();
-            menu.classList.add('is-open');
-        }
     })
 });
 // Обработка стандартной формы
@@ -327,6 +324,17 @@ $(function () {
     });
 });
 
+//page-footer
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.footer-menu__toggle') < 1) return;
+        let menu = e.target.closest('.footer-menu');
+        if (!menu.classList.contains('is-open')) {
+            e.preventDefault();
+            menu.classList.add('is-open');
+        }
+    })
+});
 //map-block
 class MapBlock {
     constructor(context) {
@@ -485,6 +493,55 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 });
+//steps
+$(function() {
+    function initSteps($slider, $context, options) {
+        $slider.on("init afterChange", function(event, slick, currentSlide){
+            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
+            $(".steps__total-number", $context).text(slick.slideCount);
+        });
+        $slider.slick(options);
+    }
+    $('.steps').each(function() {
+        let $context = $(this);
+        let $slider = $('.steps__list', $context);
+        let options = {
+            infinite: false,
+            dots: false,
+            mobileFirst: true,
+            prevArrow: $('.steps__slider-arrow.button_prev', $context),
+            nextArrow: $('.steps__slider-arrow.button_next', $context),
+            responsive: [{
+                breakpoint: 769,
+                settings: "unslick"
+
+            }, {
+
+                breakpoint: 483,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
+            }
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            initSteps($slider, $context, options);
+        }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                initSteps($slider, $context, options);
+            }
+        });
+    });
+});
 //specials
 $(function() {
     $('.specials__tab').each(function() {
@@ -575,55 +632,20 @@ $(function() {
         }
     });
 });
-//steps
-$(function() {
-    function initSteps($slider, $context, options) {
-        $slider.on("init afterChange", function(event, slick, currentSlide){
-            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
-            $(".steps__total-number", $context).text(slick.slideCount);
-        });
-        $slider.slick(options);
-    }
-    $('.steps').each(function() {
-        let $context = $(this);
-        let $slider = $('.steps__list', $context);
-        let options = {
-            infinite: false,
-            dots: false,
-            mobileFirst: true,
-            prevArrow: $('.steps__slider-arrow.button_prev', $context),
-            nextArrow: $('.steps__slider-arrow.button_next', $context),
-            responsive: [{
-                breakpoint: 769,
-                settings: "unslick"
-
-            }, {
-
-                breakpoint: 483,
-                settings: {
-                    slidesToShow: 2,
-                }
-
-            }, {
-
-                breakpoint: 300,
-                settings: {
-                    slidesToShow: 1
-                }
-
-            }
-            ]
-        };
-        if (window.innerWidth < 1025) {
-            initSteps($slider, $context, options);
+//top-menu
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
+        let submenuItem = e.target.closest('.top-menu__submenu-item');
+        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
+            e.preventDefault();
+            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
+            parentMenu.classList.toggle('is-open');
         }
-        $(window).on('resize', function() {
-            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-                initSteps($slider, $context, options);
-            }
-        });
-    });
+    })
 });
+//types-block
+
 //tabs-links
 const tabsEvent = new Event('tabActivation');
 document.addEventListener("DOMContentLoaded", function(){
@@ -644,17 +666,4 @@ document.addEventListener("DOMContentLoaded", function(){
         window.dispatchEvent(tabsEvent);
     })
 });
-//top-menu
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let parentMenu = e.target.closest('.top-menu__menu-item.is-parent');
-        let submenuItem = e.target.closest('.top-menu__submenu-item');
-        if (parentMenu && !submenuItem  && window.innerWidth < 1025 ) {
-            e.preventDefault();
-            parentMenu.closest('.top-menu').classList.toggle('hide-inactive');
-            parentMenu.classList.toggle('is-open');
-        }
-    })
-});
-//types-block
 //# sourceMappingURL=../sourcemaps/blocks.js.map

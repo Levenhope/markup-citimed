@@ -12,7 +12,14 @@ mixin page-header()
                         +e.toggle-text.bvi-show Меню
                     +e.A.logo(href='/build/index.html')
                         +svgUse(140, 36, 'logo-header')
-                    +b.A.icon-link._icon-accent._text-secondary._no-text-mobile._text-uppercase(href='#')
+                    +b.A.icon-link._icon-accent._text-secondary._no-text-mobile._text-uppercase(
+                            href="./modal_map.html"
+                            data-fancybox
+                            data-type="iframe"
+                            data-preload="false"
+                            data-width="1028"
+                            data-height="640"
+                        )
                         +e.SPAN.icon-holder
                             +svgUse(16, 20, 'icon-pin')(class='icon-link__icon')
                         +e.SPAN.text Адреса медицинских центров

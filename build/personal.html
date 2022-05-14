@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../assets/vendor/slick/slick.css" type="text/css">
     <link rel="stylesheet" href="../assets/vendor/select2/select2.css" type="text/css">
     <link rel="stylesheet" href="./svg/css/sprite.css" type="text/css">
+    <link rel="stylesheet" href="../assets/vendor/fancybox/fancybox.css">
     <link href="./css/global.css" type="text/css" rel="stylesheet">
     <script src="../assets/vendor/bvi/js/bvi.js"></script>
     <script src="../assets/vendor/jquery/jquery-3.6.0.min.js"></script>
@@ -19,6 +20,7 @@
     <script src="../assets/vendor/select2/select2.min.js"></script>
     <script src="../assets/vendor/sameheight/jquery.sameheight.js"></script>
     <script src="../assets/vendor/jquery.maskedinput/jquery.maskedinput.js"></script>
+    <script src="../assets/vendor/fancybox/fancybox.umd.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <script src="./js/global.js"></script>
     <script src="./js/blocks.js"></script>
@@ -38,7 +40,7 @@
             </button><a class="page-header__logo" href="/build/index.html">
             <svg width="140" height="36">
               <use xlink:href="./svg/symbol/sprite.svg#logo-header"></use>
-            </svg></a><a class="icon-link icon-link_icon-accent icon-link_text-secondary icon-link_no-text-mobile icon-link_text-uppercase" href="#"><span class="icon-link__icon-holder">
+            </svg></a><a class="icon-link icon-link_icon-accent icon-link_text-secondary icon-link_no-text-mobile icon-link_text-uppercase" href="./modal_map.html" data-fancybox="data-fancybox" data-type="iframe" data-preload="false" data-width="1028" data-height="640"><span class="icon-link__icon-holder">
             <svg class="icon-link__icon" width="16" height="20">
               <use xlink:href="./svg/symbol/sprite.svg#icon-pin"></use>
             </svg></span><span class="icon-link__text">Адреса медицинских центров</span></a><a class="icon-link icon-link_icon-accent icon-link_icon-dark-mobile icon-link_text-bigger icon-link_no-brake icon-link_no-text-mobile" href="tel:+74951212578"><span class="icon-link__icon-holder">
@@ -66,6 +68,56 @@
                   <use xlink:href="./svg/symbol/sprite.svg#icon-cart"></use>
                 </svg><span class="bvi-show">Корзина</span><span class="cart-compact__counter">12</span></a>
                 <div class="cart-compact__dropdown">
+                  <div class="cart-compact__block">
+                    <div class="cart-compact__title"><span class="cart-compact__title-text">Корзина</span><span class="cart-compact__title-counter">(12)</span>
+                    </div>
+                  </div>
+                  <div class="cart-compact__block">
+                    <ul class="cart-compact__list">
+                      <li class="cart-compact__item">
+                        <div class="cart-compact__item-name">Клинический анализ крови без лейкоцитарной формулы (венозная кровь)
+                        </div>
+                        <div class="cart-compact__item-price">4 800 <span class="rub">₽</span>
+                        </div>
+                        <button class="cart-compact__remove button button button_control">
+                          <svg width="8" height="8">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                          </svg>
+                        </button>
+                      </li>
+                      <li class="cart-compact__item">
+                        <div class="cart-compact__item-name">Клинический анализ крови без лейкоцитарной формулы (венозная кровь)
+                        </div>
+                        <div class="cart-compact__item-price">4 800 <span class="rub">₽</span>
+                        </div>
+                        <button class="cart-compact__remove button button button_control">
+                          <svg width="8" height="8">
+                            <use xlink:href="./svg/symbol/sprite.svg#icon-close"></use>
+                          </svg>
+                        </button>
+                      </li>
+                    </ul>
+                    <div class="cart-compact__list-title">Дополнительные услуги
+                    </div>
+                    <ul class="cart-compact__list">
+                      <li class="cart-compact__item">
+                        <div class="cart-compact__item-name">Взятие биоматериала
+                        </div>
+                        <div class="cart-compact__item-price">+ 200 <span class="rub">₽</span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="cart-compact__block">
+                    <div class="cart-compact__total">
+                      <div class="cart-compact__total-content">
+                        <div class="cart-compact__total-title">Итого:
+                        </div>
+                        <div class="cart-compact__total-price">5 200 <span class="rub">₽</span>
+                        </div>
+                      </div><a class="cart-compact__checkout button button button_filled" href="./checkout.html">Оформить</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

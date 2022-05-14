@@ -3,7 +3,7 @@
   position: relative;
   padding: 40px 0;
   box-shadow: 0 2px 12px rgba(34, 87, 142, 0.1);
-  &_small {
+  &_small, &_medium {
     padding: 15px 20px 15px 70px;
     box-shadow: none;
     border-radius: 6px;
@@ -19,7 +19,7 @@
     @media #{$media-mobile} {
       display: none;
     }
-    #{$self}_small & {
+    #{$self}_small &, #{$self}_medium & {
       position: absolute;
       left: 18px;
       top: 25px;
@@ -30,7 +30,7 @@
   }
   &__icon-holder {
     fill: $color-accent;
-    #{$self}_small & {
+    #{$self}_small &, #{$self}_medium & {
       width: 28px;
     }
   }
@@ -52,6 +52,11 @@
         display: block;
       }
     }
+    #{$self}_medium & {
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
   }
   &__title {
     font-weight: $font-weight-medium;
@@ -63,7 +68,7 @@
       font-size: 15px;
       line-height: 1.47;
     }
-    #{$self}_small & {
+    #{$self}_small &, #{$self}_medium & {
       font-weight: $font-weight-normal;
       font-size: 14px;
       line-height: 1.4;
@@ -84,7 +89,7 @@
       font-size: 14px;
       line-height: 1.57;
     }
-    #{$self}_small & {
+    #{$self}_small &, #{$self}_medium & {
       margin-bottom: 0;
       font-weight: $font-weight-medium;
       font-size: 15px;
