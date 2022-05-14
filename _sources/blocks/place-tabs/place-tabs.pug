@@ -1,3 +1,4 @@
+include ../field/field
 mixin place-tabs()
     +b.place-tabs.tabs-holder
         +e.nav.tabs-links
@@ -24,4 +25,37 @@ mixin place-tabs()
                         +e.selected-place г. Москва, ул. Генерала Кузнецова, 19к1
                     +e.BUTTON.button.button._stroke Изменить
             +e.tab.tab(id='place-home')
-                .test
+                +b.form-standart._two-cols
+                    +e.FORM
+                        +e.item
+                            +field({fieldType: 'text', codeName: 'address', required: true, label: 'Адрес*'})
+                        +e.item
+                            +field({fieldType: 'date', codeName: 'appoinmentDate', required: true, label: 'Предпочтительная дата выезда*'})
+                        +e.item
+                            +e.item-title Выберите тарифную зону
+                            +field({fieldType: 'select', codeName: 'zone', required: true, label: 'Тарифная зона', options:[
+                                    {
+                                        value: 'in-mkad',
+                                        price: 1500,
+                                        name: 'Москва (в пределах МКАД)',
+                                    },
+                                    {
+                                        value: 'in-ckad',
+                                        price: 2000,
+                                        name: 'МO (от МКАД до ЦКАД)',
+                                    }
+                                ]})
+                        +e.item
+                            +e.item-title Телефон для связи
+                            +field({fieldType: 'tel', codeName: 'phone', required: true, label: 'Номер телефона', options: [
+                                    {
+                                        value: '+7',
+                                        name: '+7',
+                                        country: 'Россия'
+                                    },
+                                    {
+                                        value: '+375',
+                                        name: '+375',
+                                        country: 'Беларусь'
+                                    }
+                                ]})

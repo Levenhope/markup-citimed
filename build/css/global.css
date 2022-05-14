@@ -205,6 +205,64 @@ table {
   background: linear-gradient(89.84deg, #1B77DC -0.35%, #35A8EA 99.03%);
 }
 
+.select2-container .select2-selection--single {
+  height: 52px;
+  border-radius: 3px;
+  border: none;
+  padding: 17px 20px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: transform ease 0.35s;
+}
+@media screen and (max-width: 768px) {
+  .select2-container--default .select2-selection--single .select2-selection__arrow {
+    right: 10px;
+  }
+}
+
+.select2-container--open .select2-container--default .select2-selection--single .select2-selection__arrow {
+  transform: rotate(180deg);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  width: 8px;
+  height: 5px;
+  border: none;
+  background-image: url("../../assets/img/form-arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.select2-dropdown {
+  padding: 7px 0 10px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 2px 10px rgba(34, 87, 142, 0.19);
+}
+
+.select2-results__option {
+  padding: 7px 20px;
+  font-size: 15px;
+  color: #57758F;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: #ffffff;
+  color: #0E3F60;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  line-height: 1.4;
+  color: #0E3F60;
+}
+
 .text-styles h1, .h1 {
   margin-bottom: 30px;
   font-weight: 500;
@@ -1248,6 +1306,11 @@ svg + .button__text {
   justify-content: space-between;
   margin-top: 40px;
 }
+@media screen and (max-width: 768px) {
+  .cart-total__total {
+    margin-top: 10px;
+  }
+}
 .cart-total__total-name {
   font-size: 16px;
 }
@@ -1258,6 +1321,14 @@ svg + .button__text {
 .cart-total__total-price .rub {
   font-size: 26px;
 }
+@media screen and (max-width: 768px) {
+  .cart-total__total-price {
+    font-size: 22px;
+  }
+  .cart-total__total-price .rub {
+    font-size: 20px;
+  }
+}
 .cart-total__footnote {
   margin-bottom: 20px;
   font-size: 13px;
@@ -1267,9 +1338,61 @@ svg + .button__text {
 .cart-total__footnote b {
   font-weight: 500;
 }
+.cart-total__buttons + .cart-total__footnote {
+  margin-top: 15px;
+  margin-bottom: 0;
+  color: #57758F;
+}
+.cart-total__buttons + .cart-total__footnote .policylink {
+  color: currentColor;
+}
 .cart-total__buttons {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+.cart-total__buttons_align-left {
+  align-items: flex-start;
+}
+.cart-total__edit-link {
+  font-size: 14px;
+  text-decoration: underline;
+}
+.cart-total__edit-link:hover {
+  text-decoration: none;
+}
+
+.cart-user {
+  margin-bottom: 90px;
+  padding: 40px 30px 50px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 20px rgba(34, 87, 142, 0.1);
+}
+@media screen and (max-width: 768px) {
+  .cart-user {
+    margin-bottom: 10px;
+    padding: 30px 25px 25px 15px;
+  }
+}
+.cart-user__already {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 20px;
+}
+.cart-user__already-title {
+  font-weight: 500;
+  font-size: 18px;
+}
+.cart-user__already-login {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #F35150;
+  text-decoration: underline;
+}
+.cart-user__already-login:hover {
+  text-decoration: none;
 }
 
 .catalog-nav {
@@ -2152,6 +2275,154 @@ svg + .button__text {
   }
 }
 
+.field {
+  position: relative;
+  border: 1px solid rgba(87, 117, 143, 0.2);
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+.field_tel {
+  display: flex;
+}
+.field_tel-part {
+  border: 0;
+  border-radius: 0;
+}
+.field_tel-part.field_left {
+  width: 150px;
+  flex-shrink: 0;
+  border-radius: 3px 0 0 3px;
+  border-right: 1px solid rgba(87, 117, 143, 0.2);
+}
+@media screen and (max-width: 1024px) {
+  .field_tel-part.field_left {
+    width: 80px;
+  }
+}
+.field_tel-part.field_right {
+  flex-grow: 1;
+  border-radius: 0 3px 3px 0;
+}
+.field_radio {
+  background-color: rgba(14, 63, 96, 0);
+  border: none;
+  padding-bottom: 10px;
+}
+.field__input {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  box-shadow: none;
+  padding: 17px 15px 20px 20px;
+  font-size: 15px;
+  line-height: 1;
+  color: #0E3F60;
+  height: 52px;
+}
+.field__input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+.field__input::-moz-placeholder {
+  color: #ffffff;
+}
+.field__input:-moz-placeholder {
+  color: #ffffff;
+}
+.field__input:-ms-input-placeholder {
+  color: #ffffff;
+}
+.field__input.ui-placeholder {
+  color: #ffffff;
+}
+.field__label {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  padding: 3px 16px 1px 5px;
+  color: rgba(87, 117, 143, 0.84);
+  font-size: 12px;
+  pointer-events: none;
+  transform: scale(1.25) translate(15px, 13px);
+  transform-origin: left;
+  transition: transform ease 0.35s;
+  background-color: #ffffff;
+}
+.is-focus .field__label, .is-dirty .field__label {
+  transform: scale(1) translate(15px, -9px);
+  transform-origin: left;
+}
+@media screen and (max-width: 600px) {
+  .field__label {
+    padding: 4px 5px 2px;
+    transform: scale(1.16) translate(15px, 13px);
+    transform-origin: left;
+  }
+}
+.field__inputs {
+  position: relative;
+  z-index: 1;
+}
+.field_radio .field__inputs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 30px;
+}
+.field__select-options {
+  display: none;
+}
+.field__option-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.field_tel .field__option-inner {
+  display: initial;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.field__option-price {
+  font-weight: 500;
+}
+.field__option-note {
+  margin-left: 0.5em;
+}
+@media screen and (max-width: 768px) {
+  .field__option-note {
+    display: none;
+  }
+}
+.field__none {
+  display: none;
+}
+.is-none .field__none {
+  display: block;
+}
+.field__error {
+  display: none;
+}
+.is-error .field__error {
+  display: block;
+}
+.field__none, .field__error {
+  position: absolute;
+  right: 0;
+  bottom: -17px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ff4701;
+}
+
+::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+  color: transparent;
+  opacity: 1;
+  background: url("../../assets/img/calendar.svg") no-repeat center;
+  background-size: contain;
+}
+
 @media screen and (max-width: 1024px) {
   .footer-menu {
     padding-bottom: 0;
@@ -2234,6 +2505,37 @@ svg + .button__text {
   }
   .is-open .footer-menu__arrow {
     transform: rotate(180deg);
+  }
+}
+
+.form-standart_two-cols form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+@media screen and (max-width: 768px) {
+  .form-standart_two-cols form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.form-standart__item-title {
+  margin-bottom: 18px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.form-standart__item_fixed-width {
+  grid-column: 1/3;
+}
+.form-standart__item_fixed-width > .field {
+  min-width: 340px;
+  width: calc(50% - 15px);
+}
+@media screen and (max-width: 768px) {
+  .form-standart__item_fixed-width > .field {
+    width: 100%;
+    min-width: auto;
   }
 }
 
@@ -3440,6 +3742,11 @@ svg + .button__text {
 .place-tabs {
   margin-bottom: 25px;
 }
+@media screen and (max-width: 768px) {
+  .place-tabs {
+    margin-bottom: 10px;
+  }
+}
 .place-tabs__nav {
   display: flex;
   gap: 10px;
@@ -3467,9 +3774,25 @@ svg + .button__text {
 .place-tabs__link:hover {
   text-decoration: none;
 }
+@media screen and (max-width: 768px) {
+  .place-tabs__link {
+    padding: 13px 15px;
+    font-size: 13px;
+    line-height: 1.2;
+  }
+  .place-tabs__link svg {
+    margin-right: 10px;
+  }
+}
 .place-tabs__tabs {
   padding: 30px;
   background-color: #ffffff;
+  box-shadow: 0 3px 20px rgba(34, 87, 142, 0.1);
+}
+@media screen and (max-width: 768px) {
+  .place-tabs__tabs {
+    padding: 15px 25px 15px 15px;
+  }
 }
 .place-tabs__choice-button {
   margin-right: 45px;
@@ -3535,6 +3858,45 @@ svg + .button__text {
   .profile-compact__arrow {
     display: none;
   }
+}
+
+.radio {
+  position: relative;
+}
+.radio__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.radio__label {
+  padding-left: 37px;
+  font-size: 15px;
+  transition: color ease 0.35s;
+  cursor: pointer;
+}
+.radio__label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -0.2em;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(87, 117, 143, 0.2);
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 20px #ffffff;
+  transition: box-shadow ease 0.35s;
+}
+:checked + .radio__label {
+  color: #1C7ADD;
+}
+:checked + .radio__label:before {
+  background-color: #1C7ADD;
+  border-color: #1C7ADD;
+  box-shadow: inset 0 0 0 4px #ffffff;
 }
 
 .search-line_cart {

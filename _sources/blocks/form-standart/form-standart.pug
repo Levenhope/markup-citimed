@@ -1,0 +1,64 @@
+mixin (field)
+    if (field.type === 'text' || field.type === 'tel' || field.type === 'email')
+        +b.form-standart__field
+            +e.LABEL.label= field.name
+            +e.item
+                +e.inputs
+                    +e.INPUT.input(type=field.type data-necessary='')
+                +e.message
+                    +e.none Заполните поле
+                    +e.error Поле заполнено некорректно
+    else if (field.type === 'select')
+        +b.form-standart__field
+            +e.LABEL.label= field.name
+            +e.item
+                +e.inputs
+                    select(data-placeholder='Выберите клуб' data-necessary='')
+                        option
+                        option(value='ugo-zapad') Метро Юго-Западная
+                        option(value='chertanovskaya') Метро Чертановская
+                        option(value='federaciya') Башня Федерации
+                +e.message
+                    +e.none Сделайте выбор
+    else if (field.type === 'textarea')
+        +b.form-standart__field
+            +e.item
+                +e.inputs
+                    +e.TEXTAREA.textarea(placeholder=field.name data-necessary='')
+                +e.message
+                    +e.none Заполните поле
+
+mixin form-standart(params)
+    +b.form-standart(class=('_tpl-'+params.tpl) class=('_'+params.bg+'-bg'))
+        +e.plate
+            +e.H2.title!= params.title
+            form
+                +e.fields-list
+                    if (params.fieldsCols)
+                        each col in params.fieldsCols
+                            +e.fields-col
+                                each field in col
+                                    +filedTypes(field)
+                    else
+                        each field in params.fields
+                            +filedTypes(field)
+                +e.footer
+                    +e.agreements
+                        if (!!params.policy)
+                            +e.field_agreement._checkbox
+                                +b.LABEL.b-checkbox
+                                    +e.INPUT.input(type='checkbox' name='agr1' id='agr1' data-necessary='')
+                                    +e.text Согласен с <a href='#'>Политикой конфиденциальности</a> и на <a href='#'>обработку персональных данных</a>
+                                +e.message
+                                    +e.error Необходимо ваше согласие
+
+                        if (!!params.rules)
+                            +e.field_agreement._checkbox
+                                +b.LABEL.b-checkbox
+                                    +e.INPUT.input(type='checkbox' name='agr2' id='agr2' data-necessary='')
+                                    +e.text С <a href='#'>Офертой</a> и <a href='#'>Правилами клуба ознакомлен</a>
+                                +e.message
+                                    +e.error Необходимо ваше согласие
+                    +e.buttons
+                        +e.BUTTON.submit.button-outline(type='submit') Отправить
+            +e.success-message Ваша заявка отправлена! Наш менеджер скоро с вами свяжется.

@@ -19,4 +19,37 @@ mixin cart-total()
                 p
                     b Стоимость услуг при заказе выезда на дом может отличаться!
             +e.buttons
-                +e.A.submit.button.button_filled Перейти к оформлению
+                +e.A.submit.button.button_filled(href='#') Перейти к оформлению
+mixin cart-total-checkout()
+    +b.cart-total
+        +e.block
+            +e.title К оплате
+        +e.block
+            +e.UL.list
+                +e.LI.list-item
+                    +e.item-name Исследования
+                    +e.item-price + 4 800 #[span.rub ₽]
+                +e.LI.list-item
+                    +e.item-name Взятие биоматериала
+                    +e.item-price + 200 #[span.rub ₽]
+            +e.total
+                +e.total-title Общая цена
+                +e.total-price 5 200 #[span.rub ₽]
+        +e.block
+            +e.buttons
+                +e.A.submit.button.button_filled(href='#') Подтвердить заказ
+                +e.A.edit-link(href='#') Отредактировать заказ
+            +e.footnote
+                p Оформляя заказ, вы принимаете условия #[a.policylink(href='#' target='_blank') Соглашения об обработке персональных данных]
+
+mixin cart-total-compact()
+    +b.cart-total._compact
+        +e.UL.list
+            +e.LI.list-item
+                +e.item-name Ваш заказ
+                +e.item-price + 4 800 #[span.rub ₽]
+            +e.LI.list-item
+                +e.item-name Взятие биоматериала
+                +e.item-price + 200 #[span.rub ₽]
+        +e.buttons._align-left
+            +e.A.edit-link(href='#') Что входит в заказ

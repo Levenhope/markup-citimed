@@ -1,0 +1,33 @@
+.form-standart {
+  $self: &;
+  &_two-cols {
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      @media #{$media-phone-landscape} {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+  &__item-title {
+    margin-bottom: 18px;
+    font-weight: $font-weight-medium;
+    font-size: 18px;
+  }
+  &__item {
+    &_fixed-width {
+      grid-column: 1/3;
+      > .field {
+        min-width: 340px;
+        width: calc(50% - 15px);
+        @media #{$media-phone-landscape} {
+          width: 100%;
+          min-width: auto;
+        }
+      }
+    }
+  }
+}

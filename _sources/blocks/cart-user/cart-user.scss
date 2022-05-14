@@ -1,0 +1,28 @@
+.cart-user {
+  margin-bottom: 90px;
+  padding: 40px 30px 50px;
+  background-color: $color-white;
+  box-shadow: 0 3px 20px rgb(34 87 142 / 10%);
+  @media #{$media-phone-landscape} {
+    margin-bottom: 10px;
+    padding: 30px 25px 25px 15px;
+  }
+  &__already {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+  &__already-title {
+    font-weight: $font-weight-medium;
+    font-size: 18px;
+  }
+  &__already-login {
+    margin-left: 10px;
+    font-size: 14px;
+    color: $color-accent;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

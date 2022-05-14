@@ -1,0 +1,38 @@
+.radio {
+  position: relative;
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__label {
+    padding-left: 37px;
+    font-size: 15px;
+    transition: color ease .35s;
+    cursor: pointer;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -.2em;
+      display: block;
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(87, 117, 143, .2);
+      border-radius: 100%;
+      box-shadow: inset 0 0 0 20px $color-white;
+      transition: box-shadow ease .35s;
+    }
+    :checked + & {
+      color: $color-secondary;
+      &:before {
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+        box-shadow: inset 0 0 0 4px $color-white;
+      }
+    }
+  }
+}

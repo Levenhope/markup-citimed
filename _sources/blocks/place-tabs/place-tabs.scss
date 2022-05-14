@@ -1,5 +1,8 @@
 .place-tabs {
   margin-bottom: 25px;
+  @media #{$media-phone-landscape} {
+    margin-bottom: 10px;
+  }
   &__nav {
     display: flex;
     gap: 10px;
@@ -26,10 +29,22 @@
     &:hover {
       text-decoration: none;
     }
+    @media #{$media-phone-landscape} {
+      padding: 13px 15px;
+      font-size: 13px;
+      line-height: 1.2;
+      svg {
+        margin-right: 10px;
+      }
+    }
   }
   &__tabs {
     padding: 30px;
     background-color: $color-white;
+    box-shadow: 0 3px 20px rgb(34 87 142 / 10%);
+    @media #{$media-phone-landscape} {
+      padding: 15px 25px 15px 15px;
+    }
   }
   &__choice-button {
     margin-right: 45px;

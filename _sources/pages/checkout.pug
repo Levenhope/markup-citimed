@@ -3,6 +3,7 @@ include ../blocks/search-line/search-line
 include ../blocks/breadcrumbs/breadcrumbs
 include ../blocks/cart-total/cart-total
 include ../blocks/place-tabs/place-tabs
+include ../blocks/cart-user/cart-user
 
 block global_vars
     -
@@ -17,8 +18,11 @@ block content
         .content-center
             +b.page-cols
                 +e.title
+                    .hide-desktop
+                        +cart-total-compact()
                     h1.h2 Где бы Вы хотели сдать анализы?
                 +e.main-col
                     +place-tabs()
+                    +cart-user()
                 +e.side-col
-                    +cart-total()
+                    +cart-total-checkout()

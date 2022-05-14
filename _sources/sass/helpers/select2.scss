@@ -1,0 +1,48 @@
+.select2-container .select2-selection--single {
+  height: 52px;
+  border-radius: 3px;
+  border: none;
+  padding: 17px 20px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transition: transform ease .35s;
+  @media #{$media-phone-landscape} {
+    right: 10px;
+  }
+}
+.select2-container--open .select2-container--default .select2-selection--single .select2-selection__arrow {
+  transform: rotate(180deg);
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  width: 8px;
+  height: 5px;
+  border: none;
+  background-image: url('../../assets/img/form-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.select2-dropdown {
+  padding: 7px 0 10px;
+  border: none;
+  border-radius: 0;
+  box-shadow: 0 2px 10px rgba(34, 87, 142, .19);
+}
+.select2-results__option {
+  padding: 7px 20px;
+  font-size: 15px;
+  color: $color-text-light;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option[aria-selected=true] {
+  background-color: $color-white;
+  color: $color-black;
+}
+.select2-container .select2-selection--single .select2-selection__rendered {
+  padding-left: 0;
+  line-height: 1.4;
+  color: $color-black;
+}

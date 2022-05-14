@@ -1,0 +1,61 @@
+mixin cart-user()
+    +b.cart-user
+        +e.inner
+            +e.already
+                +e.already-title Есть учетная запись?
+                +e.A.already-login(href='#') Войти
+            +b.form-standart._two-cols
+                +e.FORM
+                    +e.item
+                        +field({fieldType: 'text', codeName: 'lastName', required: true, label: 'Фамилия*'})
+                    +e.item
+                        +field({fieldType: 'text', codeName: 'firstName', required: true, label: 'Имя*'})
+                    +e.item
+                        +field({fieldType: 'text', codeName: 'middleName', required: true, label: 'Отчество*'})
+                    +e.item
+                        +field({
+                            fieldType: 'date',
+                            codeName: 'birthDate',
+                            required: true,
+                            label: 'Дата рождения*'
+                        })
+                    +e.item._fixed-width
+                        +field({
+                            fieldType: 'radio',
+                            codeName: 'sex',
+                            options: [
+                                {
+                                    name: 'Женщина',
+                                    value: 'female',
+                                    checked: true
+                                },
+                                {
+                                    name: 'Мужчина',
+                                    value: 'male'
+                                },
+                            ]
+                        })
+                    +e.item._fixed-width
+                        +e.item-title Номер телефона для SMS-оповещения
+                        +field({
+                            fieldType: 'tel', codeName: 'phone', required: true, label: 'Номер телефона', options: [
+                                {
+                                    value: '+7',
+                                    name: '+7',
+                                    country: 'Россия'
+                                },
+                                {
+                                    value: '+375',
+                                    name: '+375',
+                                    country: 'Беларусь'
+                                }
+                            ]
+                        })
+                    +e.item._fixed-width
+                        +e.item-title Куда прислать результат исследования?
+                        +field({
+                            fieldType: 'email',
+                            codeName: 'birthDate',
+                            required: true,
+                            label: 'Адрес электронной почты'
+                        })

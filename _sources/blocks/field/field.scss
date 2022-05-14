@@ -1,0 +1,135 @@
+.field {
+  $self: &;
+  position: relative;
+  border: 1px solid rgba(87, 117, 143, .2);
+  border-radius: 3px;
+  background-color: $color-white;
+  &_tel {
+    display: flex;
+  }
+  &_tel-part {
+    border: 0;
+    border-radius: 0;
+    &#{$self}_left {
+      width: 150px;
+      flex-shrink: 0;
+      border-radius: 3px 0 0 3px;
+      border-right: 1px solid rgba(87, 117, 143, .2);
+      @media #{$media-mobile} {
+        width: 80px;
+      }
+    }
+    &#{$self}_right {
+      flex-grow: 1;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+  &_radio {
+    background-color: $transparent;
+    border: none;
+    padding-bottom: 10px;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    box-shadow: none;
+    padding: 17px 15px 20px 20px;
+    font-size: 15px;
+    line-height: 1;
+    color: $color-black;
+    height: 52px;
+    @include placeholder() {
+      color: $color-white;
+    }
+  }
+  &__label {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    padding: 3px 16px 1px 5px;
+    color: rgba(87, 117, 143, .84);
+    font-size: 12px;
+    pointer-events: none;
+    transform: scale(1.25) translate(15px, 13px);
+    transform-origin: left;
+    transition: transform ease .35s;
+    background-color: $color-white;
+
+    .is-focus &, .is-dirty & {
+      transform: scale(1) translate(15px, -9px);
+      transform-origin: left;
+    }
+    @media #{$media-phone} {
+      padding: 4px 5px 2px;
+      transform: scale(1.16) translate(15px, 13px);
+      transform-origin: left;
+    }
+  }
+  &__inputs {
+    position: relative;
+    z-index: 1;
+    #{$self}_radio & {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 30px;
+    }
+  }
+  &__select-options {
+    display: none;
+  }
+  &__option-inner {
+    display: flex;
+    justify-content: space-between;
+    #{$self}_tel & {
+      display: initial;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  &__option-price {
+    font-weight: $font-weight-medium;
+  }
+  &__option-note {
+    margin-left: .5em;
+    @media #{$media-phone-landscape} {
+      display: none;
+    }
+  }
+  &__none {
+    display: none;
+
+    .is-none & {
+      display: block;
+    }
+  }
+
+  &__error {
+    display: none;
+
+    .is-error & {
+      display: block;
+    }
+  }
+
+  &__none, &__error {
+    position: absolute;
+    right: 0;
+    bottom: -17px;
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    color: $color-status-error;
+  }
+}
+
+::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+  color: transparent;
+  opacity: 1;
+  background: url('../../assets/img/calendar.svg') no-repeat center;
+  background-size: contain;
+}
