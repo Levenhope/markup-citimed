@@ -1,0 +1,29 @@
+.personal-nav {
+  margin-bottom: 30px;
+  padding: 25px 35px;
+  background-color: $color-bg-light;
+  border-radius: 3px;
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__name {
+    font-weight: $font-weight-medium;
+    font-size: 14px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: $color-secondary;
+  }
+  &__block {
+    padding: 15px 0;
+    border-bottom: 1px dashed rgba(87, 117, 143, 0.17);
+  }
+  &__nav-link {
+    display: block;
+    padding: 10px 0;
+    font-weight: $font-weight-medium;
+    font-size: 15px;
+    color: $color-black;
+  }
+}

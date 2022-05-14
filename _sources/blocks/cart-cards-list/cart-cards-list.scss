@@ -4,4 +4,9 @@
   box-shadow: 0 3px 20px rgba(34, 87, 142, 0.1);
   border-radius: 6px;
   margin-bottom: 40px;
+  &_no-plate {
+    padding: 0;
+    background: $transparent;
+    box-shadow: none;
+  }
 }

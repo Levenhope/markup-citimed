@@ -1156,6 +1156,11 @@ svg + .button__text {
   border-radius: 6px;
   margin-bottom: 40px;
 }
+.cart-cards-list_no-plate {
+  padding: 0;
+  background: rgba(14, 63, 96, 0);
+  box-shadow: none;
+}
 
 .cart-compact__link {
   position: relative;
@@ -3764,6 +3769,36 @@ svg + .button__text {
 
 .page-content_light-bg {
   background-color: rgba(244, 248, 253, 0.66);
+}
+
+.personal-nav {
+  margin-bottom: 30px;
+  padding: 25px 35px;
+  background-color: #F2F7FD;
+  border-radius: 3px;
+}
+.personal-nav__heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.personal-nav__name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #1C7ADD;
+}
+.personal-nav__block {
+  padding: 15px 0;
+  border-bottom: 1px dashed rgba(87, 117, 143, 0.17);
+}
+.personal-nav__nav-link {
+  display: block;
+  padding: 10px 0;
+  font-weight: 500;
+  font-size: 15px;
+  color: #0E3F60;
 }
 
 .place-tabs {

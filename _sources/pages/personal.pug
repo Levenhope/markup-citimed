@@ -1,0 +1,23 @@
+extends ./layouts/default
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/personal-nav/personal-nav
+include ../blocks/cart-cards-list/cart-cards-list
+
+block global_vars
+    -
+        $bodyMods = ['']
+        $pageTitle = 'Личный кабинет'
+
+block content
+    main.page-content
+        +breadcrumbs({
+            items: [{name: 'Главная', href: 'index.html'}, {name: 'Личный кабинет'}]
+        })
+        .content-center
+            +b.page-cols
+                +e.title
+                    h1.h2 Состав заказа
+                +e.side-col
+                    +personal-nav()
+                +e.main-col
+                    +cart-cards-list({isNoPlate: true})

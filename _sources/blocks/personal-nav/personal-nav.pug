@@ -1,0 +1,12 @@
+mixin personal-nav()
+    +b.personal-nav
+        +e.block
+            +e.heading
+                +svgUse(16, 16, "icon-profile")
+                +e.name Консантинопольский К.О.
+        +e.block
+            +e.UL.nav
+                +e.LI.nav-item
+                    +e.A.nav-link(href='#') Все заказы
+                +e.LI.nav-item
+                    +e.A.nav-link(href='#') Настроики профиля

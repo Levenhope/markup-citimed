@@ -1,11 +1,12 @@
 include ../compact-card/compact-card
-mixin cart-cards-list
-    +b.cart-cards-list
+mixin cart-cards-list(params)
+    - var isNoPlate = params&&params.isNoPlate?'_no-plate':'';
+    +b.cart-cards-list(class=isNoPlate)
         +e.item
             +compact-card({onlyRemove: true})
         +e.item
             +compact-card({onlyRemove: true})
     h2.h3 Дополнительные услуги
-    +b.cart-cards-list
+    +b.cart-cards-list(class=isNoPlate)
         +e.item
             +compact-card-extra()
