@@ -1,5 +1,6 @@
 include ../service-card/service-card
 include ../compact-card/compact-card
+include ../nano-card/nano-card
 mixin cards-block(params)
     +b.SECTION.cards-block
         .content-center
@@ -69,3 +70,16 @@ mixin cards-block-extra(params)
                 +e.list(data-compact=true)
                     +e.item
                         +compact-card()
+
+mixin cards-block-nano(params)
+    +b.SECTION.cards-block._compact
+        +e.list._nano(data-compact=true)
+            +e.item
+                +nano-card()
+            +e.item
+                +nano-card()
+            +e.item
+                +nano-card()
+        +e.A.show-all(href='./search.html')
+            +e.SPAN.show-all-text Все результаты
+            +e.SPAN.show-all-counter (102)

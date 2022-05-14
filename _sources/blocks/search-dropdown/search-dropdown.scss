@@ -1,0 +1,43 @@
+.search-dropdown {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: none;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: $color-white;
+  &.is-open {
+    display: block;
+  }
+  &__control {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 25px 0 20px;
+  }
+  &__toggle {
+    display: none;
+    @media #{$media-mobile} {
+      display: block;
+      border: 0;
+      box-shadow: none;
+      background: $transparent;
+      &_close {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+      }
+    }
+  }
+  &__toggle-icon {
+    display: block;
+    fill: $color-black;
+  }
+  &__toggle-text {
+    display: none;
+  }
+  &__line {
+    margin-bottom: 30px;
+  }
+}

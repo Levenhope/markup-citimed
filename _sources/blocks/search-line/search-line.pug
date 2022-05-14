@@ -1,3 +1,4 @@
+include ../cards-block/cards-block
 mixin search-line(params)
     - var tagList = ['клинический анализ крови', 'COVID-19', 'Диабет', 'клинический анализ крови', 'COVID-19', 'Диабет', 'клинический анализ крови'];
     - var template = params&&params.template?'_'+params.template:'';
@@ -6,7 +7,7 @@ mixin search-line(params)
         +e.inner
             +e.content
                 +e.FORM.form(method='GET')
-                    +e.INPUT.input(type='search' placeholder=params.placeholder data-placeholder-mobile=params.placeholderMobile?params.placeholderMobile:'')
+                    +e.INPUT.input(type='search' data-instant=(params && params.instant) placeholder=params.placeholder data-placeholder-mobile=params.placeholderMobile?params.placeholderMobile:'')
                     +e.BUTTON.button._reset(type='reset')
                         +svgUse(14, 14, 'icon-close')(class='search-line__button-icon bvi-hide')
                         +e.reset-text.bvi-show Сбросить
@@ -24,3 +25,6 @@ mixin search-line(params)
             +e.request
                 +e.SPAN.request-title по запросу:
                 +e.SPAN.request-text «кровь»
+        if params&&params.instant
+            +e.result-drop
+                +cards-block-nano()

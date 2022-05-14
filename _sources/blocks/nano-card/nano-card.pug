@@ -1,0 +1,28 @@
+mixin nano-card(params)
+    +b.ARTICLE.nano-card(class=mod)
+        +e.content
+            +e.A.title(href='#') Клинический анализ крови без лейкоцитарной формулы (венозная кровь)
+            +e.UL.tags
+                +e.LI.tag Исследование
+                +e.LI.tag 1.0.D1.202
+                +e.LI.tag кровь с EDTA
+                +e.LI.tag количественный
+                +e.LI.tag._secondary 1 день
+            if params && params.limits
+                +e.note Есть #[a(href='#') ограничения]
+        +e.footer
+            if params&&params.discount
+                +e.price._discount
+                    +e.old-price 3 600 #[span.rub ₽]
+                    +e.current-price 2 600 #[span.rub ₽]
+            else
+                +e.price 2 600 #[span.rub ₽]
+            if params&&params.onlyRemove
+                +e.BUTTON.remove.button.button_control
+                    +svgUse(14, 14, 'icon-close')
+            else
+                +e.BUTTON.add.button.button_cart(class=params&&params.added?'is-added':'')
+                    span.button__inner
+                        +svgUse(18, 18, 'icon-cart')(class='compact-card__add-icon')
+                    span.button__remove
+                        +svgUse(7, 7, 'icon-close')(class='compact-card__remove-icon')

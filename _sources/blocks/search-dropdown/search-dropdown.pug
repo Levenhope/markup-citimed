@@ -1,0 +1,16 @@
+include ../search-line/search-line
+include ../cards-block/cards-block
+mixin search-dropdown()
+    +b.search-dropdown
+        .content-center
+            +e.control
+                +e.BUTTON.toggle.js-search-toggle
+                    +svgUse(16, 16, 'icon-close')
+                    +e.toggle-text.bvi-show Закрыть меню
+            +e.line
+                +search-line({
+                    placeholder: 'Поиск нужного исследования...',
+                    template: 'round-modal',
+                })
+            +cards-block-nano()
+

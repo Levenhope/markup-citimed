@@ -2,6 +2,7 @@ include ../top-menu/top-menu
 include ../search-line/search-line
 include ../profile-compact/profile-compact
 include ../cart-compact/cart-compact
+include ../search-dropdown/search-dropdown
 mixin page-header()
     +b.HEADER.page-header
         +e.top
@@ -14,7 +15,7 @@ mixin page-header()
                         +svgUse(140, 36, 'logo-header')
                     +b.A.icon-link._icon-accent._text-secondary._no-text-mobile._text-uppercase(
                             href="./modal_map.html"
-                            data-fancybox
+                            data-fancybox="map"
                             data-type="iframe"
                             data-preload="false"
                             data-width="1028"
@@ -27,10 +28,23 @@ mixin page-header()
                         +e.SPAN.icon-holder
                             +svgUse(30, 23, 'icon-call-time')(class='icon-link__icon')
                         +e.SPAN.text +7 (495) 121-25-78
-                    +b.A.icon-link._icon-dark-mobile._no-text-mobile._text-uppercase.page-header__search-icon(href='#')
+                    +b.A.icon-link._icon-dark-mobile._no-text-mobile._text-uppercase.page-header__search-icon.hide-mobile(
+                        href="./modal_search.html"
+                        data-fancybox="search"
+                        data-type="iframe"
+                        data-preload="false"
+                        data-width="1028"
+                        data-height="640"
+                    )
                         +e.SPAN.icon-holder
                             +svgUse(16, 16, 'icon-search')(class='icon-link__icon')
                         +e.SPAN.text Поиск анализов
+                    +b.A.icon-link._icon-dark-mobile._no-text-mobile._text-uppercase.page-header__search-icon.js-search-toggle.hide-desktop(
+                        href="javascript:;")
+                        +e.SPAN.icon-holder
+                            +svgUse(16, 16, 'icon-search')(class='icon-link__icon')
+                        +e.SPAN.text Поиск анализов
+                    +search-dropdown()
                     +b.A.icon-link._text-uppercase.hide-mobile(href='#')
                         +e.SPAN.icon-holder
                             +svgUse(16, 20, 'icon-doc')(class='icon-link__icon')

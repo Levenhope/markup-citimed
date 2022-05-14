@@ -1,0 +1,13 @@
+extends ./layouts/modal
+include ../blocks/search-line/search-line
+include ../blocks/search-tabs/search-tabs
+block content
+    +search-line({
+        placeholder: 'Быстрый поиск нужного исследования...',
+        placeholderMobile: 'Поиск нужного исследования...',
+        btnText: 'Найти исследование',
+        template: 'panel',
+        onPage: true,
+        request: 'Кровь'
+    })
+    +search-tabs()
