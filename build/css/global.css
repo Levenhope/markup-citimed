@@ -650,6 +650,9 @@ html[data-useragent*="Mac OS X"] .rub {
   transition: transform ease 0.35s;
   transform: rotate(-45deg);
 }
+.page-cols__main-col .accordion__toggle {
+  top: 32px;
+}
 .is-open .accordion__toggle {
   transform: rotate(0deg);
 }
@@ -2537,7 +2540,7 @@ svg + .button__text {
   border: none;
   background: none;
   box-shadow: none;
-  padding: 17px 15px 20px 20px;
+  padding: 20px 15px 20px 20px;
   font-size: 15px;
   line-height: 1;
   color: #0E3F60;

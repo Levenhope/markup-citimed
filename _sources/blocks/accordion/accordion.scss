@@ -70,6 +70,9 @@
     fill: $color-secondary;
     transition: transform ease .35s;
     transform: rotate(-45deg);
+    .page-cols__main-col & {
+      top: 32px;
+    }
     .is-open & {
       transform: rotate(0deg);
     }
