@@ -612,7 +612,7 @@ $(function() {
         function sliderGridFix() {
             let parentWidth = $slider.closest('.specials__content').width();
             let compactTemplate = $slider.closest('.specials_compact');
-            let sliderListWidth = (window.innerWidth>1024)||compactTemplate?parentWidth+30:parentWidth-65;
+            let sliderListWidth = window.innerWidth>1024||compactTemplate.length>0?parentWidth+30:parentWidth-65;
             $slider.width(sliderListWidth);
         }
         $slider.on('init', function() {
@@ -668,6 +668,8 @@ document.addEventListener("DOMContentLoaded", function(){
         window.dispatchEvent(tabsEvent);
     })
 });
+//types-block
+
 //top-menu
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
@@ -680,5 +682,4 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 });
-//types-block
 //# sourceMappingURL=../sourcemaps/blocks.js.map

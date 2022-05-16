@@ -316,9 +316,11 @@
     text-decoration: underline;
   }
   &__info {
-    display: none;
-    @media #{$media-phone-landscape} {
-      display: block;
+    .modal-content & {
+      display: none;
+      @media #{$media-phone-landscape} {
+        display: block;
+      }
     }
   }
   &__bottom-info {

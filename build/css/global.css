@@ -645,7 +645,7 @@ html[data-useragent*="Mac OS X"] .rub {
 .accordion__toggle {
   position: absolute;
   right: 12px;
-  top: 32px;
+  top: 40px;
   fill: #1C7ADD;
   transition: transform ease 0.35s;
   transform: rotate(-45deg);
@@ -3603,11 +3603,11 @@ svg + .button__text {
 .map-block__block-link {
   text-decoration: underline;
 }
-.map-block__info {
+.modal-content .map-block__info {
   display: none;
 }
 @media screen and (max-width: 768px) {
-  .map-block__info {
+  .modal-content .map-block__info {
     display: block;
   }
 }
