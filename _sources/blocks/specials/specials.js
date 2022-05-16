@@ -4,6 +4,7 @@ $(function() {
         let $context = $(this);
         let $slider = $('.specials__list', $context);
         let isCompact = $slider.attr('data-compact');
+        let mobileWidth = window.innerWidth < 601;
         let options = {
             infinite: false,
             dots: true,
@@ -50,20 +51,21 @@ $(function() {
             ]
         };
         function sliderGridFix() {
+            mobileWidth = window.innerWidth < 601;
             let parentWidth = $slider.closest('.specials__content').width();
-            let compactTemplate = $slider.closest('.specials_compact');
-            let sliderListWidth = window.innerWidth>1024||compactTemplate.length>0?parentWidth+30:parentWidth-65;
+            let compactTemplate = $slider.closest('.specials_compact').length > 0;
+            let sliderListWidth = (!compactTemplate&&window.innerWidth<1025)||mobileWidth?parentWidth-65:parentWidth+30;
             $slider.width(sliderListWidth);
         }
         $slider.on('init', function() {
             sliderGridFix();
         });
         if (isCompact) {
-            if (window.innerWidth < 601) {
+            if (mobileWidth) {
                 $slider.slick(compactOptions);
             }
             window.addEventListener('resize', function(event) {
-                if (!$slider.is('.slick-initialized') && (window.innerWidth < 601)) {
+                if (!$slider.is('.slick-initialized') && mobileWidth) {
                     $slider.slick(compactOptions);
                 } else {
                     sliderGridFix();

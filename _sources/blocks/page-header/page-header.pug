@@ -10,7 +10,7 @@ mixin page-header()
                 +e.container
                     +e.BUTTON.toggle
                         +svgUse(16, 20, 'icon-mobile-menu')(class='page-header__toggle-icon')
-                        +e.toggle-text.bvi-show Меню
+                        +e.SPAN.toggle-text.bvi-show Меню
                     +e.A.logo(href='/build/index.html')
                         +svgUse(140, 36, 'logo-header')
                     +b.A.icon-link._icon-accent._text-secondary._no-text-mobile._text-uppercase(
@@ -56,7 +56,7 @@ mixin page-header()
         +e.menu-holder
             +e.BUTTON.toggle._close
                 +svgUse(16, 16, 'icon-close')(class='page-header__toggle-icon')
-                +e.toggle-text.bvi-show Закрыть меню
+                +e.SPAN.toggle-text.bvi-show Закрыть меню
             +top-menu()
             +e.mobile-part
                 .content-center

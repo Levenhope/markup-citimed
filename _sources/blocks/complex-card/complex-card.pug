@@ -23,4 +23,4 @@ mixin complex-card(params)
                 +e.PICTURE.img
                     if params.imgMob
                         +e.SOURCE(srcset=params.imgMob media="(max-width: 1024px)")
-                    +e.IMG.img(src=params.img)
+                    +e.IMG.img(src=params.img alt='')
