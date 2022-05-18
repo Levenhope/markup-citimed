@@ -96,8 +96,14 @@ $(function() {
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
         let item = e.target.closest('.cart-compact__link');
-        if (item < 1) return;
-        item.closest('.cart-compact').classList.toggle('is-open');
+        let modal = e.target.closest('.cart-compact__dropdown');
+        let cartCompact = document.querySelector('.cart-compact');
+        let isOpen = cartCompact.classList.contains('is-open');
+        if (!isOpen && !!item) {
+            cartCompact.classList.add('is-open');
+        } else if (!!isOpen && !modal) {
+            cartCompact.classList.remove('is-open');
+        }
     })
 });
 //catalog-nav
@@ -480,6 +486,16 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        //mobile search
+        if (e.target.closest('.js-search-toggle') < 1) return;
+        let header = e.target.closest('.page-header');
+        let searchDropdown = header.querySelector('.search-dropdown');
+        searchDropdown.classList.toggle('is-open');
+        fixPage();
+    });
+});
+document.addEventListener("DOMContentLoaded", function(){
     let searchLine = document.querySelectorAll('.search-line__input');
     function toggleResult(line) {
         if (line.value.length > 2) {
@@ -498,85 +514,6 @@ document.addEventListener("DOMContentLoaded", function(){
             });
         }
     });
-});
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        //mobile search
-        if (e.target.closest('.js-search-toggle') < 1) return;
-        let header = e.target.closest('.page-header');
-        let searchDropdown = header.querySelector('.search-dropdown');
-        searchDropdown.classList.toggle('is-open');
-        fixPage();
-    });
-});
-//steps
-$(function() {
-    function initSteps($slider, $context, options) {
-        $slider.on("init afterChange", function(event, slick, currentSlide){
-            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
-            $(".steps__total-number", $context).text(slick.slideCount);
-        });
-        $slider.slick(options);
-    }
-    $('.steps').each(function() {
-        let $context = $(this);
-        let $slider = $('.steps__list', $context);
-        let options = {
-            infinite: false,
-            dots: false,
-            mobileFirst: true,
-            prevArrow: $('.steps__slider-arrow.button_prev', $context),
-            nextArrow: $('.steps__slider-arrow.button_next', $context),
-            responsive: [{
-                breakpoint: 769,
-                settings: "unslick"
-
-            }, {
-
-                breakpoint: 483,
-                settings: {
-                    slidesToShow: 2,
-                }
-
-            }, {
-
-                breakpoint: 300,
-                settings: {
-                    slidesToShow: 1
-                }
-
-            }
-            ]
-        };
-        if (window.innerWidth < 1025) {
-            initSteps($slider, $context, options);
-        }
-        $(window).on('resize', function() {
-            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-                initSteps($slider, $context, options);
-            }
-        });
-    });
-});
-//tabs-links
-const tabsEvent = new Event('tabActivation');
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let tabLink = e.target.closest('.tabs-link');
-        let tabsHolder = e.target.closest('.tabs-holder');
-        if (!(tabLink && tabsHolder)) return;
-        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
-        let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
-        activeTabs.forEach(function(activeTab) {
-            activeTab.classList.remove('is-active');
-        });
-        tabsHolder.querySelectorAll('.tabs-link.is-active').forEach(function(activeLink) {
-            activeLink.classList.remove('is-active');
-        });
-        tabLink.classList.add('is-active');
-        targetTab.classList.add('is-active');
-        window.dispatchEvent(tabsEvent);
-    })
 });
 //specials
 $(function() {
@@ -670,8 +607,77 @@ $(function() {
         }
     });
 });
+//steps
+$(function() {
+    function initSteps($slider, $context, options) {
+        $slider.on("init afterChange", function(event, slick, currentSlide){
+            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
+            $(".steps__total-number", $context).text(slick.slideCount);
+        });
+        $slider.slick(options);
+    }
+    $('.steps').each(function() {
+        let $context = $(this);
+        let $slider = $('.steps__list', $context);
+        let options = {
+            infinite: false,
+            dots: false,
+            mobileFirst: true,
+            prevArrow: $('.steps__slider-arrow.button_prev', $context),
+            nextArrow: $('.steps__slider-arrow.button_next', $context),
+            responsive: [{
+                breakpoint: 769,
+                settings: "unslick"
+
+            }, {
+
+                breakpoint: 483,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
+            }
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            initSteps($slider, $context, options);
+        }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                initSteps($slider, $context, options);
+            }
+        });
+    });
+});
 //types-block
 
+//tabs-links
+const tabsEvent = new Event('tabActivation');
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let tabLink = e.target.closest('.tabs-link');
+        let tabsHolder = e.target.closest('.tabs-holder');
+        if (!(tabLink && tabsHolder)) return;
+        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
+        let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
+        activeTabs.forEach(function(activeTab) {
+            activeTab.classList.remove('is-active');
+        });
+        tabsHolder.querySelectorAll('.tabs-link.is-active').forEach(function(activeLink) {
+            activeLink.classList.remove('is-active');
+        });
+        tabLink.classList.add('is-active');
+        targetTab.classList.add('is-active');
+        window.dispatchEvent(tabsEvent);
+    })
+});
 //top-menu
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {

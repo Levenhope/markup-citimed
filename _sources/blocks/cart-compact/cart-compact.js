@@ -2,7 +2,13 @@
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
         let item = e.target.closest('.cart-compact__link');
-        if (item < 1) return;
-        item.closest('.cart-compact').classList.toggle('is-open');
+        let modal = e.target.closest('.cart-compact__dropdown');
+        let cartCompact = document.querySelector('.cart-compact');
+        let isOpen = cartCompact.classList.contains('is-open');
+        if (!isOpen && !!item) {
+            cartCompact.classList.add('is-open');
+        } else if (!!isOpen && !modal) {
+            cartCompact.classList.remove('is-open');
+        }
     })
 });

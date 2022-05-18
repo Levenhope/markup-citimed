@@ -1,5 +1,6 @@
 mixin category-nav(params)
-    +b.category-nav
+    - var isNav = params&&params.isNav?'_nav':'';
+    +b.category-nav(class=isNav)
         +e.UL.list
             each item in params.items
                 +e.LI.item

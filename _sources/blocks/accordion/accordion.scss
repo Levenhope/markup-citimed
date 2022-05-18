@@ -93,6 +93,13 @@
     pointer-events: none;
     transform: translateY(0);
     transition: max-height ease .35s, transform ease .35s, padding ease .35s, opacity ease .35s;
+    a {
+      color: $color-secondary-medium;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     #{$self}_big & {
       padding: 0;
     }
@@ -110,6 +117,9 @@
     @media #{$media-mobile} {
       padding: 0 30px;
       font-size: 14px;
+      .is-open & {
+        transform: translateY(-5px);
+      }
     }
   }
 }

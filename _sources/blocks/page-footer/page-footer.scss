@@ -92,7 +92,7 @@
     display: block;
     svg {
       display: block;
-      fill: $color-secondary;
+      fill: $color-secondary-medium;
     }
     &:hover {
       svg {
@@ -120,11 +120,12 @@
   }
   &__policy {
     display: inline-block;
+    color: $color-secondary-medium;
   }
   &__places-link {
     margin-top: auto;
     font-size: 15px;
-    color: $color-secondary;
+    color: $color-secondary-medium;
     text-decoration: underline;
     &:hover {
       text-decoration: none;

@@ -15,7 +15,7 @@
   }
   &__icon {
     display: block;
-    fill: $color-secondary;
+    fill: $color-secondary-medium;
     #{$self}_icon-accent & {
       fill: $color-accent;
     }
