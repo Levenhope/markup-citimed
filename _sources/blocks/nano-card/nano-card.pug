@@ -1,5 +1,5 @@
 mixin nano-card(params)
-    +b.ARTICLE.nano-card(class=mod)
+    +b.ARTICLE.nano-card(class=mod+' cart-btn-parent')
         +e.content
             +e.A.title(href='#') Клинический анализ крови без лейкоцитарной формулы (венозная кровь)
             +e.UL.tags
@@ -21,8 +21,8 @@ mixin nano-card(params)
                 +e.BUTTON.remove.button.button_control
                     +svgUse(14, 14, 'icon-close')
             else
-                +e.BUTTON.add.button.button_cart(class=params&&params.added?'is-added':'')
+                +e.BUTTON.add.button.button_cart(class=params && params.added ? 'is-added' : '')
                     span.button__inner
-                        +svgUse(18, 18, 'icon-cart')(class='compact-card__add-icon')
+                        +svgUse(18, 18, 'icon-cart')
                     span.button__remove
-                        +svgUse(7, 7, 'icon-close')(class='compact-card__remove-icon')
+                        +svgUse(7, 7, 'icon-close')

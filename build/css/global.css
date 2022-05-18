@@ -1036,13 +1036,6 @@ html[data-useragent*="Mac OS X"] .rub {
 .button_filled:hover {
   background-size: 200% 100%;
 }
-.button_cart {
-  position: relative;
-  width: 45px;
-  height: 45px;
-  flex-shrink: 0;
-  padding: 0;
-}
 .button__inner {
   display: flex;
   align-items: center;
@@ -1052,11 +1045,34 @@ html[data-useragent*="Mac OS X"] .rub {
   border-radius: 100%;
   box-shadow: 0 2px 6px rgba(34, 87, 142, 0.15);
   border: 1px solid rgba(87, 117, 143, 0);
+  background-color: #ffffff;
+  transition: border-color ease 0.35s;
 }
-.is-added .button__inner {
+.button_cart {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  padding: 0;
+  background-color: rgba(14, 63, 96, 0);
+}
+.button_cart .button__inner {
+  border: 1px solid rgba(87, 117, 143, 0.15);
+  box-shadow: none;
+}
+.button_cart .button__inner svg {
+  fill: #0E3F60;
+}
+.cart-btn-parent:hover .button_cart .button__inner svg {
+  fill: #1C7ADD;
+}
+.button_cart .button__inner:hover {
+  border-color: #1C7ADD;
+}
+.button_cart.is-added .button__inner {
   background-color: #1C7ADD;
 }
-.is-added .button__inner > svg {
+.button_cart.is-added .button__inner svg, .button_cart.is-added:hover .button__inner svg, .cart-btn-parent:hover .button_cart.is-added .button__inner svg {
   fill: #ffffff;
 }
 .button__remove {
@@ -1075,9 +1091,13 @@ html[data-useragent*="Mac OS X"] .rub {
   border-radius: 100%;
   background-color: #ffffff;
   border: 1px solid rgba(87, 117, 143, 0.15);
+  transition: border-color ease 0.35s;
 }
 .button__remove > svg {
   fill: #F35150;
+}
+.button:hover .button__remove {
+  border-color: #F35150;
 }
 .is-added .button__remove {
   opacity: 1;
@@ -1777,11 +1797,13 @@ svg + .button__text {
   background-color: #57758F;
   border-radius: 100%;
 }
-.category-nav_nav .category-nav__item {
-  padding-left: 0;
-}
-.category-nav_nav .category-nav__item:before {
-  display: none;
+@media screen and (max-width: 600px) {
+  .category-nav_nav .category-nav__item {
+    padding-left: 0;
+  }
+  .category-nav_nav .category-nav__item:before {
+    display: none;
+  }
 }
 .category-nav__link {
   display: inline-block;
@@ -2036,19 +2058,6 @@ svg + .button__text {
     right: 0;
     text-align: center;
   }
-}
-.compact-card__add .button__inner {
-  border: 1px solid rgba(87, 117, 143, 0.15);
-  box-shadow: none;
-}
-.compact-card__add.button svg {
-  fill: #0E3F60;
-}
-.compact-card:hover .compact-card__add.button svg {
-  fill: #2B95E4;
-}
-.compact-card__add.is-added .button__inner svg, .compact-card__add.is-added:hover .button__inner svg, .compact-card:hover .compact-card__add.is-added .button__inner svg {
-  fill: #ffffff;
 }
 .compact-card__remove > svg {
   fill: rgba(87, 117, 143, 0.47);
@@ -2315,12 +2324,6 @@ svg + .button__text {
     margin-bottom: 25px;
     font-size: 11px;
   }
-}
-.complex-card__add svg {
-  fill: #0E3F60;
-}
-.complex-card__add:hover svg {
-  fill: #1C7ADD;
 }
 
 .complex-selection {
@@ -3853,12 +3856,6 @@ svg + .button__text {
     text-align: center;
   }
 }
-.nano-card__add > svg {
-  fill: #0E3F60;
-}
-.nano-card__add:not(.is-added):hover > svg {
-  fill: #1C7ADD;
-}
 .nano-card__remove > svg {
   fill: rgba(87, 117, 143, 0.47);
 }
@@ -4784,7 +4781,9 @@ svg + .button__text {
 }
 .search-line__result-drop {
   position: absolute;
+  z-index: 5;
   display: none;
+  width: 100%;
   top: calc(100% - 15px);
   padding: 20px 30px 20px;
   background: #ffffff;
@@ -4796,6 +4795,11 @@ svg + .button__text {
 }
 .show-result .search-line__result-drop {
   display: block;
+}
+@media screen and (max-width: 1024px) {
+  .show-result .search-line__result-drop {
+    display: none;
+  }
 }
 
 .search-tabs__nav {
@@ -5105,7 +5109,7 @@ svg + .button__text {
   }
 }
 .service-card__img-holder {
-  width: 45%;
+  width: 43%;
   margin-left: auto;
 }
 @media screen and (max-width: 1024px) {
@@ -5218,12 +5222,6 @@ svg + .button__text {
   .service-card__price {
     font-size: 18px;
   }
-}
-.service-card__add svg {
-  fill: #0E3F60;
-}
-.service-card__add:hover svg {
-  fill: #1C7ADD;
 }
 
 .specials {

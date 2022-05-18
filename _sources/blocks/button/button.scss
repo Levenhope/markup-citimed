@@ -81,13 +81,6 @@
       background-size: 200% 100%;
     }
   }
-  &_cart {
-    position: relative;
-    width: 45px;
-    height: 45px;
-    flex-shrink: 0;
-    padding: 0;
-  }
   &__inner {
     display: flex;
     align-items: center;
@@ -97,9 +90,34 @@
     border-radius: 100%;
     box-shadow: 0 2px 6px rgba(34, 87, 142, 0.15);
     border: 1px solid rgba(87, 117, 143, 0);
-    .is-added & {
-      background-color: $color-secondary;
-      > svg {
+    background-color: $color-white;
+    transition: border-color ease .35s;
+  }
+  &_cart {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    padding: 0;
+    background-color: $transparent;
+    .button__inner {
+      border: 1px solid rgba(87, 117, 143, .15);
+      box-shadow: none;
+      svg {
+        fill: $color-black;
+        .cart-btn-parent:hover & {
+          fill: $color-secondary;
+        }
+      }
+      &:hover {
+        border-color: $color-secondary;
+      }
+    }
+    &.is-added {
+      .button__inner {
+        background-color: $color-secondary;
+      }
+      .button__inner svg, &:hover .button__inner svg, .cart-btn-parent:hover & .button__inner svg {
         fill: $color-white;
       }
     }
@@ -120,8 +138,12 @@
     border-radius: 100%;
     background-color: $color-white;
     border: 1px solid rgba($color-text-light, .15);
+    transition: border-color ease .35s;
     > svg {
       fill: $color-accent;
+    }
+    .button:hover & {
+      border-color: $color-accent;
     }
     .is-added & {
       opacity: 1;

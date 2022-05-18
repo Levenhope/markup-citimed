@@ -210,23 +210,6 @@
       text-align: center;
     }
   }
-  &__add {
-    .button__inner {
-      border: 1px solid rgba(87, 117, 143, .15);
-      box-shadow: none;
-    }
-    &.button svg {
-      fill: $color-black;
-      #{$self}:hover & {
-        fill: #2B95E4;
-      }
-    }
-    &.is-added {
-      .button__inner svg, &:hover .button__inner svg, #{$self}:hover & .button__inner svg {
-        fill: $color-white;
-      }
-    }
-  }
   &__remove {
     > svg {
       fill: rgba(87, 117, 143, 0.47);

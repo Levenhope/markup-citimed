@@ -44,7 +44,7 @@
     }
   }
   &__img-holder {
-    width: 45%;
+    width: 43%;
     margin-left: auto;
     @media #{$media-mobile} {
       position: absolute;
@@ -140,14 +140,6 @@
     white-space: nowrap;
     @media #{$media-mobile} {
       font-size: 18px;
-    }
-  }
-  &__add {
-    svg {
-      fill: $color-black;
-    }
-    &:hover svg {
-      fill: $color-secondary;
     }
   }
 }

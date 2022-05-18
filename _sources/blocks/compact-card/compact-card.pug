@@ -1,6 +1,6 @@
 mixin compact-card(params)
     - var mod = params&&params.mod?'_'+params.mod:'';
-    +b.ARTICLE.compact-card(class=mod)
+    +b.ARTICLE.compact-card(class=mod+' cart-btn-parent')
         +e.content
             +e.code
                 +e.SPAN.code-title Исследование /
@@ -28,9 +28,9 @@ mixin compact-card(params)
             else
                 +e.BUTTON.add.button.button_cart(class=params&&params.added?'is-added':'')
                     span.button__inner
-                        +svgUse(18, 18, 'icon-cart')(class='compact-card__add-icon')
+                        +svgUse(18, 18, 'icon-cart')
                     span.button__remove
-                        +svgUse(7, 7, 'icon-close')(class='compact-card__remove-icon')
+                        +svgUse(7, 7, 'icon-close')
 mixin compact-card-extra(params)
     +b.ARTICLE.compact-card._cart-extra
         +e.content

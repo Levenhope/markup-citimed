@@ -30,9 +30,11 @@
       border-radius: 100%;
     }
     #{$self}_nav & {
-      padding-left: 0;
-      &:before {
-        display: none;
+      @media #{$media-phone} {
+        padding-left: 0;
+        &:before {
+          display: none;
+        }
       }
     }
   }

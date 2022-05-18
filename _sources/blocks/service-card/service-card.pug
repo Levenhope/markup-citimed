@@ -1,6 +1,6 @@
 mixin service-card(params)
-    - var mod = params&&params.mod?params.mod:'';
-    +b.ARTICLE.service-card(class=mod?'_'+mod:'')
+    - var mod = params&&params.mod?'_'+params.mod:'';
+    +b.ARTICLE.service-card(class=mod+' cart-btn-parent')
         +e.header
             +e.code 1.0.D1.202
             +e.duration
@@ -14,8 +14,11 @@ mixin service-card(params)
                 +e.LI.tag количественный
             +e.footer
                 +e.price 2 600 #[span.rub ₽]
-                +e.BUTTON.add.button.button_control
-                    +svgUse(18, 18, 'icon-cart')(class='service-card__add-icon')
+                +e.BUTTON.add.button.button_cart(class=params && params.added ? 'is-added' : '')
+                    span.button__inner
+                        +svgUse(18, 18, 'icon-cart')
+                    span.button__remove
+                        +svgUse(7, 7, 'icon-close')
         if params&&params.img
             +e.img-holder
                 +e.IMG.img(src=params.img)
