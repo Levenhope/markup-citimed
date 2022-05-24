@@ -114,9 +114,12 @@
       height: 50px;
       width: 100%;
       padding: 0 15px;
-      font-size: 14px;
       &__icon-holder {
         margin-right: 15px;
+      }
+      &__text {
+        font-size: 14px;
+        font-weight: $font-weight-semibold;
       }
       @media #{$media-phone-landscape} {
         height: auto;
@@ -126,7 +129,8 @@
           height: 25px;
         }
         &__text {
-          width: 130px;
+          width: 150px;
+          font-size: 13px;
           text-align: left;
         }
       }

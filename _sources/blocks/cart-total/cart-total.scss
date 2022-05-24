@@ -1,12 +1,17 @@
 .cart-total {
   $self: &;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   padding: 35px 35px 40px;
   background: $color-white;
   border-radius: 3px;
   box-shadow: 0 3px 20px rgba(34, 87, 142, 0.1);
   @media #{$media-phone} {
     padding: 20px;
+  }
+  @media #{$media-not-mobile} {
+    position: sticky;
+    top: 150px;
+    z-index: 5;
   }
   &__block {
     padding: 20px 0 12px;

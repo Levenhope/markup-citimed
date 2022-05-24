@@ -18,7 +18,7 @@ block global_vars
 
 block content
     main.page-content
-        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
+        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel', instant: true})
         +breadcrumbs({items:[{name: 'Главная', href: 'index.html'}, {name: 'Анализы на дому'}]})
         .content-center
             +b.page-cols
@@ -26,10 +26,9 @@ block content
                     h1.h2= $pageTitle
                 +e.side-col
                     +catalog-nav()
-                    .hide-mobile
-                        +info-bar()
-                        +cart-panel()
-                        +catalog-nav()
+                    +info-bar().hide-mobile
+                    +cart-panel().hide-mobile
+                    +catalog-nav().hide-mobile
                 +e.main-col
                     +service-buttons()
                     +cards-block-compact()

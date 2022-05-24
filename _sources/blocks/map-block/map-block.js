@@ -72,20 +72,21 @@ class MapBlock {
                 iconColor: mark.color,
                 balloonOffset: [90, -15],
                 hideIconOnBalloonOpen: false,
-                balloonCloseButton: false,
+                balloonCloseButton: true,
             }
         );
         this.collection.add(placemark);
 
         element.addEventListener('click', function () {
-            self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
-                placeItem.classList.remove('is-active');
-            });
-            element.classList.add('is-active');
-            if (!placemark.balloon.isOpen()) {
-                placemark.balloon.open();
-            } else {
+            if (element.classList.contains('is-active')) {
                 placemark.balloon.close();
+                element.classList.remove('is-active');
+            } else {
+                self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
+                    placeItem.classList.remove('is-active');
+                });
+                element.classList.add('is-active');
+                placemark.balloon.open();
             }
             return false;
         });

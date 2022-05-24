@@ -48,7 +48,7 @@
     display: block;
     margin-bottom: 2px;
     color: $color-text;
-    font-weight: $font-weight-medium;
+    font-weight: $font-weight-semibold;
     font-size: 13px;
     line-height: 1.2;
     letter-spacing: 0.02em;
@@ -71,7 +71,7 @@
     font-size: 13px;
     color: $color-text-light;
     #{$self}__item_map & {
-      color: $color-text-light-white;
+      color: rgba(255, 255, 255, 0.54);
       @media #{$media-mobile} {
         color: $color-text-light;
       }

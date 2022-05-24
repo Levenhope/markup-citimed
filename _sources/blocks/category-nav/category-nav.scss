@@ -50,6 +50,7 @@
     }
     @media #{$media-phone} {
       font-size: 14px;
+      border-bottom: none;
     }
   }
   &__count {

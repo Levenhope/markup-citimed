@@ -3,6 +3,11 @@
   padding: 35px 35px 40px;
   background: $color-bg-light;
   border-radius: 3px;
+  @media #{$media-not-mobile} {
+    position: sticky;
+    top: 150px;
+    z-index: 5;
+  }
   @media #{$media-phone} {
     padding: 20px;
   }

@@ -93,7 +93,7 @@
     pointer-events: none;
     transform: translateY(0);
     transition: max-height ease .35s, transform ease .35s, padding ease .35s, opacity ease .35s;
-    a {
+    a:not([class]) {
       color: $color-secondary-medium;
       text-decoration: underline;
       &:hover {

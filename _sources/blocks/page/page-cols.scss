@@ -16,6 +16,7 @@
       grid-area: main;
     }
     &__side-col {
+      position: relative;
       grid-area: side;
     }
   }

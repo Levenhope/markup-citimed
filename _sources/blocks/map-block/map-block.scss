@@ -245,7 +245,7 @@
   &__extra-block {
     padding: 10px 30px;
     font-size: 14px;
-    border-top: 1px solid rgba(87, 117, 143, 0.3);
+    border-top: 1px solid rgba(87, 117, 143, 0.1);
     #{$self}__map & {
       padding: 10px 0;
     }

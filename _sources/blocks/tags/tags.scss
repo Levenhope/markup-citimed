@@ -1,5 +1,11 @@
 .tags {
   margin-bottom: 30px;
+  .h2 + & {
+    margin-top: -20px;
+    @media #{$media-mobile} {
+      margin-bottom: 20px;
+    }
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;

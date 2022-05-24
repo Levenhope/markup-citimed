@@ -675,11 +675,11 @@ html[data-useragent*="Mac OS X"] .rub {
   transform: translateY(0);
   transition: max-height ease 0.35s, transform ease 0.35s, padding ease 0.35s, opacity ease 0.35s;
 }
-.accordion__item-content a {
+.accordion__item-content a:not([class]) {
   color: #009DD9;
   text-decoration: underline;
 }
-.accordion__item-content a:hover {
+.accordion__item-content a:not([class]):hover {
   text-decoration: none;
 }
 .accordion_big .accordion__item-content {
@@ -1302,7 +1302,7 @@ svg + .button__text {
   margin-left: 5px;
   padding: 0 3px;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 12px;
   line-height: 1;
   background-color: #F35150;
@@ -1435,9 +1435,16 @@ svg + .button__text {
 }
 
 .cart-panel {
-  margin: 20px 0;
   background-color: #E7F2FF;
   border-radius: 3px;
+}
+@media screen and (min-width: 1025px) {
+  .cart-panel {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    z-index: 5;
+  }
 }
 .cart-panel__header {
   display: flex;
@@ -1501,7 +1508,7 @@ svg + .button__text {
 }
 
 .cart-total {
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   padding: 35px 35px 40px;
   background: #ffffff;
   border-radius: 3px;
@@ -1510,6 +1517,14 @@ svg + .button__text {
 @media screen and (max-width: 600px) {
   .cart-total {
     padding: 20px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .cart-total {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    z-index: 5;
   }
 }
 .cart-total__block {
@@ -1819,6 +1834,7 @@ svg + .button__text {
 @media screen and (max-width: 600px) {
   .category-nav__link {
     font-size: 14px;
+    border-bottom: none;
   }
 }
 .category-nav__count {
@@ -1996,7 +2012,7 @@ svg + .button__text {
   position: relative;
   margin-right: 15px;
   padding: 7px 20px 7px 0;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   white-space: nowrap;
@@ -2293,7 +2309,7 @@ svg + .button__text {
 .complex-card__price {
   margin-right: 15px;
   padding: 7px 20px 7px 0;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   white-space: nowrap;
@@ -2423,6 +2439,14 @@ svg + .button__text {
   padding: 35px 35px 40px;
   background: #F2F7FD;
   border-radius: 3px;
+}
+@media screen and (min-width: 1025px) {
+  .detail-control {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    z-index: 5;
+  }
 }
 @media screen and (max-width: 600px) {
   .detail-control {
@@ -3278,10 +3302,13 @@ svg + .button__text {
   height: 50px;
   width: 100%;
   padding: 0 15px;
-  font-size: 14px;
 }
 .main-screen__menu-item .icon-link__icon-holder {
   margin-right: 15px;
+}
+.main-screen__menu-item .icon-link__text {
+  font-size: 14px;
+  font-weight: 700;
 }
 @media screen and (max-width: 768px) {
   .main-screen__menu-item .icon-link {
@@ -3293,7 +3320,8 @@ svg + .button__text {
     height: 25px;
   }
   .main-screen__menu-item .icon-link__text {
-    width: 130px;
+    width: 150px;
+    font-size: 13px;
     text-align: left;
   }
 }
@@ -3563,7 +3591,7 @@ svg + .button__text {
 .map-block__extra-block {
   padding: 10px 30px;
   font-size: 14px;
-  border-top: 1px solid rgba(87, 117, 143, 0.3);
+  border-top: 1px solid rgba(87, 117, 143, 0.1);
 }
 .map-block__map .map-block__extra-block {
   padding: 10px 0;
@@ -3804,7 +3832,7 @@ svg + .button__text {
   margin-right: 15px;
   padding: 7px 15px 7px 0;
   color: #0E3F60;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.2;
   white-space: nowrap;
@@ -4057,7 +4085,7 @@ svg + .button__text {
 }
 .page-footer__work-hours b {
   color: #0E3F60;
-  font-weight: 600;
+  font-weight: 700;
 }
 @media screen and (max-width: 1024px) {
   .page-footer__copyright {
@@ -4191,6 +4219,7 @@ svg + .button__text {
     grid-area: main;
   }
   .page-cols__side-col {
+    position: relative;
     grid-area: side;
   }
 }
@@ -4538,6 +4567,13 @@ svg + .button__text {
   border-radius: 60px;
   background-color: #ffffff;
 }
+@media screen and (max-width: 1024px) {
+  .search-line_cart .search-line__form {
+    padding-left: 25px;
+    padding-right: 20px;
+    gap: 10px;
+  }
+}
 .bvi-active .search-line__form {
   border: 2px solid black;
 }
@@ -4568,6 +4604,11 @@ svg + .button__text {
 }
 .search-line_round-modal .search-line__input {
   font-size: 13px;
+}
+@media screen and (max-width: 1024px) {
+  .search-line_cart .search-line__input {
+    font-size: 12px;
+  }
 }
 .search-line__input::-webkit-input-placeholder {
   color: rgba(87, 117, 143, 0.5);
@@ -4784,7 +4825,11 @@ svg + .button__text {
   z-index: 5;
   display: none;
   width: 100%;
+  max-width: 1170px;
   top: calc(100% - 15px);
+  left: 0;
+  right: 0;
+  margin: auto;
   padding: 20px 30px 20px;
   background: #ffffff;
   box-shadow: 0 2px 10px rgba(34, 87, 142, 0.19);
@@ -5004,7 +5049,7 @@ svg + .button__text {
   display: block;
   margin-bottom: 2px;
   color: #0E3F60;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 13px;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -5020,7 +5065,7 @@ svg + .button__text {
 }
 @media screen and (max-width: 1024px) {
   .service-buttons__main-line {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 12px;
   }
 }
@@ -5030,7 +5075,7 @@ svg + .button__text {
   color: #57758F;
 }
 .service-buttons__item_map .service-buttons__subline {
-  color: rgba(255, 255, 255, 0.67);
+  color: rgba(255, 255, 255, 0.54);
 }
 @media screen and (max-width: 1024px) {
   .service-buttons__item_map .service-buttons__subline {
@@ -5213,7 +5258,7 @@ svg + .button__text {
   border-top: 1px dashed rgba(87, 117, 143, 0.47);
 }
 .service-card__price {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 20px;
   line-height: 1.2;
   white-space: nowrap;
@@ -5354,6 +5399,18 @@ svg + .button__text {
   .specials_compact .specials__buttons {
     margin-top: 30px;
   }
+}
+.specials__button_specials {
+  display: none;
+}
+[data-active="#special-tab"] .specials__button_specials {
+  display: flex;
+}
+.specials__button_news {
+  display: none;
+}
+[data-active="#news-tab"] .specials__button_news {
+  display: flex;
 }
 .specials__slider-nav {
   grid-area: nav;
@@ -5558,6 +5615,14 @@ svg + .button__text {
 
 .tags {
   margin-bottom: 30px;
+}
+.h2 + .tags {
+  margin-top: -20px;
+}
+@media screen and (max-width: 1024px) {
+  .h2 + .tags {
+    margin-bottom: 20px;
+  }
 }
 .tags__list {
   display: flex;

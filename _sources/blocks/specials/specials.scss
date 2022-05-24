@@ -119,6 +119,20 @@
       }
     }
   }
+  &__button {
+    &_specials {
+      display: none;
+      [data-active='#special-tab'] & {
+        display: flex;
+      }
+    }
+    &_news {
+      display: none;
+      [data-active='#news-tab'] & {
+        display: flex;
+      }
+    }
+  }
   &__slider-nav {
     grid-area: nav;
     display: flex;

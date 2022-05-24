@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
         tabLink.classList.add('is-active');
         targetTab.classList.add('is-active');
+        tabsHolder.dataset.active = tabLink.dataset.target;
         window.dispatchEvent(tabsEvent);
     })
 });
