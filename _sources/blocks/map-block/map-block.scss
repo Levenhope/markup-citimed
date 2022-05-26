@@ -230,7 +230,7 @@
         padding-top: 15px;
       }
     }
-    #{$self}__map &, .modal-content & {
+    #{$self}__map &, .inner-modal-content & {
       padding: 10px 0;
     }
   }
@@ -238,7 +238,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height ease-out .35s;
-    .is-active &, #{$self}__map &, .modal-content & {
+    .is-active &, #{$self}__map &, .inner-modal-content & {
       max-height: 1000px;
     }
   }
@@ -246,7 +246,7 @@
     padding: 10px 30px;
     font-size: 14px;
     border-top: 1px solid rgba(87, 117, 143, 0.1);
-    #{$self}__map &, .modal-content & {
+    #{$self}__map &, .inner-modal-content & {
       padding: 10px 0;
     }
   }
@@ -278,7 +278,7 @@
     position: absolute;
     top: 17px;
     left: 0;
-    #{$self}__map &, .modal-content & {
+    #{$self}__map &, .inner-modal-content & {
       display: none;
     }
   }
@@ -293,7 +293,7 @@
     .is-active & {
       transform: rotate(180deg);
     }
-    #{$self}__map &, .modal-content & {
+    #{$self}__map &, .inner-modal-content & {
       display: none;
     }
   }

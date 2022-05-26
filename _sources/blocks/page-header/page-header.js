@@ -1,6 +1,8 @@
 //page-header
 function fixedHeaderfix() {
-    let headerHeight = document.querySelector('.page-header').clientHeight;
+    let header = document.querySelector('.page-header');
+    if (!header) return;
+    let headerHeight = header.clientHeight;
     document.body.style.paddingTop = headerHeight + 'px';
 }
 document.addEventListener("DOMContentLoaded", function(){

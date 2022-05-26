@@ -79,12 +79,11 @@ class MapBlock {
         this.collection.add(placemark);
 
         placemark.events.add('click', function(e) {
-            e.preventDefault();
             if (window.innerWidth < 769) {
-                //$.fancybox.open(placemark.properties.get('balloonContent'))
-                const fancybox = Fancybox.show([
+                e.preventDefault();
+                Fancybox.show([
                     {
-                        src: "<div class='modal-content'>"+placemark.properties.get('balloonContent')+"</div>",
+                        src: "<div class='inner-modal-content'>"+placemark.properties.get('balloonContent')+"</div>",
                         type: "html",
                     },
                 ]);
@@ -92,19 +91,23 @@ class MapBlock {
         });
 
         element.addEventListener('click', function () {
-            if (element.classList.contains('is-active')) {
-                placemark.balloon.close();
-                self.map.setZoom([7]);
-                self.map.setBounds(self.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
-                element.classList.remove('is-active');
+            if (window.innerWidth < 769) {
+                element.classList.toggle('is-active');
             } else {
-                self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
-                    placeItem.classList.remove('is-active');
-                });
-                element.classList.add('is-active');
-                self.map.setCenter([parseFloat(mark.coords[0]), parseFloat(mark.coords[1])]);
-                self.map.setZoom([17]);
-                placemark.balloon.open();
+                if (element.classList.contains('is-active')) {
+                    placemark.balloon.close();
+                    self.map.setZoom([7]);
+                    self.map.setBounds(self.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
+                    element.classList.remove('is-active');
+                } else {
+                    self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
+                        placeItem.classList.remove('is-active');
+                    });
+                    element.classList.add('is-active');
+                    self.map.setCenter([parseFloat(mark.coords[0]), parseFloat(mark.coords[1])]);
+                    self.map.setZoom([17]);
+                    placemark.balloon.open();
+                }
             }
             return false;
         });

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){
         let isNotClosable = tabsHolder.classList.contains('js-no-close');
         let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
         let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
-        if (isNotClosable) {
+        if (window.innerWidth > 600 || isNotClosable) {
             activeTabs.forEach(function(activeTab) {
                 activeTab.classList.remove('is-active');
             });
