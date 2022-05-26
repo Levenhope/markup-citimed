@@ -11,7 +11,11 @@ window.addEventListener('resize', function () {
 document.documentElement.setAttribute('data-useragent', navigator.userAgent);
 document.addEventListener("DOMContentLoaded", function () {
   //Инициализация плагина для версии для слабовидящих
-  new isvek.Bvi();
+  new isvek.Bvi(); //Класс для содержимого попапов
+
+  if (window.parent !== window) {
+    document.documentElement.classList.add('inside-iframe');
+  }
 });
 
 function fixPage() {
@@ -23,4 +27,14 @@ function fixPage() {
     window.scroll(0, currentScroll);
   }
 }
+
+document.addEventListener('click', function (e) {
+  let anchor = e.target.closest('a[href^="#"]');
+  if (!anchor) return;
+  e.preventDefault();
+  let linkTarget = document.querySelector(anchor.getAttribute('href'));
+  $('html, body').animate({
+    scrollTop: linkTarget.offsetTop - 140
+  }, 500);
+});
 //# sourceMappingURL=../sourcemaps/global.js.map

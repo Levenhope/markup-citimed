@@ -33,6 +33,9 @@ body {
 	}
 	@media (max-width: 319px) {
 		min-width: 320px;
+		.inside-iframe & {
+			min-width: auto;
+		}
 	}
 }
 

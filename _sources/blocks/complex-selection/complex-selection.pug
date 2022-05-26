@@ -7,26 +7,26 @@ mixin complex-selection-wrap(isCompact)
             block
 mixin complex-selection(params)
     - var isCompact = params&&params.isCompact;
+    - var isWideFirst = params&&params.wideFirst;
     +b.SECTION.complex-selection(class=isCompact?'_compact':'')
         +complex-selection-wrap(isCompact)
             +e.content
                 +e.H2.title(class=isCompact?'h3':'h2') Популярные комплексы анализов
                 if isCompact
                     +e.list
-                        +e.item._big(class=params&&params.wideFirst?'_wide':'')
+                        +e.item._big(class=isWideFirst?'_wide':'')
                             +complex-card({
-                                img: '../assets/img/complex-card-img.png',
+                                img: isWideFirst?'../assets/img/complex-card-img-wide.png':'../assets/img/complex-card-img.png',
                                 imgMob: '../assets/img/complex-card-img-mob.png',
                                 isBig: true,
-                                isWide: true
+                                isWide: isWideFirst
                             })
                         if (!(params&&params.wideFirst))
                             +e.item._big
                                 +complex-card({
                                     img: '../assets/img/complex-card-img.png',
                                     imgMob: '../assets/img/complex-card-img-mob.png',
-                                    isBig: true,
-                                    isWide: true
+                                    isBig: true
                                 })
                     +e.list-compact
                         +e.item

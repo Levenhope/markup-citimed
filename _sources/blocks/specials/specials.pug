@@ -10,7 +10,7 @@ mixin specials(params)
     - var isOneTab = params&&params.oneTab;
     +b.SECTION.specials(class=isCompact?'_compact':'')
         +specials-wrap(isCompact)
-            +e.content.tabs-holder(data-active='#special-tab')
+            +e.content.tabs-holder.js-no-close(data-active='#special-tab')
                 if (!isCompact&&!isOneTab)
                     +e.H2.title._tabs-links.h2.tabs-links #[a.tabs-link.is-active(data-target='#special-tab' href='javascript:;') Акции] и #[a.tabs-link(data-target='#news-tab' href='javascript:;') Новости]
                 else if (isCompact)

@@ -24,7 +24,7 @@ block global_vars
 
 block content
     main.page-content
-        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
+        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel', instant: true})
         +breadcrumbs({items:[{name: 'Главная', href: 'index.html'}, {name: 'Исследования крови', href: 'index.html'}, {name: 'Клинический анализ крови без лейкоцитарной формулы (венозная кровь)'}]})
         .content-center
             +b.page-cols

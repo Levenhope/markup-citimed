@@ -12,7 +12,7 @@ include ../blocks/catalog-nav/catalog-nav
 include ../blocks/info-bar/info-bar
 include ../blocks/cart-panel/cart-panel
 include ../blocks/category-nav/category-nav
-include ../blocks/seo-tabs/seo-tabs
+include ../blocks/anchors-block/anchors-block
 include ../blocks/mobile-nav-holder/mobile-nav-holder
 block global_vars
     -
@@ -21,7 +21,7 @@ block global_vars
 
 block content
     main.page-content
-        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel'})
+        +search-line({placeholder: 'Быстрый поиск нужного исследования...', placeholderMobile:'Поиск нужного исследования...', btnText: 'Найти исследование', template: 'panel', instant: true})
         +breadcrumbs({items:[{name: 'Главная', href: 'index.html'},{name: 'Анализы', href: 'catalog.html'}, {name: 'Анализ крови'}]})
         .content-center
             +b.page-cols
@@ -98,6 +98,6 @@ block content
                     .hide-desktop
                         +info-bar()
                         +mobile-nav-holder()
-                    +seo-tabs()
+                    +anchors-block()
         +map-block()
         +faq-block()

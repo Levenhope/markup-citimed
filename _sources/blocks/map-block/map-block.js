@@ -70,22 +70,40 @@ class MapBlock {
             },
             {
                 iconColor: mark.color,
-                balloonOffset: [90, -15],
+                balloonOffset: [0, -40],
                 hideIconOnBalloonOpen: false,
                 balloonCloseButton: true,
+                balloonPanelMaxMapArea: 0
             }
         );
         this.collection.add(placemark);
 
+        placemark.events.add('click', function(e) {
+            e.preventDefault();
+            if (window.innerWidth < 769) {
+                //$.fancybox.open(placemark.properties.get('balloonContent'))
+                const fancybox = Fancybox.show([
+                    {
+                        src: "<div class='modal-content'>"+placemark.properties.get('balloonContent')+"</div>",
+                        type: "html",
+                    },
+                ]);
+            }
+        });
+
         element.addEventListener('click', function () {
             if (element.classList.contains('is-active')) {
                 placemark.balloon.close();
+                self.map.setZoom([7]);
+                self.map.setBounds(self.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
                 element.classList.remove('is-active');
             } else {
                 self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
                     placeItem.classList.remove('is-active');
                 });
                 element.classList.add('is-active');
+                self.map.setCenter([parseFloat(mark.coords[0]), parseFloat(mark.coords[1])]);
+                self.map.setZoom([17]);
                 placemark.balloon.open();
             }
             return false;
@@ -98,6 +116,10 @@ class MapBlock {
                 if (self.map !== undefined) self.map.container.fitToViewport(true);
             }, 200);
             event.stopPropagation();
+        });
+
+        this.context.addEventListener('balloon.open', function(event) {
+            console.log(event)
         });
 
         this.context.addEventListener('setPlacemark.block', function(event, mark) {

@@ -1,11 +1,3 @@
-//accorion
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let item = e.target.closest('.accordion__item-heading');
-        if (item < 1) return;
-        item.closest('.accordion__item').classList.toggle('is-open');
-    })
-});
 //alphabet
 document.addEventListener("DOMContentLoaded", function(){
     let alphabets = document.querySelectorAll('.alphabet');
@@ -27,6 +19,14 @@ document.addEventListener("DOMContentLoaded", function(){
             alphabet.lastChild.lastChild.append(sortedItem);
         });
     });
+});
+//accorion
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let item = e.target.closest('.accordion__item-heading');
+        if (item < 1) return;
+        item.closest('.accordion__item').classList.toggle('is-open');
+    })
 });
 //cards-block
 $(function() {
@@ -112,17 +112,6 @@ document.addEventListener("DOMContentLoaded", function(){
         if (e.target.closest('.catalog-nav__group-title') < 1) return;
         let menu = e.target.closest('.catalog-nav__group');
         menu.classList.toggle('is-open');
-    })
-});
-//page-footer
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        if (e.target.closest('.footer-menu__toggle') < 1) return;
-        let menu = e.target.closest('.footer-menu');
-        if (!menu.classList.contains('is-open')) {
-            e.preventDefault();
-            menu.classList.add('is-open');
-        }
     })
 });
 // Обработка стандартной формы
@@ -341,6 +330,17 @@ $(function () {
     });
 });
 
+//page-footer
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.footer-menu__toggle') < 1) return;
+        let menu = e.target.closest('.footer-menu');
+        if (!menu.classList.contains('is-open')) {
+            e.preventDefault();
+            menu.classList.add('is-open');
+        }
+    })
+});
 //map-block
 class MapBlock {
     constructor(context) {
@@ -413,22 +413,40 @@ class MapBlock {
             },
             {
                 iconColor: mark.color,
-                balloonOffset: [90, -15],
+                balloonOffset: [0, -40],
                 hideIconOnBalloonOpen: false,
                 balloonCloseButton: true,
+                balloonPanelMaxMapArea: 0
             }
         );
         this.collection.add(placemark);
 
+        placemark.events.add('click', function(e) {
+            e.preventDefault();
+            if (window.innerWidth < 769) {
+                //$.fancybox.open(placemark.properties.get('balloonContent'))
+                const fancybox = Fancybox.show([
+                    {
+                        src: "<div class='modal-content'>"+placemark.properties.get('balloonContent')+"</div>",
+                        type: "html",
+                    },
+                ]);
+            }
+        });
+
         element.addEventListener('click', function () {
             if (element.classList.contains('is-active')) {
                 placemark.balloon.close();
+                self.map.setZoom([7]);
+                self.map.setBounds(self.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
                 element.classList.remove('is-active');
             } else {
                 self.context.querySelectorAll('.map-block__place').forEach(function(placeItem) {
                     placeItem.classList.remove('is-active');
                 });
                 element.classList.add('is-active');
+                self.map.setCenter([parseFloat(mark.coords[0]), parseFloat(mark.coords[1])]);
+                self.map.setZoom([17]);
                 placemark.balloon.open();
             }
             return false;
@@ -441,6 +459,10 @@ class MapBlock {
                 if (self.map !== undefined) self.map.container.fitToViewport(true);
             }, 200);
             event.stopPropagation();
+        });
+
+        this.context.addEventListener('balloon.open', function(event) {
+            console.log(event)
         });
 
         this.context.addEventListener('setPlacemark.block', function(event, mark) {
@@ -487,24 +509,31 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        //mobile search
-        if (e.target.closest('.js-search-toggle') < 1) return;
-        let header = e.target.closest('.page-header');
-        let searchDropdown = header.querySelector('.search-dropdown');
-        searchDropdown.classList.toggle('is-open');
-        fixPage();
-    });
-});
-document.addEventListener("DOMContentLoaded", function(){
     let searchLine = document.querySelectorAll('.search-line__input');
     function toggleResult(line) {
+        let searchDropdown = document.querySelector('.search-dropdown');
+        let dropdownInput = searchDropdown.querySelector('.search-line__input');
         if (line.value.length > 2) {
             line.closest('.search-line').classList.add('show-result');
+            if (window.innerWidth < 1025) {
+                searchDropdown.classList.add('is-open');
+                dropdownInput.value = line.value;
+                dropdownInput.focus();
+                line.value = '';
+            }
         } else {
             line.closest('.search-line').classList.remove('show-result');
+            if (window.innerWidth < 1025) {
+                searchDropdown.classList.remove('is-open');
+            }
         }
     }
+    document.addEventListener('click', function(e) {
+        let resetBtn = e.target.closest('.search-line__button_reset');
+        if (!resetBtn) return;
+        let parent = resetBtn.closest('.search-line');
+        parent.classList.remove('show-result');
+    });
     searchLine.forEach(function(line) {
         if (window.innerWidth < 1025 && line.dataset.placeholderMobile) {
             line.setAttribute('placeholder', line.dataset.placeholderMobile);
@@ -514,6 +543,93 @@ document.addEventListener("DOMContentLoaded", function(){
                 toggleResult(line);
             });
         }
+    });
+});
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        //mobile search
+        if (e.target.closest('.js-search-toggle') < 1) return;
+        let header = e.target.closest('.page-header');
+        let searchDropdown = header.querySelector('.search-dropdown');
+        searchDropdown.classList.toggle('is-open');
+        fixPage();
+    });
+});
+//tabs-links
+const tabsEvent = new Event('tabActivation');
+document.addEventListener("DOMContentLoaded", function(){
+    document.addEventListener('click', function(e) {
+        let tabLink = e.target.closest('.tabs-link');
+        let tabsHolder = e.target.closest('.tabs-holder');
+        if (!(tabLink && tabsHolder)) return;
+        let isNotClosable = tabsHolder.classList.contains('js-no-close');
+        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
+        let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
+        if (isNotClosable) {
+            activeTabs.forEach(function(activeTab) {
+                activeTab.classList.remove('is-active');
+            });
+            tabsHolder.querySelectorAll('.tabs-link.is-active').forEach(function(activeLink) {
+                activeLink.classList.remove('is-active');
+            });
+            tabLink.classList.add('is-active');
+            targetTab.classList.add('is-active');
+            tabsHolder.dataset.active = tabLink.dataset.target;
+        } else {
+            tabLink.classList.toggle('is-active');
+            targetTab.classList.toggle('is-active');
+            tabsHolder.dataset.active = tabsHolder.querySelector('.tabs-link.is-active').dataset.target;
+        }
+        window.dispatchEvent(tabsEvent);
+    })
+});
+//steps
+$(function() {
+    function initSteps($slider, $context, options) {
+        $slider.on("init afterChange", function(event, slick, currentSlide){
+            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
+            $(".steps__total-number", $context).text(slick.slideCount);
+        });
+        $slider.slick(options);
+    }
+    $('.steps').each(function() {
+        let $context = $(this);
+        let $slider = $('.steps__list', $context);
+        let options = {
+            infinite: false,
+            dots: false,
+            mobileFirst: true,
+            prevArrow: $('.steps__slider-arrow.button_prev', $context),
+            nextArrow: $('.steps__slider-arrow.button_next', $context),
+            responsive: [{
+                breakpoint: 769,
+                settings: "unslick"
+
+            }, {
+
+                breakpoint: 483,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
+            }
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            initSteps($slider, $context, options);
+        }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                initSteps($slider, $context, options);
+            }
+        });
     });
 });
 //specials
@@ -608,76 +724,8 @@ $(function() {
         }
     });
 });
-//tabs-links
-const tabsEvent = new Event('tabActivation');
-document.addEventListener("DOMContentLoaded", function(){
-    document.addEventListener('click', function(e) {
-        let tabLink = e.target.closest('.tabs-link');
-        let tabsHolder = e.target.closest('.tabs-holder');
-        if (!(tabLink && tabsHolder)) return;
-        let targetTab = tabsHolder.querySelector(tabLink.dataset.target);
-        let activeTabs = tabsHolder.querySelectorAll('.tab.is-active');
-        activeTabs.forEach(function(activeTab) {
-            activeTab.classList.remove('is-active');
-        });
-        tabsHolder.querySelectorAll('.tabs-link.is-active').forEach(function(activeLink) {
-            activeLink.classList.remove('is-active');
-        });
-        tabLink.classList.add('is-active');
-        targetTab.classList.add('is-active');
-        tabsHolder.dataset.active = tabLink.dataset.target;
-        window.dispatchEvent(tabsEvent);
-    })
-});
-//steps
-$(function() {
-    function initSteps($slider, $context, options) {
-        $slider.on("init afterChange", function(event, slick, currentSlide){
-            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
-            $(".steps__total-number", $context).text(slick.slideCount);
-        });
-        $slider.slick(options);
-    }
-    $('.steps').each(function() {
-        let $context = $(this);
-        let $slider = $('.steps__list', $context);
-        let options = {
-            infinite: false,
-            dots: false,
-            mobileFirst: true,
-            prevArrow: $('.steps__slider-arrow.button_prev', $context),
-            nextArrow: $('.steps__slider-arrow.button_next', $context),
-            responsive: [{
-                breakpoint: 769,
-                settings: "unslick"
+//types-block
 
-            }, {
-
-                breakpoint: 483,
-                settings: {
-                    slidesToShow: 2,
-                }
-
-            }, {
-
-                breakpoint: 300,
-                settings: {
-                    slidesToShow: 1
-                }
-
-            }
-            ]
-        };
-        if (window.innerWidth < 1025) {
-            initSteps($slider, $context, options);
-        }
-        $(window).on('resize', function() {
-            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-                initSteps($slider, $context, options);
-            }
-        });
-    });
-});
 //top-menu
 document.addEventListener("DOMContentLoaded", function(){
     document.addEventListener('click', function(e) {
@@ -690,5 +738,4 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     })
 });
-//types-block
 //# sourceMappingURL=../sourcemaps/blocks.js.map

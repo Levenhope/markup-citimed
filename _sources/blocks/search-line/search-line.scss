@@ -16,7 +16,7 @@
       margin-bottom: 30px;
       border-radius: 6px;
       @media #{$media-phone} {
-        margin: 0 -20px 15px;
+        margin: 0 -15px 15px;
         border-radius: 0;
         .modal-content & {
           margin-left: 0;
@@ -250,7 +250,7 @@
   }
   &__result-drop {
     position: absolute;
-    z-index: 5;
+    z-index: 7;
     display: none;
     width: 100%;
     max-width: 1170px;
