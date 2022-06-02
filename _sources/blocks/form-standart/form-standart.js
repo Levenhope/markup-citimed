@@ -22,7 +22,7 @@ $(function () {
         function checkTextInputFill($input) {
             const $relatedField = $input.closest(`.field`);
 
-            if ($input.val().length > 0 && $input.val() !== '(___)___-__-__') {
+            if ($input.val().length > 0 && $input.val() !== '+7(___)___-__-__') {
                 $relatedField.addClass('is-dirty').removeClass('is-empty');
             } else {
                 $relatedField.removeClass('is-dirty').addClass('is-empty');
@@ -65,7 +65,7 @@ $(function () {
 
             if (!$input.is('[data-necessary]')) return;
 
-            if ($input.val().length < 1 || $input.val() === '(___)___-__-__') {
+            if ($input.val().length < 1 || $input.val() === '+7(___)___-__-__') {
                 $relatedField.addClass('is-none');
             } else if ($input.is('[type="tel"]')) {
                 const regex = /\+7\(\d{3}\)\d{3}-\d{2}-\d{2}/;
@@ -80,7 +80,7 @@ $(function () {
             }
         }
 
-        $('input[type="tel"]', $form).mask('(999)999-99-99', {autoclear: false});
+        $('input[type="tel"]', $form).mask('+7(999)999-99-99', {autoclear: false});
 
         $textInputs.each(function() {
             checkTextInputFill($(this));

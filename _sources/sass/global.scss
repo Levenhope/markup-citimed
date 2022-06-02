@@ -129,6 +129,14 @@ body .nomargin {
 	}
 }
 
+.sticky {
+	@media #{$media-not-mobile} {
+		position: sticky;
+		top: 150px;
+		z-index: 5;
+	}
+}
+
 @media #{$media-mobile} {
 	.hide-mobile {
 		display: none !important;

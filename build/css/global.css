@@ -544,6 +544,15 @@ html[data-useragent*="Mac OS X"] .rub {
   }
 }
 
+@media screen and (min-width: 1025px) {
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    z-index: 5;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .hide-mobile {
     display: none !important;
@@ -1529,14 +1538,6 @@ svg + .button__text {
 .cart-panel {
   background-color: #E7F2FF;
   border-radius: 3px;
-}
-@media screen and (min-width: 1025px) {
-  .cart-panel {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 150px;
-    z-index: 5;
-  }
 }
 .cart-panel__header {
   display: flex;

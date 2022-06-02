@@ -150,7 +150,7 @@ $(function () {
         function checkTextInputFill($input) {
             const $relatedField = $input.closest(`.field`);
 
-            if ($input.val().length > 0 && $input.val() !== '(___)___-__-__') {
+            if ($input.val().length > 0 && $input.val() !== '+7(___)___-__-__') {
                 $relatedField.addClass('is-dirty').removeClass('is-empty');
             } else {
                 $relatedField.removeClass('is-dirty').addClass('is-empty');
@@ -193,7 +193,7 @@ $(function () {
 
             if (!$input.is('[data-necessary]')) return;
 
-            if ($input.val().length < 1 || $input.val() === '(___)___-__-__') {
+            if ($input.val().length < 1 || $input.val() === '+7(___)___-__-__') {
                 $relatedField.addClass('is-none');
             } else if ($input.is('[type="tel"]')) {
                 const regex = /\+7\(\d{3}\)\d{3}-\d{2}-\d{2}/;
@@ -208,7 +208,7 @@ $(function () {
             }
         }
 
-        $('input[type="tel"]', $form).mask('(999)999-99-99', {autoclear: false});
+        $('input[type="tel"]', $form).mask('+7(999)999-99-99', {autoclear: false});
 
         $textInputs.each(function() {
             checkTextInputFill($(this));
@@ -439,7 +439,7 @@ class MapBlock {
                 element.classList.toggle('is-active');
             } else {
                 if (element.classList.contains('is-active')) {
-                    placemark.balloon.close();
+                    //placemark.balloon.close();
                     self.map.setZoom([7]);
                     self.map.setBounds(self.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
                     element.classList.remove('is-active');
@@ -450,7 +450,7 @@ class MapBlock {
                     element.classList.add('is-active');
                     self.map.setCenter([parseFloat(mark.coords[0]), parseFloat(mark.coords[1])]);
                     self.map.setZoom([17]);
-                    placemark.balloon.open();
+                    //placemark.balloon.open();
                 }
             }
             return false;
@@ -532,6 +532,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (line.value.length > 2) {
             line.closest('.search-line').classList.add('show-result');
             if (window.innerWidth < 1025) {
+                fixPage();
                 searchDropdown.classList.add('is-open');
                 dropdownInput.value = line.value;
                 dropdownInput.focus();
@@ -559,55 +560,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 toggleResult(line);
             });
         }
-    });
-});
-//steps
-$(function() {
-    function initSteps($slider, $context, options) {
-        $slider.on("init afterChange", function(event, slick, currentSlide){
-            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
-            $(".steps__total-number", $context).text(slick.slideCount);
-        });
-        $slider.slick(options);
-    }
-    $('.steps').each(function() {
-        let $context = $(this);
-        let $slider = $('.steps__list', $context);
-        let options = {
-            infinite: false,
-            dots: false,
-            mobileFirst: true,
-            prevArrow: $('.steps__slider-arrow.button_prev', $context),
-            nextArrow: $('.steps__slider-arrow.button_next', $context),
-            responsive: [{
-                breakpoint: 769,
-                settings: "unslick"
-
-            }, {
-
-                breakpoint: 483,
-                settings: {
-                    slidesToShow: 2,
-                }
-
-            }, {
-
-                breakpoint: 300,
-                settings: {
-                    slidesToShow: 1
-                }
-
-            }
-            ]
-        };
-        if (window.innerWidth < 1025) {
-            initSteps($slider, $context, options);
-        }
-        $(window).on('resize', function() {
-            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
-                initSteps($slider, $context, options);
-            }
-        });
     });
 });
 //specials
@@ -700,6 +652,55 @@ $(function() {
                 }
             });
         }
+    });
+});
+//steps
+$(function() {
+    function initSteps($slider, $context, options) {
+        $slider.on("init afterChange", function(event, slick, currentSlide){
+            $(".steps__current-number", $context).text(parseInt(slick.currentSlide + 1));
+            $(".steps__total-number", $context).text(slick.slideCount);
+        });
+        $slider.slick(options);
+    }
+    $('.steps').each(function() {
+        let $context = $(this);
+        let $slider = $('.steps__list', $context);
+        let options = {
+            infinite: false,
+            dots: false,
+            mobileFirst: true,
+            prevArrow: $('.steps__slider-arrow.button_prev', $context),
+            nextArrow: $('.steps__slider-arrow.button_next', $context),
+            responsive: [{
+                breakpoint: 769,
+                settings: "unslick"
+
+            }, {
+
+                breakpoint: 483,
+                settings: {
+                    slidesToShow: 2,
+                }
+
+            }, {
+
+                breakpoint: 300,
+                settings: {
+                    slidesToShow: 1
+                }
+
+            }
+            ]
+        };
+        if (window.innerWidth < 1025) {
+            initSteps($slider, $context, options);
+        }
+        $(window).on('resize', function() {
+            if (!$slider.is('.slick-initialized') && (window.innerWidth < 1025)) {
+                initSteps($slider, $context, options);
+            }
+        });
     });
 });
 //tabs-links

@@ -2,11 +2,6 @@
   $self: &;
   background-color: $color-bg-medium;
   border-radius: 3px;
-  @media #{$media-not-mobile} {
-    position: sticky;
-    top: 150px;
-    z-index: 5;
-  }
   &__header {
     display: flex;
     align-items: center;

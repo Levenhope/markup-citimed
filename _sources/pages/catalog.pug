@@ -26,9 +26,11 @@ block content
                     h1.h2= $pageTitle
                 +e.side-col
                     +catalog-nav()
-                    +info-bar().hide-mobile
-                    +cart-panel().hide-mobile
-                    +catalog-nav().hide-mobile
+                    .hide-mobile
+                        +info-bar()
+                    .hide-mobile.sticky
+                        +cart-panel()
+                        +catalog-nav()
                 +e.main-col
                     +service-buttons()
                     +cards-block-compact()

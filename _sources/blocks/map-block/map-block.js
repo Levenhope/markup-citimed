@@ -95,7 +95,7 @@ class MapBlock {
                 element.classList.toggle('is-active');
             } else {
                 if (element.classList.contains('is-active')) {
-                    placemark.balloon.close();
+                    //placemark.balloon.close();
                     self.map.setZoom([7]);
                     self.map.setBounds(self.collection.getBounds(), {checkZoomRange:true, zoomMargin:100});
                     element.classList.remove('is-active');
@@ -106,7 +106,7 @@ class MapBlock {
                     element.classList.add('is-active');
                     self.map.setCenter([parseFloat(mark.coords[0]), parseFloat(mark.coords[1])]);
                     self.map.setZoom([17]);
-                    placemark.balloon.open();
+                    //placemark.balloon.open();
                 }
             }
             return false;

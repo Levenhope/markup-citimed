@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (line.value.length > 2) {
             line.closest('.search-line').classList.add('show-result');
             if (window.innerWidth < 1025) {
+                fixPage();
                 searchDropdown.classList.add('is-open');
                 dropdownInput.value = line.value;
                 dropdownInput.focus();

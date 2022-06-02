@@ -17,23 +17,10 @@ mixin field(params)
                                         +e.SPAN.option-price= option.price
                                             span.rub ₽
         else if (fieldType === 'tel')
-            +b.field._tel-part._left
-                +e.LABEL.label(for='codeField') Код
-                +e.item
-                    +e.inputs
-                        +e.SELECT.select._phone(data-placeholder='' data-necessary='' name='codeField')
-                            option
-                        +e.select-options
-                            each option in params.options
-                                +e.option(value=option.value)
-                                    +e.SPAN.option-inner
-                                        +e.SPAN.option-name= option.name
-                                        +e.SPAN.option-note= option.country
-            +b.field._tel-part._right
-                +e.LABEL.label(for=codeName)= params.label
-                +e.item
-                    +e.inputs
-                        +e.INPUT.input._phone(name=codeName type=fieldType data-necessary=params.required placeholder=params.label)
+            +e.LABEL.label(for=codeName)= params.label
+            +e.item
+                +e.inputs
+                    +e.INPUT.input._phone(name=codeName type=fieldType data-necessary=params.required placeholder=params.label)
         else if (fieldType === 'radio')
             +b.field._radio
                 +e.item
